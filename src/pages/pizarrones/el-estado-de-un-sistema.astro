@@ -1,0 +1,228 @@
+---
+import PizarronLayout from "../../layouts/PizarronLayout.astro";
+---
+
+<PizarronLayout
+  title="El estado de un sistema"
+  description="Pizarrón sobre el estado de un sistema: datos relacionados que describen la situación actual y permiten que el programa continúe."
+  categoria="Sistemas Informáticos"
+  encabezado="borde-grande"
+>
+  <section class="introduccion" aria-label="Introducción">
+    <p>
+      El estado de un sistema es el conjunto de datos relacionados que
+      describe la situación actual y permite que el programa continúe.
+    </p>
+  </section>
+
+  <section class="diagrama-principal" aria-labelledby="relacion">
+    <h2 id="relacion" class="relacion">Una operación transforma el estado</h2>
+
+    <figure class="diagrama">
+      <div class="flujo">
+        <div class="caja estado">
+          <p class="caja-etiqueta">Estado inicial</p>
+          <p class="caja-dato">Stock 12</p>
+        </div>
+
+        <div class="flecha" aria-hidden="true">
+          <svg viewBox="0 0 48 24" focusable="false">
+            <path d="M2 12h38M31 4l13 8-13 8"></path>
+          </svg>
+        </div>
+
+        <div class="caja operacion">
+          <p class="caja-etiqueta">Entrada / operación</p>
+          <p class="caja-dato">Vender 2</p>
+        </div>
+
+        <div class="flecha" aria-hidden="true">
+          <svg viewBox="0 0 48 24" focusable="false">
+            <path d="M2 12h38M31 4l13 8-13 8"></path>
+          </svg>
+        </div>
+
+        <div class="caja estado actualizado">
+          <p class="caja-etiqueta">Estado actualizado</p>
+          <p class="caja-dato">Stock 10</p>
+          <p class="caja-nota">+ venta registrada</p>
+        </div>
+      </div>
+    </figure>
+  </section>
+
+  <div class="complementos">
+    <section class="explicacion" aria-label="Ampliación">
+      <p>
+        Cada instrucción consulta una parte del estado, realiza una operación
+        y puede modificar algunos valores.
+      </p>
+      <p>
+        Ejemplos: en una calculadora incluye números y operación; en un
+        reproductor, canción, posición, volumen y modo.
+      </p>
+    </section>
+
+    <aside class="idea" aria-label="Idea destacada">
+      <p>El estado es información actual y organizada.</p>
+    </aside>
+  </div>
+
+  <p class="cierre">
+    El estado actualizado se convierte en punto de partida del estado siguiente.
+  </p>
+</PizarronLayout>
+
+<style>
+  .introduccion {
+    margin-bottom: 1.5rem;
+    max-width: 46rem;
+  }
+
+  .introduccion p {
+    margin: 0;
+  }
+
+  .diagrama-principal {
+    margin-bottom: 0;
+    padding: 1.35rem 0 1.5rem;
+    border-top: 2px solid var(--line);
+    border-bottom: 2px solid var(--line);
+  }
+
+  .complementos {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(16rem, 22rem);
+    gap: 1.25rem 1.75rem;
+    align-items: start;
+    margin-top: 1.75rem;
+  }
+
+  .explicacion {
+    display: grid;
+    gap: 0.85rem;
+  }
+
+  .explicacion p {
+    margin: 0;
+    max-width: 42rem;
+  }
+
+  .idea {
+    display: flex;
+    align-items: center;
+    align-self: stretch;
+    border: 2px solid var(--emphasis);
+    padding: 1rem 1.1rem;
+    background: color-mix(in srgb, var(--emphasis) 8%, var(--board));
+  }
+
+  .idea p {
+    margin: 0;
+    color: var(--emphasis);
+    font-size: clamp(1.15rem, 0.5vw + 1.05rem, 1.4rem);
+    font-weight: 700;
+    line-height: 1.35;
+  }
+
+  .relacion {
+    margin: 0 0 1.1rem;
+    text-align: center;
+    font-size: clamp(1.15rem, 0.4vw + 1.05rem, 1.35rem);
+    font-weight: 700;
+  }
+
+  .diagrama {
+    margin: 0;
+  }
+
+  .flujo {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 3rem minmax(0, 1fr) 3rem minmax(0, 1.15fr);
+    align-items: stretch;
+    gap: 0.5rem 0.35rem;
+  }
+
+  .caja {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 8.5rem;
+    padding: 0.95rem 1rem;
+    border: 2px solid var(--line);
+    text-align: center;
+  }
+
+  .caja-etiqueta {
+    margin: 0 0 0.55rem;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .caja-dato {
+    margin: 0;
+    font-size: 1.35rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .caja-nota {
+    margin: 0.4rem 0 0;
+    font-size: 0.98rem;
+    font-weight: 600;
+  }
+
+  .operacion {
+    background: var(--accent);
+    color: var(--board);
+    border-color: var(--accent);
+  }
+
+  .flecha {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .flecha svg {
+    width: 3rem;
+    height: 1.5rem;
+    fill: none;
+    stroke: var(--ink);
+    stroke-width: 2.4;
+    stroke-linecap: square;
+    stroke-linejoin: miter;
+  }
+
+  .cierre {
+    margin: 1.6rem 0 0;
+    padding-top: 1rem;
+    border-top: 2px solid var(--line);
+    font-weight: 600;
+    max-width: 46rem;
+  }
+
+  @media (max-width: 52rem) {
+    .complementos {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 44rem) {
+    .flujo {
+      grid-template-columns: 1fr;
+    }
+
+    .caja {
+      min-height: 0;
+    }
+
+    .flecha {
+      min-height: 2.25rem;
+      transform: rotate(90deg);
+    }
+  }
+</style>

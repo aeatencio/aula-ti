@@ -1,0 +1,41 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout
+  title="Pizarrones · Aula TI"
+  description="Pizarrones digitales para trabajar conceptos de Tecnologías de la Información en clase."
+  current="pizarrones"
+>
+  <h1 class="page-title">Pizarrones</h1>
+  <p class="lede">
+    Reconstrucciones digitales de pizarrones de clase: una idea, su explicación y
+    un diagrama para leer juntos.
+  </p>
+
+  <section class="categoria" aria-labelledby="cat-sistemas">
+    <h2 id="cat-sistemas">Sistemas Informáticos</h2>
+    <ul class="lista-pizarrones">
+      <li>
+        <a href="/pizarrones/el-estado-de-un-sistema/">El estado de un sistema</a>
+      </li>
+      <li>
+        <a href="/pizarrones/el-sistema-operativo/">El sistema operativo</a>
+      </li>
+      <li>
+        <a href="/pizarrones/hardware-software-y-tarea/">Hardware, software y tarea</a>
+      </li>
+    </ul>
+  </section>
+
+  <section class="categoria" aria-labelledby="cat-pensamiento">
+    <h2 id="cat-pensamiento">Pensamiento Computacional</h2>
+    <ul class="lista-pizarrones">
+      <li>
+        <a href="/pizarrones/la-maquina-obedece-exactamente/">
+          La máquina obedece exactamente
+        </a>
+      </li>
+    </ul>
+  </section>
+</Layout>

@@ -1,0 +1,86 @@
+---
+import Layout from "./Layout.astro";
+
+type EncabezadoVariant =
+  | "borde-grande"
+  | "borde-chico"
+  | "simple-grande"
+  | "simple-chico";
+
+interface Props {
+  title: string;
+  description: string;
+  categoria: string;
+  encabezado?: EncabezadoVariant;
+}
+
+const {
+  title,
+  description,
+  categoria,
+  encabezado = "simple-chico",
+} = Astro.props;
+
+const tieneSlotEncabezado = Astro.slots.has("encabezado-extra");
+---
+
+<Layout
+  title={`${title} · Pizarrones · Aula TI`}
+  description={description}
+  current="pizarrones"
+>
+  <article class="pizarron">
+    <header
+      class:list={[
+        "pizarron-encabezado",
+        `pizarron-encabezado--${encabezado}`,
+      ]}
+    >
+      <p class="ubicacion">Pizarrones · {categoria}</p>
+      <h1>{title}</h1>
+      {tieneSlotEncabezado && <slot name="encabezado-extra" />}
+    </header>
+    <slot />
+  </article>
+</Layout>
+
+<style>
+  .pizarron {
+    background: var(--board);
+    border: 2px solid var(--line);
+    padding: clamp(1.25rem, 3vw, 2.35rem);
+  }
+
+  .pizarron-encabezado {
+    margin-bottom: 1.15rem;
+  }
+
+  .pizarron-encabezado--simple-grande {
+    margin-bottom: 1.35rem;
+  }
+
+  .pizarron-encabezado--borde-grande {
+    margin-bottom: 1.35rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--line);
+  }
+
+  .pizarron-encabezado--borde-chico {
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--line);
+  }
+
+  .ubicacion {
+    margin: 0 0 0.45rem;
+    color: var(--muted);
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
+  .pizarron-encabezado h1 {
+    margin: 0;
+    font-size: var(--title);
+    line-height: 1.15;
+  }
+</style>

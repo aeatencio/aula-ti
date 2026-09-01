@@ -1,0 +1,300 @@
+---
+import PizarronLayout from "../../layouts/PizarronLayout.astro";
+---
+
+<PizarronLayout
+  title="El sistema operativo"
+  description="Pizarrón sobre el sistema operativo: el software de base que administra los recursos y permite que los programas usen el hardware."
+  categoria="Sistemas Informáticos"
+  encabezado="borde-chico"
+>
+  <p class="sigla" slot="encabezado-extra">S.O.</p>
+
+  <section class="intro" aria-label="Introducción">
+    <p>
+      Una computadora es un sistema formado por componentes que se relacionan.
+    </p>
+    <p>
+      El hardware aporta los componentes físicos y el software aporta las
+      instrucciones y los datos.
+    </p>
+  </section>
+
+  <figure class="arbol" aria-label="El programa solicita recursos al sistema operativo, que administra el hardware">
+    <div class="nodo nodo-programa">
+      <p class="nodo-nombre">Programa</p>
+      <p class="nodo-detalle">Quiere realizar una tarea</p>
+    </div>
+
+    <div class="eje" aria-hidden="true">
+      <svg viewBox="0 0 48 24" focusable="false">
+        <path d="M2 12h38M31 4l13 8-13 8"></path>
+      </svg>
+      <p>Solicita recursos</p>
+    </div>
+
+    <div class="nodo nodo-so">
+      <p class="nodo-nombre">Sistema operativo</p>
+      <p class="nodo-detalle">Organiza y administra recursos</p>
+    </div>
+
+    <div class="eje eje-corto" aria-hidden="true">
+      <svg viewBox="0 0 48 24" focusable="false">
+        <path d="M2 12h38M31 4l13 8-13 8"></path>
+      </svg>
+    </div>
+
+    <div class="hardware">
+      <p class="hardware-titulo">Hardware</p>
+      <div class="recursos">
+        <div class="recurso">
+          <p class="recurso-nombre">CPU</p>
+          <p class="recurso-detalle">Ejecuta instrucciones</p>
+        </div>
+        <div class="recurso">
+          <p class="recurso-nombre">RAM</p>
+          <p class="recurso-detalle">Datos e instrucciones en uso</p>
+        </div>
+        <div class="recurso">
+          <p class="recurso-nombre">Almacenamiento</p>
+          <p class="recurso-detalle">Programas y archivos</p>
+        </div>
+        <div class="recurso">
+          <p class="recurso-nombre">Dispositivos E/S</p>
+          <p class="recurso-detalle">Teclado, mouse, pantalla</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="sintesis">
+      Programa <span aria-hidden="true">↔</span>
+      Sistema operativo <span aria-hidden="true">↔</span>
+      Hardware
+    </p>
+  </figure>
+
+  <div class="notas">
+    <section class="nota" aria-labelledby="abrir-programa">
+      <h2 id="abrir-programa">Cuando abrimos un programa</h2>
+      <p>
+        El sistema operativo localiza el programa en el almacenamiento, carga
+        en la memoria RAM las instrucciones y los datos necesarios, y organiza
+        el trabajo de la CPU para que los ejecute.
+      </p>
+      <p>También coordina la entrada y la salida de información.</p>
+    </section>
+
+    <section class="nota nota-definicion" aria-labelledby="que-es-so">
+      <h2 id="que-es-so">Qué es y qué hace</h2>
+      <p>
+        El sistema operativo es el software de base que administra los
+        recursos de la computadora y permite que los programas utilicen el
+        hardware.
+      </p>
+    </section>
+  </div>
+</PizarronLayout>
+
+<style>
+  .sigla {
+    margin: 0.35rem 0 0;
+    color: var(--muted);
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .intro {
+    display: grid;
+    gap: 0.7rem;
+    margin: 1.25rem 0 1.6rem;
+    max-width: 46rem;
+  }
+
+  .intro p {
+    margin: 0;
+  }
+
+  .arbol {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 1.5rem 0 1.35rem;
+    border-top: 2px solid var(--line);
+    border-bottom: 2px solid var(--line);
+  }
+
+  .nodo {
+    width: min(100%, 28rem);
+    padding: 0.95rem 1.1rem;
+    border: 2px solid var(--line);
+    text-align: center;
+  }
+
+  .nodo-nombre {
+    margin: 0 0 0.35rem;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .nodo-detalle {
+    margin: 0;
+    font-size: clamp(1.15rem, 0.45vw + 1.05rem, 1.4rem);
+    font-weight: 700;
+    line-height: 1.25;
+  }
+
+  .nodo-so {
+    width: min(100%, 36rem);
+    background: var(--accent);
+    color: var(--board);
+    border-color: var(--accent);
+    padding: 1.2rem 1.25rem;
+  }
+
+  .nodo-so .nodo-nombre {
+    font-size: 0.9rem;
+    color: color-mix(in srgb, var(--board) 82%, var(--accent));
+  }
+
+  .nodo-so .nodo-detalle {
+    font-size: clamp(1.25rem, 0.6vw + 1.1rem, 1.55rem);
+  }
+
+  .eje {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+    margin: 0.35rem 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+    font-weight: 700;
+  }
+
+  .eje p {
+    margin: 0;
+  }
+
+  .eje svg {
+    width: 1.5rem;
+    height: 2.4rem;
+    fill: none;
+    stroke: var(--ink);
+    stroke-width: 2.4;
+    stroke-linecap: square;
+    stroke-linejoin: miter;
+    transform: rotate(90deg);
+  }
+
+  .eje-corto {
+    margin: 0.15rem 0 0.45rem;
+  }
+
+  .hardware {
+    width: 100%;
+  }
+
+  .hardware-titulo {
+    margin: 0 0 0.75rem;
+    text-align: center;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .recursos {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.65rem;
+  }
+
+  .recurso {
+    min-width: 0;
+    padding: 0.85rem 0.7rem;
+    border: 2px solid var(--line);
+    text-align: center;
+  }
+
+  .recurso-nombre {
+    margin: 0 0 0.4rem;
+    font-size: clamp(1.05rem, 0.3vw + 0.95rem, 1.2rem);
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    overflow-wrap: break-word;
+  }
+
+  .recurso-detalle {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.98rem;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  .sintesis {
+    margin: 1.25rem 0 0;
+    text-align: center;
+    font-size: clamp(1.05rem, 0.4vw + 0.95rem, 1.25rem);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+
+  .sintesis span {
+    margin: 0 0.35rem;
+    color: var(--accent);
+  }
+
+  .notas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.35rem 1.75rem;
+    margin-top: 1.75rem;
+  }
+
+  .nota h2 {
+    margin: 0 0 0.65rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+  }
+
+  .nota p {
+    margin: 0;
+  }
+
+  .nota p + p {
+    margin-top: 0.7rem;
+  }
+
+  .nota-definicion {
+    border: 2px solid var(--emphasis);
+    padding: 1rem 1.1rem;
+    background: color-mix(in srgb, var(--emphasis) 8%, var(--board));
+  }
+
+  .nota-definicion h2,
+  .nota-definicion p {
+    color: var(--emphasis);
+  }
+
+  @media (max-width: 56rem) {
+    .recursos {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 40rem) {
+    .notas {
+      grid-template-columns: 1fr;
+    }
+
+    .recursos {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

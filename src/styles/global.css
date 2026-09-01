@@ -1,0 +1,165 @@
+:root {
+  --ink: #142033;
+  --muted: #3d4a5c;
+  --paper: #eceae4;
+  --board: #fbfaf6;
+  --accent: #155e63;
+  --emphasis: #8a3418;
+  --line: #142033;
+  --space: clamp(1rem, 2.5vw, 2rem);
+  --page-width: 72rem;
+  --text: clamp(1.05rem, 0.35vw + 1rem, 1.25rem);
+  --title: clamp(1.75rem, 1.2vw + 1.4rem, 2.5rem);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: var(--text);
+  line-height: 1.55;
+}
+
+a {
+  color: var(--accent);
+}
+
+a:hover {
+  color: var(--ink);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 0.75rem;
+  top: -3rem;
+  z-index: 2;
+  padding: 0.4rem 0.7rem;
+  background: var(--board);
+  color: var(--ink);
+}
+
+.skip-link:focus {
+  top: 0.75rem;
+}
+
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: var(--space);
+}
+
+.marca {
+  color: var(--ink);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+}
+
+.site-nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.site-nav a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+  border-bottom-color: var(--accent);
+}
+
+.site-main {
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 0 var(--space) calc(var(--space) * 2);
+}
+
+.lede {
+  max-width: 40rem;
+  color: var(--muted);
+}
+
+.page-title {
+  margin: 0 0 0.6rem;
+  font-size: var(--title);
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+.cta {
+  display: inline-block;
+  margin-top: 1.25rem;
+  padding: 0.65rem 1.1rem;
+  background: var(--ink);
+  color: var(--board);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.cta:hover {
+  background: var(--accent);
+  color: var(--board);
+}
+
+.categoria {
+  margin-top: 2.5rem;
+}
+
+.categoria + .categoria {
+  margin-top: 1.75rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid var(--line);
+}
+
+.categoria h2 {
+  margin: 0 0 0.85rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.lista-pizarrones {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lista-pizarrones li + li {
+  margin-top: 0.55rem;
+}
+
+.lista-pizarrones a {
+  color: var(--ink);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 2px solid var(--accent);
+}
+
+.lista-pizarrones a:hover {
+  color: var(--accent);
+}

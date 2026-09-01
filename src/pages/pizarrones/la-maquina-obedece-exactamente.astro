@@ -1,0 +1,197 @@
+---
+import PizarronLayout from "../../layouts/PizarronLayout.astro";
+---
+
+<PizarronLayout
+  title="La máquina obedece exactamente"
+  description="Pizarrón sobre la diferencia entre intención e instrucción: la máquina no interpreta lo que queremos; ejecuta lo que le pedimos."
+  categoria="Pensamiento Computacional"
+  encabezado="simple-grande"
+>
+  <p class="pregunta">
+    ¿Qué diferencia hay entre querer que algo pase y dar instrucciones para que
+    pase?
+  </p>
+
+  <ul class="palabras" aria-label="Palabras clave">
+    <li>Intención</li>
+    <li>Instrucción</li>
+    <li>Secuencia</li>
+    <li>Ejecutar</li>
+    <li>Ajustar</li>
+  </ul>
+
+  <section class="secuencia" aria-label="Intención, instrucciones, ejecución, ajuste">
+    <div class="pasos">
+      <div class="paso">
+        <p class="paso-clave">Intención</p>
+        <p class="paso-texto">Queríamos lograr</p>
+      </div>
+      <div class="flecha" aria-hidden="true">
+        <svg viewBox="0 0 48 24" focusable="false">
+          <path d="M2 12h38M31 4l13 8-13 8"></path>
+        </svg>
+      </div>
+      <div class="paso">
+        <p class="paso-clave">Instrucciones</p>
+        <p class="paso-texto">Instrucciones que dimos</p>
+      </div>
+      <div class="flecha" aria-hidden="true">
+        <svg viewBox="0 0 48 24" focusable="false">
+          <path d="M2 12h38M31 4l13 8-13 8"></path>
+        </svg>
+      </div>
+      <div class="paso paso-ejecucion">
+        <p class="paso-clave">Ejecución</p>
+        <p class="paso-texto">Al ejecutar, pasó</p>
+      </div>
+      <div class="flecha" aria-hidden="true">
+        <svg viewBox="0 0 48 24" focusable="false">
+          <path d="M2 12h38M31 4l13 8-13 8"></path>
+        </svg>
+      </div>
+      <div class="paso">
+        <p class="paso-clave">Ajuste</p>
+        <p class="paso-texto">Ajustamos</p>
+      </div>
+    </div>
+  </section>
+
+  <p class="cierre">
+    Programar es organizar instrucciones, probar qué pasa y ajustar para
+    acercarnos a lo que queremos lograr.
+  </p>
+</PizarronLayout>
+
+<style>
+  .pregunta {
+    margin: 0 0 1.35rem;
+    padding: 0.85rem 0 0.95rem 1rem;
+    border-left: 4px solid var(--emphasis);
+    color: var(--ink);
+    font-size: clamp(1.2rem, 0.55vw + 1.05rem, 1.5rem);
+    font-weight: 700;
+    line-height: 1.35;
+    max-width: 46rem;
+  }
+
+  .palabras {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem 0.55rem;
+    margin: 0 0 1.75rem;
+    padding: 0;
+    list-style: none;
+  }
+
+  .palabras li {
+    padding: 0.35rem 0.7rem;
+    border: 2px solid var(--line);
+    font-size: 0.92rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .secuencia {
+    padding: 1.5rem 0;
+    border-top: 2px solid var(--line);
+    border-bottom: 2px solid var(--line);
+  }
+
+  .pasos {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 2.6rem minmax(0, 1fr) 2.6rem minmax(0, 1fr) 2.6rem minmax(0, 1fr);
+    align-items: stretch;
+    gap: 0.45rem 0.25rem;
+    margin: 0;
+    counter-reset: paso;
+  }
+
+  .paso {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 8.25rem;
+    padding: 0.9rem 0.85rem;
+    border: 2px solid var(--line);
+    text-align: center;
+    counter-increment: paso;
+  }
+
+  .paso::before {
+    content: counter(paso);
+    display: block;
+    margin-bottom: 0.35rem;
+    color: var(--muted);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+  }
+
+  .paso-clave {
+    margin: 0 0 0.45rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .paso-texto {
+    margin: 0;
+    font-size: clamp(1.05rem, 0.3vw + 1rem, 1.2rem);
+    font-weight: 700;
+    line-height: 1.25;
+  }
+
+  .paso-ejecucion {
+    background: var(--accent);
+    color: var(--board);
+    border-color: var(--accent);
+  }
+
+  .paso-ejecucion::before,
+  .paso-ejecucion .paso-clave {
+    color: color-mix(in srgb, var(--board) 82%, var(--accent));
+  }
+
+  .flecha {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .flecha svg {
+    width: 2.6rem;
+    height: 1.35rem;
+    fill: none;
+    stroke: var(--ink);
+    stroke-width: 2.4;
+    stroke-linecap: square;
+    stroke-linejoin: miter;
+  }
+
+  .cierre {
+    margin: 1.6rem 0 0;
+    font-size: clamp(1.08rem, 0.35vw + 1rem, 1.28rem);
+    font-weight: 700;
+    line-height: 1.4;
+    max-width: 48rem;
+  }
+
+  @media (max-width: 56rem) {
+    .pasos {
+      grid-template-columns: 1fr;
+    }
+
+    .paso {
+      min-height: 0;
+    }
+
+    .flecha {
+      min-height: 2.1rem;
+      transform: rotate(90deg);
+    }
+  }
+</style>

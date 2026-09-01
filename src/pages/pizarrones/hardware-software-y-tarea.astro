@@ -1,0 +1,309 @@
+---
+import PizarronLayout from "../../layouts/PizarronLayout.astro";
+---
+
+<PizarronLayout
+  title="Hardware, software y tarea"
+  description="Pizarrón sobre cómo hardware y software trabajan relacionados para realizar una tarea concreta."
+  categoria="Sistemas Informáticos"
+>
+  <p class="pregunta">
+    ¿Cómo puede una misma computadora realizar tareas diferentes?
+  </p>
+
+  <figure class="convergencia" aria-label="El hardware y el software convergen en una tarea concreta">
+    <section class="aporte hardware" aria-labelledby="hw-nombre">
+      <p id="hw-nombre" class="aporte-nombre">Hardware</p>
+      <p class="aporte-que">Componentes físicos</p>
+      <p class="aporte-hace">
+        Aporta <strong>capacidades</strong> para recibir información,
+        mantenerla, realizar operaciones y producir resultados.
+      </p>
+    </section>
+
+    <section class="aporte software" aria-labelledby="sw-nombre">
+      <p id="sw-nombre" class="aporte-nombre">Software</p>
+      <p class="aporte-que">Programas, instrucciones y datos</p>
+      <p class="aporte-hace">
+        Organiza las <strong>instrucciones</strong> y los <strong>datos</strong> para
+        usar esas capacidades en una tarea.
+      </p>
+    </section>
+
+    <div class="via via-baja" aria-hidden="true">
+      <svg viewBox="0 0 48 24" focusable="false">
+        <path d="M2 12h38M31 4l13 8-13 8"></path>
+      </svg>
+    </div>
+
+    <svg class="haz" viewBox="0 0 100 18" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M22 1 L50 17"></path>
+      <path d="M78 1 L50 17"></path>
+    </svg>
+
+    <p class="encuentro">
+      <span class="encuentro-nombre">Tarea concreta</span>
+      <span class="encuentro-ejemplos">Escribir · Calcular · Reproducir música</span>
+    </p>
+
+    <div class="via via-alta" aria-hidden="true">
+      <svg viewBox="0 0 48 24" focusable="false">
+        <path d="M2 12h38M31 4l13 8-13 8"></path>
+      </svg>
+    </div>
+  </figure>
+
+  <section class="misma" aria-labelledby="misma-titulo">
+    <h2 id="misma-titulo">Misma computadora</h2>
+    <ul class="casos">
+      <li><strong>Escribir</strong> — texto · editor · documento</li>
+      <li><strong>Calcular</strong> — números · calculadora · resultado</li>
+      <li><strong>Reproducir música</strong> — audio · reproductor · sonido</li>
+    </ul>
+    <div class="contraste">
+      <p>
+        <span class="contraste-clave">Permanece</span>
+        buena parte del hardware
+      </p>
+      <p>
+        <span class="contraste-clave">Cambian</span>
+        programa · datos · operaciones · resultado
+      </p>
+    </div>
+  </section>
+
+  <p class="cierre">
+    Hardware y software trabajan relacionados: el programa organiza la tarea y
+    el hardware permite ejecutarla.
+  </p>
+</PizarronLayout>
+
+<style>
+  .pregunta {
+    margin: 0 0 1.5rem;
+    max-width: 40rem;
+    font-size: clamp(1.15rem, 0.5vw + 1.05rem, 1.4rem);
+    font-weight: 700;
+    line-height: 1.35;
+  }
+
+  .convergencia {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "hw sw"
+      "haz haz"
+      "tarea tarea";
+    column-gap: 1.25rem;
+    align-items: stretch;
+    margin: 0;
+    padding: 1.4rem 0 1.5rem;
+    border-top: 2px solid var(--line);
+    border-bottom: 2px solid var(--line);
+  }
+
+  .hardware {
+    grid-area: hw;
+  }
+
+  .software {
+    grid-area: sw;
+  }
+
+  .haz {
+    grid-area: haz;
+    display: block;
+    width: 100%;
+    height: 2.75rem;
+    margin: 0.15rem 0 0.35rem;
+    fill: none;
+    stroke: var(--ink);
+    stroke-width: 1.6;
+    stroke-linecap: square;
+  }
+
+  .via {
+    display: none;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .via svg {
+    width: 1.5rem;
+    height: 2.2rem;
+    fill: none;
+    stroke: var(--ink);
+    stroke-width: 2.4;
+    stroke-linecap: square;
+    stroke-linejoin: miter;
+  }
+
+  .via-baja svg {
+    transform: rotate(90deg);
+  }
+
+  .via-alta svg {
+    transform: rotate(-90deg);
+  }
+
+  .aporte {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 1rem 1.05rem;
+    border: 2px solid var(--line);
+  }
+
+  .aporte-nombre {
+    margin: 0 0 0.35rem;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .aporte-que {
+    margin: 0 0 0.7rem;
+    font-size: clamp(1.15rem, 0.4vw + 1.05rem, 1.35rem);
+    font-weight: 700;
+    line-height: 1.25;
+  }
+
+  .aporte-hace {
+    margin: 0;
+    color: var(--muted);
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  .aporte-hace strong {
+    color: var(--ink);
+    font-weight: 800;
+  }
+
+  .encuentro {
+    grid-area: tarea;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: min(100%, 28rem);
+    min-height: 6.5rem;
+    margin: 0 auto;
+    padding: 1rem 1.15rem;
+    background: var(--accent);
+    color: var(--board);
+    border: 2px solid var(--accent);
+    text-align: center;
+  }
+
+  .encuentro-nombre {
+    font-size: clamp(1.3rem, 0.55vw + 1.15rem, 1.6rem);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .encuentro-ejemplos {
+    margin-top: 0.4rem;
+    font-size: 0.98rem;
+    font-weight: 600;
+    color: color-mix(in srgb, var(--board) 82%, var(--accent));
+  }
+
+  .misma {
+    margin-top: 1.6rem;
+    max-width: 40rem;
+  }
+
+  .misma h2 {
+    margin: 0 0 0.7rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .casos {
+    margin: 0 0 1rem;
+    padding: 0;
+    list-style: none;
+  }
+
+  .casos li {
+    margin: 0;
+    padding: 0.35rem 0;
+  }
+
+  .casos li + li {
+    border-top: 1px solid color-mix(in srgb, var(--line) 22%, var(--board));
+  }
+
+  .contraste {
+    display: grid;
+    gap: 0.55rem;
+  }
+
+  .contraste p {
+    margin: 0;
+    font-weight: 600;
+  }
+
+  .contraste-clave {
+    display: inline-block;
+    min-width: 7.5rem;
+    margin-right: 0.45rem;
+    color: var(--emphasis);
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .cierre {
+    margin: 1.6rem 0 0;
+    padding-top: 1.1rem;
+    border-top: 2px solid var(--line);
+    font-size: clamp(1.08rem, 0.35vw + 1rem, 1.25rem);
+    font-weight: 700;
+    line-height: 1.4;
+    max-width: 46rem;
+  }
+
+  @media (max-width: 52rem) {
+    .convergencia {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "hw"
+        "baja"
+        "tarea"
+        "alta"
+        "sw";
+      row-gap: 0.15rem;
+    }
+
+    .haz {
+      display: none;
+    }
+
+    .via {
+      display: flex;
+    }
+
+    .via-baja {
+      grid-area: baja;
+    }
+
+    .via-alta {
+      grid-area: alta;
+    }
+
+    .encuentro {
+      width: 100%;
+    }
+
+    .contraste-clave {
+      display: block;
+      min-width: 0;
+      margin: 0 0 0.15rem;
+    }
+  }
+</style>
