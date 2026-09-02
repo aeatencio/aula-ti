@@ -7,9 +7,12 @@ A futuro podrá incluir distintos tipos de materiales —por ejemplo Pizarrones,
 ## Alcance actual
 
 - Home mínima de Aula TI
-- Listado de `/pizarrones/`
-- **Sistemas Informáticos** — *El estado de un sistema*, *El sistema operativo*, *Hardware, software y tarea*
+- Listado de `/pizarrones/` por espacio curricular
+- **Sistemas Informáticos** — *Preguntas y conceptos principales*, *El estado de un sistema*, *El sistema operativo*, *Hardware, software y tarea*
 - **Pensamiento Computacional** — *La máquina obedece exactamente*
+- Segunda vía de acceso en `/escuelas/`, por escuela y período: **Gabriela Mistral · 2.º cuatrimestre 2026**
+
+Los pizarrones son páginas canónicas. Una misma página puede referenciarse desde el índice por espacio curricular y desde un recorrido de escuela; no se duplica el contenido.
 
 No hay backend, base de datos, autenticación ni CMS. El contenido vive en páginas Astro.
 

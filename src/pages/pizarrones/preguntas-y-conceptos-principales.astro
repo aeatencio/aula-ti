@@ -1,0 +1,201 @@
+---
+import PizarronLayout from "../../layouts/PizarronLayout.astro";
+
+const filas = [
+  {
+    pregunta: "¿Cómo puede una computadora realizar tareas diferentes?",
+    conceptos: "Hardware · Software · Programa",
+  },
+  {
+    pregunta: "¿Qué contiene un programa?",
+    conceptos: "Instrucciones · Datos · Operaciones",
+  },
+  {
+    pregunta: "¿Cómo entra, se procesa y sale la información?",
+    conceptos: "Entrada · Procesamiento · Salida",
+  },
+  {
+    pregunta: "¿Qué ocurre mientras un programa se ejecuta?",
+    conceptos: "Memoria · Procesador · Ejecución",
+  },
+  {
+    pregunta: "¿Qué es el estado de un sistema?",
+    conceptos: "Estado variable · Estado interno · Actualización",
+  },
+  {
+    pregunta: "¿Por qué importa el orden de las instrucciones?",
+    conceptos: "Secuencia · Dependencia · Transformación",
+  },
+  {
+    pregunta: "¿Cómo funcionan los sistemas que se actualizan?",
+    conceptos: "Ciclo · Coordinación · Coherencia",
+  },
+  {
+    pregunta: "¿Cómo representamos un sistema digital?",
+    conceptos: "Modelo · Diagrama · Nivel de detalle",
+  },
+];
+---
+
+<PizarronLayout
+  title="Preguntas y conceptos principales"
+  description="Pizarrón introductorio: ocho preguntas y los conceptos principales asociados a cada una."
+  categoria="Sistemas Informáticos"
+  encabezado="borde-chico"
+  recorridoHref="/escuelas/gabriela-mistral/2-cuatrimestre-2026/"
+  recorridoNombre="Gabriela Mistral · 2.º cuatrimestre 2026"
+>
+  <table class="mapa">
+    <caption class="sr-only">
+      Preguntas del recorrido y conceptos principales asociados
+    </caption>
+    <thead>
+      <tr>
+        <th scope="col">Pregunta</th>
+        <th scope="col">Conceptos principales</th>
+      </tr>
+    </thead>
+    <tbody>
+      {filas.map((fila, indice) => (
+        <tr>
+          <th scope="row">
+            <span class="nro">{indice + 1}.</span>
+            {fila.pregunta}
+          </th>
+          <td>
+            <span class="etiqueta-movil" aria-hidden="true">
+              Conceptos principales
+            </span>
+            {fila.conceptos}
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</PizarronLayout>
+
+<style>
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .mapa {
+    width: 100%;
+    max-width: 100%;
+    margin: 0.35rem 0 0;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+
+  .mapa th,
+  .mapa td {
+    padding: 0.72rem 0.95rem;
+    border: 2px solid var(--line);
+    vertical-align: middle;
+    text-align: left;
+  }
+
+  .mapa thead th {
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .mapa thead th:first-child {
+    width: 58%;
+  }
+
+  .mapa tbody th {
+    font-size: clamp(1.02rem, 0.25vw + 0.95rem, 1.18rem);
+    font-weight: 700;
+    line-height: 1.35;
+  }
+
+  .nro {
+    display: inline-block;
+    min-width: 1.5rem;
+    margin-right: 0.35rem;
+    color: var(--muted);
+    font-weight: 700;
+  }
+
+  .mapa td {
+    color: var(--accent);
+    font-size: clamp(1.02rem, 0.25vw + 0.95rem, 1.18rem);
+    font-weight: 700;
+    line-height: 1.35;
+  }
+
+  .etiqueta-movil {
+    display: none;
+  }
+
+  @media (max-width: 44rem) {
+    .mapa {
+      position: relative;
+      overflow-x: clip;
+      table-layout: auto;
+      border-collapse: separate;
+      border-spacing: 0 0.75rem;
+    }
+
+    .mapa thead {
+      position: absolute;
+      left: 0;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      clip-path: inset(50%);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .mapa tbody tr {
+      display: block;
+      border: 2px solid var(--line);
+    }
+
+    .mapa tbody th,
+    .mapa td {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+      box-sizing: border-box;
+      border: 0;
+      overflow-wrap: break-word;
+      word-break: normal;
+      hyphens: none;
+    }
+
+    .mapa tbody th {
+      padding-bottom: 0.35rem;
+    }
+
+    .mapa td {
+      padding-top: 0.2rem;
+    }
+
+    .etiqueta-movil {
+      display: block;
+      margin-bottom: 0.3rem;
+      color: var(--ink);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+  }
+</style>

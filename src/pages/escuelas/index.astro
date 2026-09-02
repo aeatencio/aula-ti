@@ -1,0 +1,25 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout
+  title="Escuelas · Aula TI"
+  description="Pizarrones de Aula TI organizados por escuela y período."
+  current="escuelas"
+>
+  <h1 class="page-title">Escuelas</h1>
+  <p class="lede">
+    Recorridos de clase según el lugar y el período en que se enseñaron.
+  </p>
+
+  <section class="categoria" aria-labelledby="escuela-gabriela-mistral">
+    <h2 id="escuela-gabriela-mistral">Gabriela Mistral</h2>
+    <ul class="lista-pizarrones">
+      <li>
+        <a href="/escuelas/gabriela-mistral/2-cuatrimestre-2026/">
+          2.º cuatrimestre 2026
+        </a>
+      </li>
+    </ul>
+  </section>
+</Layout>

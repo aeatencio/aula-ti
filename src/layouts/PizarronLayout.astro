@@ -12,6 +12,8 @@ interface Props {
   description: string;
   categoria: string;
   encabezado?: EncabezadoVariant;
+  recorridoHref?: string;
+  recorridoNombre?: string;
 }
 
 const {
@@ -19,9 +21,12 @@ const {
   description,
   categoria,
   encabezado = "simple-chico",
+  recorridoHref,
+  recorridoNombre,
 } = Astro.props;
 
 const tieneSlotEncabezado = Astro.slots.has("encabezado-extra");
+const mostrarRecorrido = Boolean(recorridoHref && recorridoNombre);
 ---
 
 <Layout
@@ -39,6 +44,12 @@ const tieneSlotEncabezado = Astro.slots.has("encabezado-extra");
       <p class="ubicacion">Pizarrones · {categoria}</p>
       <h1>{title}</h1>
       {tieneSlotEncabezado && <slot name="encabezado-extra" />}
+      {mostrarRecorrido && (
+        <p class="recorrido">
+          Este pizarrón forma parte de{" "}
+          <a href={recorridoHref}>{recorridoNombre}</a>
+        </p>
+      )}
     </header>
     <slot />
   </article>
@@ -82,5 +93,25 @@ const tieneSlotEncabezado = Astro.slots.has("encabezado-extra");
     margin: 0;
     font-size: var(--title);
     line-height: 1.15;
+  }
+
+  .recorrido {
+    margin: 0.7rem 0 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.4;
+    overflow-wrap: break-word;
+  }
+
+  .recorrido a {
+    color: var(--ink);
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 2px solid var(--accent);
+  }
+
+  .recorrido a:hover {
+    color: var(--accent);
   }
 </style>

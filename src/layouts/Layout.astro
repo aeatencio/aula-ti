@@ -4,7 +4,7 @@ import "../styles/global.css";
 interface Props {
   title: string;
   description?: string;
-  current?: "home" | "pizarrones";
+  current?: "home" | "pizarrones" | "escuelas";
 }
 
 const {
@@ -31,6 +31,9 @@ const {
       <nav class="site-nav" aria-label="Principal">
         <a href="/pizarrones/" aria-current={current === "pizarrones" ? "page" : undefined}>
           Pizarrones
+        </a>
+        <a href="/escuelas/" aria-current={current === "escuelas" ? "page" : undefined}>
+          Escuelas
         </a>
       </nav>
     </header>
