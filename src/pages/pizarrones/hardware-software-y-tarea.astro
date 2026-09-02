@@ -11,7 +11,10 @@ import PizarronLayout from "../../layouts/PizarronLayout.astro";
     ¿Cómo puede una misma computadora realizar tareas diferentes?
   </p>
 
-  <figure class="convergencia" aria-label="El hardware y el software convergen en una tarea concreta">
+  <figure class="convergencia">
+    <figcaption class="visually-hidden">
+      Hardware y software convergen para realizar una tarea.
+    </figcaption>
     <section class="aporte hardware" aria-labelledby="hw-nombre">
       <p id="hw-nombre" class="aporte-nombre">Hardware</p>
       <p class="aporte-que">Componentes físicos</p>
@@ -88,6 +91,7 @@ import PizarronLayout from "../../layouts/PizarronLayout.astro";
   }
 
   .convergencia {
+    position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-areas:

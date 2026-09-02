@@ -15,7 +15,7 @@ No hay backend, base de datos, autenticación ni CMS. El contenido vive en pági
 
 ## Cómo ejecutarlo
 
-Requisitos: Node.js 22 o superior (versión par).
+Requisitos: Node.js 22.12.0 o superior.
 
 ```bash
 npm install

@@ -19,6 +19,10 @@ import PizarronLayout from "../../layouts/PizarronLayout.astro";
     <h2 id="relacion" class="relacion">Una operación transforma el estado</h2>
 
     <figure class="diagrama">
+      <figcaption class="visually-hidden">
+        Estado inicial, después una entrada u operación, después el estado
+        actualizado.
+      </figcaption>
       <div class="flujo">
         <div class="caja estado">
           <p class="caja-etiqueta">Estado inicial</p>
@@ -133,6 +137,7 @@ import PizarronLayout from "../../layouts/PizarronLayout.astro";
   }
 
   .diagrama {
+    position: relative;
     margin: 0;
   }
 

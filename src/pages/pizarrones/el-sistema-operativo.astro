@@ -20,14 +20,14 @@ import PizarronLayout from "../../layouts/PizarronLayout.astro";
     </p>
   </section>
 
-  <figure class="arbol" aria-label="El programa solicita recursos al sistema operativo, que administra el hardware">
+  <figure class="arbol">
     <div class="nodo nodo-programa">
       <p class="nodo-nombre">Programa</p>
       <p class="nodo-detalle">Quiere realizar una tarea</p>
     </div>
 
-    <div class="eje" aria-hidden="true">
-      <svg viewBox="0 0 48 24" focusable="false">
+    <div class="eje">
+      <svg viewBox="0 0 48 24" aria-hidden="true" focusable="false">
         <path d="M2 12h38M31 4l13 8-13 8"></path>
       </svg>
       <p>Solicita recursos</p>
@@ -38,8 +38,8 @@ import PizarronLayout from "../../layouts/PizarronLayout.astro";
       <p class="nodo-detalle">Organiza y administra recursos</p>
     </div>
 
-    <div class="eje eje-corto" aria-hidden="true">
-      <svg viewBox="0 0 48 24" focusable="false">
+    <div class="eje eje-corto">
+      <svg viewBox="0 0 48 24" aria-hidden="true" focusable="false">
         <path d="M2 12h38M31 4l13 8-13 8"></path>
       </svg>
     </div>
@@ -67,8 +67,12 @@ import PizarronLayout from "../../layouts/PizarronLayout.astro";
     </div>
 
     <p class="sintesis">
-      Programa <span aria-hidden="true">↔</span>
-      Sistema operativo <span aria-hidden="true">↔</span>
+      Programa
+      <span aria-hidden="true">↔</span>
+      <span class="visually-hidden"> se relaciona con </span>
+      Sistema operativo
+      <span aria-hidden="true">↔</span>
+      <span class="visually-hidden"> se relaciona con </span>
       Hardware
     </p>
   </figure>
@@ -238,6 +242,7 @@ import PizarronLayout from "../../layouts/PizarronLayout.astro";
   }
 
   .sintesis {
+    position: relative;
     margin: 1.25rem 0 0;
     text-align: center;
     font-size: clamp(1.05rem, 0.4vw + 0.95rem, 1.25rem);
@@ -245,7 +250,7 @@ import PizarronLayout from "../../layouts/PizarronLayout.astro";
     letter-spacing: 0.02em;
   }
 
-  .sintesis span {
+  .sintesis [aria-hidden="true"] {
     margin: 0 0.35rem;
     color: var(--accent);
   }

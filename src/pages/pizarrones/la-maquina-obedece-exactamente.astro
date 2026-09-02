@@ -21,40 +21,48 @@ import PizarronLayout from "../../layouts/PizarronLayout.astro";
     <li>Ajustar</li>
   </ul>
 
-  <section class="secuencia" aria-label="Intención, instrucciones, ejecución, ajuste">
-    <div class="pasos">
-      <div class="paso">
-        <p class="paso-clave">Intención</p>
-        <p class="paso-texto">Queríamos lograr</p>
-      </div>
-      <div class="flecha" aria-hidden="true">
-        <svg viewBox="0 0 48 24" focusable="false">
-          <path d="M2 12h38M31 4l13 8-13 8"></path>
-        </svg>
-      </div>
-      <div class="paso">
-        <p class="paso-clave">Instrucciones</p>
-        <p class="paso-texto">Instrucciones que dimos</p>
-      </div>
-      <div class="flecha" aria-hidden="true">
-        <svg viewBox="0 0 48 24" focusable="false">
-          <path d="M2 12h38M31 4l13 8-13 8"></path>
-        </svg>
-      </div>
-      <div class="paso paso-ejecucion">
-        <p class="paso-clave">Ejecución</p>
-        <p class="paso-texto">Al ejecutar, pasó</p>
-      </div>
-      <div class="flecha" aria-hidden="true">
-        <svg viewBox="0 0 48 24" focusable="false">
-          <path d="M2 12h38M31 4l13 8-13 8"></path>
-        </svg>
-      </div>
-      <div class="paso">
-        <p class="paso-clave">Ajuste</p>
-        <p class="paso-texto">Ajustamos</p>
-      </div>
-    </div>
+  <section class="secuencia">
+    <ol class="pasos">
+      <li>
+        <div class="paso">
+          <p class="paso-clave">Intención</p>
+          <p class="paso-texto">Queríamos lograr</p>
+        </div>
+        <div class="flecha" aria-hidden="true">
+          <svg viewBox="0 0 48 24" focusable="false">
+            <path d="M2 12h38M31 4l13 8-13 8"></path>
+          </svg>
+        </div>
+      </li>
+      <li>
+        <div class="paso">
+          <p class="paso-clave">Instrucciones</p>
+          <p class="paso-texto">Instrucciones que dimos</p>
+        </div>
+        <div class="flecha" aria-hidden="true">
+          <svg viewBox="0 0 48 24" focusable="false">
+            <path d="M2 12h38M31 4l13 8-13 8"></path>
+          </svg>
+        </div>
+      </li>
+      <li>
+        <div class="paso paso-ejecucion">
+          <p class="paso-clave">Ejecución</p>
+          <p class="paso-texto">Al ejecutar, pasó</p>
+        </div>
+        <div class="flecha" aria-hidden="true">
+          <svg viewBox="0 0 48 24" focusable="false">
+            <path d="M2 12h38M31 4l13 8-13 8"></path>
+          </svg>
+        </div>
+      </li>
+      <li>
+        <div class="paso">
+          <p class="paso-clave">Ajuste</p>
+          <p class="paso-texto">Ajustamos</p>
+        </div>
+      </li>
+    </ol>
   </section>
 
   <p class="cierre">
@@ -105,7 +113,21 @@ import PizarronLayout from "../../layouts/PizarronLayout.astro";
     align-items: stretch;
     gap: 0.45rem 0.25rem;
     margin: 0;
+    padding: 0;
+    list-style-type: "";
     counter-reset: paso;
+  }
+
+  .pasos > li {
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: span 2;
+    align-items: stretch;
+    counter-increment: paso;
+  }
+
+  .pasos > li:last-child {
+    grid-column: span 1;
   }
 
   .paso {
@@ -117,11 +139,11 @@ import PizarronLayout from "../../layouts/PizarronLayout.astro";
     padding: 0.9rem 0.85rem;
     border: 2px solid var(--line);
     text-align: center;
-    counter-increment: paso;
   }
 
   .paso::before {
     content: counter(paso);
+    content: counter(paso) / "";
     display: block;
     margin-bottom: 0.35rem;
     color: var(--muted);
@@ -182,6 +204,12 @@ import PizarronLayout from "../../layouts/PizarronLayout.astro";
 
   @media (max-width: 56rem) {
     .pasos {
+      grid-template-columns: 1fr;
+    }
+
+    .pasos > li,
+    .pasos > li:last-child {
+      grid-column: auto;
       grid-template-columns: 1fr;
     }
 

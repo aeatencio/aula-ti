@@ -5,12 +5,14 @@ interface Props {
   title: string;
   description?: string;
   current?: "home" | "pizarrones";
+  currentPage?: boolean;
 }
 
 const {
   title,
   description = "Materiales docentes de Tecnologías de la Información.",
   current,
+  currentPage = false,
 } = Astro.props;
 ---
 
@@ -29,7 +31,11 @@ const {
     <header class="site-header">
       <a class="marca" href="/">Aula TI</a>
       <nav class="site-nav" aria-label="Principal">
-        <a href="/pizarrones/" aria-current={current === "pizarrones" ? "page" : undefined}>
+        <a
+          href="/pizarrones/"
+          class:list={[{ "seccion-actual": current === "pizarrones" }]}
+          aria-current={current === "pizarrones" && currentPage ? "page" : undefined}
+        >
           Pizarrones
         </a>
       </nav>
