@@ -14,6 +14,8 @@ interface Props {
   encabezado?: EncabezadoVariant;
   recorridoHref?: string;
   recorridoNombre?: string;
+  recorridoPaso?: number;
+  recorridoTotal?: number;
 }
 
 const {
@@ -23,10 +25,20 @@ const {
   encabezado = "simple-chico",
   recorridoHref,
   recorridoNombre,
+  recorridoPaso,
+  recorridoTotal,
 } = Astro.props;
 
 const tieneSlotEncabezado = Astro.slots.has("encabezado-extra");
 const mostrarRecorrido = Boolean(recorridoHref && recorridoNombre);
+const mostrarPaso =
+  mostrarRecorrido &&
+  Number.isInteger(recorridoPaso) &&
+  Number.isInteger(recorridoTotal) &&
+  recorridoPaso !== undefined &&
+  recorridoTotal !== undefined &&
+  recorridoPaso >= 1 &&
+  recorridoTotal >= recorridoPaso;
 ---
 
 <Layout
@@ -46,7 +58,14 @@ const mostrarRecorrido = Boolean(recorridoHref && recorridoNombre);
       {tieneSlotEncabezado && <slot name="encabezado-extra" />}
       {mostrarRecorrido && (
         <p class="recorrido">
-          Este pizarrón forma parte de{" "}
+          {mostrarPaso ? (
+            <>
+              Paso {recorridoPaso} de {recorridoTotal}
+              {" · "}
+            </>
+          ) : (
+            "Este pizarrón forma parte de "
+          )}
           <a href={recorridoHref}>{recorridoNombre}</a>
         </p>
       )}

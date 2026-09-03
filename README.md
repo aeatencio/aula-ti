@@ -19,6 +19,7 @@ Los pizarrones pueden encontrarse de dos maneras:
 - El estado de un sistema
 - El sistema operativo
 - Sistemas digitales: hardware y software
+- Instrucciones, datos, operaciones y resultados
 
 ### Pensamiento Computacional
 

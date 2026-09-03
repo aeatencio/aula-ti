@@ -1,0 +1,366 @@
+---
+import PizarronLayout from "../../layouts/PizarronLayout.astro";
+---
+
+<PizarronLayout
+  title="Instrucciones, datos, operaciones y resultados"
+  description="Pizarrón sobre instrucciones, datos, operaciones y resultados: cómo se organiza una tarea y cómo un resultado puede volver a usarse como dato."
+  categoria="Sistemas Informáticos"
+  encabezado="borde-chico"
+  recorridoHref="/escuelas/gabriela-mistral/2-cuatrimestre-2026/"
+  recorridoNombre="Gabriela Mistral · 2.º cuatrimestre 2026"
+  recorridoPaso={3}
+  recorridoTotal={5}
+>
+  <section class="definiciones" aria-label="Definiciones">
+    <p>
+      Las instrucciones indican qué operaciones debe realizar el sistema y cómo
+      se organiza una tarea.
+    </p>
+    <p>
+      Los datos representan la información con la que se trabaja. Pueden ser
+      números, textos, imágenes, sonidos, precios, cantidades, posiciones y
+      otros valores.
+    </p>
+    <p>
+      Las operaciones consultan, utilizan o transforman datos. Como resultado se
+      obtiene nueva información.
+    </p>
+  </section>
+
+  <figure
+    class="figura"
+    aria-label="Un programa organiza instrucciones, que indican operaciones. Las operaciones utilizan o transforman datos y producen resultados. El resultado 75 de sumar 48 y 27 se utiliza después como dato en 75 × 2."
+  >
+    <div class="cadena">
+      <p class="nodo">Programa</p>
+      <div class="via" aria-hidden="true">
+        <svg viewBox="0 0 48 24" focusable="false">
+          <path d="M2 12h38M31 4l13 8-13 8"></path>
+        </svg>
+        <p>organiza</p>
+      </div>
+      <p class="nodo">Instrucciones</p>
+      <div class="via" aria-hidden="true">
+        <svg viewBox="0 0 48 24" focusable="false">
+          <path d="M2 12h38M31 4l13 8-13 8"></path>
+        </svg>
+        <p>indican</p>
+      </div>
+      <p class="nodo nodo-operaciones">Operaciones</p>
+    </div>
+
+    <p class="puente">utilizan o transforman datos · producen resultados</p>
+
+    <div class="ejemplo">
+      <div class="cuenta">
+        <div class="pieza">
+          <p class="numero">48</p>
+          <p class="rol">Dato</p>
+        </div>
+        <div class="pieza pieza-op">
+          <p class="numero">+</p>
+          <p class="rol">Sumar</p>
+        </div>
+        <div class="pieza">
+          <p class="numero">27</p>
+          <p class="rol">Dato</p>
+        </div>
+        <p class="igual">=</p>
+        <div class="pieza pieza-resultado">
+          <p class="numero">75</p>
+          <p class="rol">Resultado</p>
+        </div>
+      </div>
+
+      <div class="continuidad">
+        <div class="via via-abajo" aria-hidden="true">
+          <svg viewBox="0 0 48 24" focusable="false">
+            <path d="M2 12h38M31 4l13 8-13 8"></path>
+          </svg>
+          <p>se utiliza como dato</p>
+        </div>
+        <div class="cuenta-sigue">
+          <div class="pieza pieza-reuso">
+            <p class="numero">75</p>
+            <p class="rol">Dato</p>
+          </div>
+          <div class="pieza pieza-op">
+            <p class="numero">×</p>
+            <p class="rol">Operación</p>
+          </div>
+          <div class="pieza">
+            <p class="numero">2</p>
+            <p class="rol">Dato</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </figure>
+
+  <p class="cierre">
+    Un resultado puede mostrarse, guardarse o utilizarse como dato para
+    continuar la tarea.
+  </p>
+</PizarronLayout>
+
+<style>
+  .definiciones {
+    display: grid;
+    gap: 0.7rem;
+    margin: 0 0 0.35rem;
+    max-width: 46rem;
+  }
+
+  .definiciones p {
+    margin: 0;
+  }
+
+  .figura {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 1.5rem 0 1.45rem;
+    border-top: 2px solid var(--line);
+    border-bottom: 2px solid var(--line);
+  }
+
+  .cadena {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 5.6rem minmax(0, 1fr) 5.6rem minmax(0, 1fr);
+    align-items: stretch;
+    width: 100%;
+    gap: 0.35rem 0.2rem;
+  }
+
+  .nodo {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.9rem 0.85rem;
+    border: 2px solid var(--line);
+    text-align: center;
+    font-size: clamp(1.05rem, 0.4vw + 0.95rem, 1.28rem);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .nodo-operaciones {
+    background: var(--accent);
+    color: var(--board);
+    border-color: var(--accent);
+  }
+
+  .via {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.15rem;
+    color: var(--muted);
+    font-size: 0.88rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  .via p {
+    margin: 0;
+  }
+
+  .via svg {
+    width: 2.6rem;
+    height: 1.35rem;
+    fill: none;
+    stroke: var(--ink);
+    stroke-width: 2.4;
+    stroke-linecap: square;
+    stroke-linejoin: miter;
+  }
+
+  .puente {
+    margin: 1.05rem 0 1.2rem;
+    color: var(--muted);
+    font-size: 0.98rem;
+    font-weight: 700;
+    line-height: 1.35;
+    text-align: center;
+  }
+
+  .ejemplo {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .cuenta,
+  .cuenta-sigue {
+    display: grid;
+    align-items: stretch;
+    gap: 0.45rem 0.4rem;
+  }
+
+  .cuenta {
+    grid-template-columns: minmax(0, 1fr) minmax(5.5rem, 0.65fr) minmax(0, 1fr) 2.2rem minmax(0, 1.4fr);
+  }
+
+  .pieza {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.85rem 0.7rem 0.75rem;
+    border: 2px solid var(--line);
+    text-align: center;
+  }
+
+  .numero {
+    margin: 0;
+    font-size: clamp(1.85rem, 2.4vw + 1.1rem, 3.15rem);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: 0.02em;
+  }
+
+  .rol {
+    margin: 0.4rem 0 0;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .pieza-op {
+    background: var(--accent);
+    color: var(--board);
+    border-color: var(--accent);
+  }
+
+  .pieza-op .rol {
+    color: color-mix(in srgb, var(--board) 82%, var(--accent));
+  }
+
+  .igual {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(1.6rem, 1.6vw + 1.1rem, 2.4rem);
+    font-weight: 700;
+  }
+
+  .pieza-resultado {
+    border-color: var(--emphasis);
+    background: color-mix(in srgb, var(--emphasis) 8%, var(--board));
+  }
+
+  .pieza-resultado .rol {
+    color: var(--emphasis);
+  }
+
+  .continuidad {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(5.5rem, 0.65fr) minmax(0, 1fr) 2.2rem minmax(0, 1.4fr);
+    justify-items: stretch;
+    margin-top: 0.15rem;
+  }
+
+  .via-abajo {
+    grid-column: 5;
+    margin: 0.15rem 0 0.35rem;
+  }
+
+  .via-abajo svg {
+    transform: rotate(90deg);
+    width: 1.5rem;
+    height: 2.2rem;
+  }
+
+  .cuenta-sigue {
+    grid-column: 5;
+    grid-template-columns: minmax(3.9rem, 1fr) minmax(6.4rem, auto) minmax(3.9rem, 0.85fr);
+    width: 100%;
+    min-width: 0;
+  }
+
+  .cuenta-sigue .pieza {
+    padding-left: 0.4rem;
+    padding-right: 0.4rem;
+  }
+
+  .cuenta-sigue .numero {
+    font-size: clamp(1.55rem, 1.6vw + 1rem, 2.4rem);
+  }
+
+  .pieza-reuso .rol {
+    color: var(--accent);
+  }
+
+  .cierre {
+    margin: 1.6rem 0 0;
+    font-size: clamp(1.08rem, 0.35vw + 1rem, 1.28rem);
+    font-weight: 700;
+    line-height: 1.4;
+    max-width: 46rem;
+  }
+
+  @media (max-width: 52rem) {
+    .cadena {
+      grid-template-columns: 1fr;
+      justify-items: stretch;
+    }
+
+    .via svg {
+      transform: rotate(90deg);
+      width: 1.5rem;
+      height: 2.2rem;
+    }
+
+    .cuenta {
+      grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+      grid-template-areas:
+        "n48 mas n27"
+        "ig ig ig"
+        "res res res";
+    }
+
+    .cuenta > .pieza:nth-child(1) {
+      grid-area: n48;
+    }
+
+    .cuenta > .pieza-op:nth-child(2) {
+      grid-area: mas;
+    }
+
+    .cuenta > .pieza:nth-child(3) {
+      grid-area: n27;
+    }
+
+    .igual {
+      grid-area: ig;
+      min-height: 1.6rem;
+    }
+
+    .pieza-resultado {
+      grid-area: res;
+    }
+
+    .continuidad {
+      grid-template-columns: 1fr;
+      margin-top: 0.25rem;
+    }
+
+    .via-abajo,
+    .cuenta-sigue {
+      grid-column: 1;
+    }
+
+    .cuenta-sigue {
+      grid-template-columns: minmax(3.9rem, 1fr) minmax(6.4rem, auto) minmax(3.9rem, 0.85fr);
+    }
+  }
+</style>

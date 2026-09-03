@@ -11,6 +11,10 @@ const pizarrones = [
     title: "Sistemas digitales: hardware y software",
   },
   {
+    href: "/pizarrones/instrucciones-datos-operaciones-y-resultados/",
+    title: "Instrucciones, datos, operaciones y resultados",
+  },
+  {
     href: "/pizarrones/el-estado-de-un-sistema/",
     title: "El estado de un sistema",
   },
@@ -32,13 +36,13 @@ const pizarrones = [
     Pizarrones vistos en esta escuela durante este período.
   </p>
 
-  <ul class="lista-pizarrones">
+  <ol class="lista-pizarrones">
     {pizarrones.map((pizarron) => (
       <li>
         <a href={pizarron.href}>{pizarron.title}</a>
       </li>
     ))}
-  </ul>
+  </ol>
 </Layout>
 
 <style>
@@ -48,5 +52,15 @@ const pizarrones = [
     font-size: 0.95rem;
     font-weight: 600;
     letter-spacing: 0.02em;
+  }
+
+  .lista-pizarrones {
+    list-style: decimal;
+    padding-left: 1.7rem;
+  }
+
+  .lista-pizarrones li::marker {
+    color: var(--muted);
+    font-weight: 700;
   }
 </style>
