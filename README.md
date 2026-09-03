@@ -18,7 +18,7 @@ Los pizarrones pueden encontrarse de dos maneras:
 - Preguntas y conceptos principales
 - El estado de un sistema
 - El sistema operativo
-- Hardware, software y tarea
+- Sistemas digitales: hardware y software
 
 ### Pensamiento Computacional
 

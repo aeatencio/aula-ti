@@ -3,32 +3,69 @@ import PizarronLayout from "../../layouts/PizarronLayout.astro";
 ---
 
 <PizarronLayout
-  title="Hardware, software y tarea"
-  description="Pizarrón sobre cómo hardware y software trabajan relacionados para realizar una tarea concreta."
+  title="Sistemas digitales: hardware y software"
+  description="Pizarrón sobre sistemas digitales: hardware, software y las tareas que realizan."
   categoria="Sistemas Informáticos"
+  encabezado="borde-chico"
+  recorridoHref="/escuelas/gabriela-mistral/2-cuatrimestre-2026/"
+  recorridoNombre="Gabriela Mistral · 2.º cuatrimestre 2026"
 >
-  <p class="pregunta">
-    ¿Cómo puede una misma computadora realizar tareas diferentes?
-  </p>
+  <section class="definiciones" aria-label="Definiciones">
+    <p>
+      Un sistema digital procesa información para realizar distintas tareas.
+    </p>
+    <p>
+      El hardware es el conjunto de componentes físicos. Por ejemplo:
+      procesador, memoria, teclado, pantalla, parlantes y sensores.
+    </p>
+    <p>
+      El software comprende los programas y los datos con los que trabaja el
+      sistema.
+    </p>
+  </section>
 
-  <figure class="convergencia" aria-label="El hardware y el software convergen en una tarea concreta">
-    <section class="aporte hardware" aria-labelledby="hw-nombre">
-      <p id="hw-nombre" class="aporte-nombre">Hardware</p>
-      <p class="aporte-que">Componentes físicos</p>
-      <p class="aporte-hace">
-        Aporta <strong>capacidades</strong> para recibir información,
-        mantenerla, realizar operaciones y producir resultados.
-      </p>
-    </section>
+  <figure
+    class="arbol"
+    aria-label="Un sistema digital incluye hardware y software, que confluyen en las tareas"
+  >
+    <p class="nodo sistema">Sistema digital</p>
 
-    <section class="aporte software" aria-labelledby="sw-nombre">
-      <p id="sw-nombre" class="aporte-nombre">Software</p>
-      <p class="aporte-que">Programas, instrucciones y datos</p>
-      <p class="aporte-hace">
-        Organiza las <strong>instrucciones</strong> y los <strong>datos</strong> para
-        usar esas capacidades en una tarea.
-      </p>
-    </section>
+    <div class="conexion conexion-arriba">
+      <svg class="haz" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M50 1 L25 19"></path>
+        <path d="M50 1 L75 19"></path>
+      </svg>
+      <p class="relacion">incluye</p>
+      <p class="relacion relacion-par">incluye</p>
+      <div class="flecha-movil" aria-hidden="true">
+        <svg viewBox="0 0 48 24" focusable="false">
+          <path d="M2 12h38M31 4l13 8-13 8"></path>
+        </svg>
+      </div>
+    </div>
+
+    <div class="par">
+      <section class="nodo rama hardware" aria-labelledby="hw-nombre">
+        <p id="hw-nombre" class="nodo-titulo">Hardware</p>
+        <p class="nodo-detalle">componentes físicos</p>
+        <p class="relacion-rama">aporta recursos para</p>
+      </section>
+
+      <section class="nodo rama software" aria-labelledby="sw-nombre">
+        <p id="sw-nombre" class="nodo-titulo">Software</p>
+        <p class="nodo-detalle">programas y datos</p>
+        <p class="relacion-rama">sus programas organizan</p>
+      </section>
+    </div>
+
+    <div class="conexion conexion-abajo">
+      <svg class="haz" viewBox="0 0 100 28" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M25 1 L50 27"></path>
+        <path d="M75 1 L50 27"></path>
+      </svg>
+      <p class="relacion relacion-larga">aporta recursos para</p>
+      <p class="relacion relacion-larga">sus programas organizan</p>
+    </div>
 
     <div class="via via-baja" aria-hidden="true">
       <svg viewBox="0 0 48 24" focusable="false">
@@ -36,15 +73,7 @@ import PizarronLayout from "../../layouts/PizarronLayout.astro";
       </svg>
     </div>
 
-    <svg class="haz" viewBox="0 0 100 18" preserveAspectRatio="none" aria-hidden="true">
-      <path d="M22 1 L50 17"></path>
-      <path d="M78 1 L50 17"></path>
-    </svg>
-
-    <p class="encuentro">
-      <span class="encuentro-nombre">Tarea concreta</span>
-      <span class="encuentro-ejemplos">Escribir · Calcular · Reproducir música</span>
-    </p>
+    <p class="nodo tareas">Tareas</p>
 
     <div class="via via-alta" aria-hidden="true">
       <svg viewBox="0 0 48 24" focusable="false">
@@ -53,81 +82,161 @@ import PizarronLayout from "../../layouts/PizarronLayout.astro";
     </div>
   </figure>
 
-  <section class="misma" aria-labelledby="misma-titulo">
-    <h2 id="misma-titulo">Misma computadora</h2>
-    <ul class="casos">
-      <li><strong>Escribir</strong> — texto · editor · documento</li>
-      <li><strong>Calcular</strong> — números · calculadora · resultado</li>
-      <li><strong>Reproducir música</strong> — audio · reproductor · sonido</li>
-    </ul>
-    <div class="contraste">
-      <p>
-        <span class="contraste-clave">Permanece</span>
-        buena parte del hardware
-      </p>
-      <p>
-        <span class="contraste-clave">Cambian</span>
-        programa · datos · operaciones · resultado
-      </p>
-    </div>
+  <section class="programa" aria-label="Programa">
+    <p>Un programa organiza instrucciones para realizar una tarea.</p>
+    <p>
+      Al cambiar el programa, una misma computadora puede realizar tareas
+      diferentes: escribir, calcular, reproducir música, editar imágenes o
+      ejecutar un juego.
+    </p>
   </section>
-
-  <p class="cierre">
-    Hardware y software trabajan relacionados: el programa organiza la tarea y
-    el hardware permite ejecutarla.
-  </p>
 </PizarronLayout>
 
 <style>
-  .pregunta {
-    margin: 0 0 1.5rem;
-    max-width: 40rem;
-    font-size: clamp(1.15rem, 0.5vw + 1.05rem, 1.4rem);
-    font-weight: 700;
-    line-height: 1.35;
+  .definiciones {
+    display: grid;
+    gap: 0.7rem;
+    margin: 0 0 0.35rem;
+    max-width: 46rem;
   }
 
-  .convergencia {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-      "hw sw"
-      "haz haz"
-      "tarea tarea";
-    column-gap: 1.25rem;
-    align-items: stretch;
+  .definiciones p {
     margin: 0;
-    padding: 1.4rem 0 1.5rem;
+  }
+
+  .arbol {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 1.5rem 0 1.45rem;
     border-top: 2px solid var(--line);
     border-bottom: 2px solid var(--line);
   }
 
-  .hardware {
-    grid-area: hw;
+  .nodo {
+    margin: 0;
+    padding: 0.95rem 1.1rem;
+    border: 2px solid var(--line);
+    text-align: center;
+    font-size: clamp(1.2rem, 0.5vw + 1.08rem, 1.5rem);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
   }
 
-  .software {
-    grid-area: sw;
+  .sistema,
+  .tareas {
+    width: min(100%, 24rem);
+  }
+
+  .tareas {
+    background: var(--accent);
+    color: var(--board);
+    border-color: var(--accent);
+    font-size: clamp(1.3rem, 0.55vw + 1.15rem, 1.6rem);
+  }
+
+  .par {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    width: 100%;
+    align-items: stretch;
+  }
+
+  .rama {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0;
+    padding: 1.05rem 1.1rem;
+  }
+
+  .nodo-titulo {
+    margin: 0 0 0.4rem;
+    font-size: clamp(1.2rem, 0.5vw + 1.08rem, 1.5rem);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .nodo-detalle {
+    margin: 0;
+    color: var(--muted);
+    font-size: clamp(1.02rem, 0.25vw + 0.95rem, 1.18rem);
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: none;
+    line-height: 1.3;
+  }
+
+  .conexion {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    position: relative;
+    width: 100%;
+  }
+
+  .conexion-arriba {
+    min-height: 3.4rem;
+    margin: 0.1rem 0 0.15rem;
+  }
+
+  .conexion-abajo {
+    min-height: 5rem;
+    margin: 0.15rem 0 0.2rem;
   }
 
   .haz {
-    grid-area: haz;
-    display: block;
+    position: absolute;
+    inset: 0;
     width: 100%;
-    height: 2.75rem;
-    margin: 0.15rem 0 0.35rem;
+    height: 100%;
     fill: none;
     stroke: var(--ink);
     stroke-width: 1.6;
     stroke-linecap: square;
   }
 
+  .relacion {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    padding: 0 0.4rem;
+    background: var(--board);
+    color: var(--muted);
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.3;
+    text-align: center;
+  }
+
+  .relacion-larga {
+    max-width: 11.5rem;
+  }
+
+  .relacion-rama {
+    display: none;
+    margin: 0.55rem 0 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: none;
+    line-height: 1.3;
+  }
+
+  .flecha-movil,
   .via {
     display: none;
     align-items: center;
     justify-content: center;
   }
 
+  .flecha-movil svg,
   .via svg {
     width: 1.5rem;
     height: 2.2rem;
@@ -136,9 +245,6 @@ import PizarronLayout from "../../layouts/PizarronLayout.astro";
     stroke-width: 2.4;
     stroke-linecap: square;
     stroke-linejoin: miter;
-  }
-
-  .via-baja svg {
     transform: rotate(90deg);
   }
 
@@ -146,146 +252,51 @@ import PizarronLayout from "../../layouts/PizarronLayout.astro";
     transform: rotate(-90deg);
   }
 
-  .aporte {
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    padding: 1rem 1.05rem;
-    border: 2px solid var(--line);
-  }
-
-  .aporte-nombre {
-    margin: 0 0 0.35rem;
-    font-size: 0.82rem;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-  }
-
-  .aporte-que {
-    margin: 0 0 0.7rem;
-    font-size: clamp(1.15rem, 0.4vw + 1.05rem, 1.35rem);
-    font-weight: 700;
-    line-height: 1.25;
-  }
-
-  .aporte-hace {
-    margin: 0;
-    color: var(--muted);
-    font-weight: 600;
-    line-height: 1.4;
-  }
-
-  .aporte-hace strong {
-    color: var(--ink);
-    font-weight: 800;
-  }
-
-  .encuentro {
-    grid-area: tarea;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: min(100%, 28rem);
-    min-height: 6.5rem;
-    margin: 0 auto;
-    padding: 1rem 1.15rem;
-    background: var(--accent);
-    color: var(--board);
-    border: 2px solid var(--accent);
-    text-align: center;
-  }
-
-  .encuentro-nombre {
-    font-size: clamp(1.3rem, 0.55vw + 1.15rem, 1.6rem);
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-  }
-
-  .encuentro-ejemplos {
-    margin-top: 0.4rem;
-    font-size: 0.98rem;
-    font-weight: 600;
-    color: color-mix(in srgb, var(--board) 82%, var(--accent));
-  }
-
-  .misma {
-    margin-top: 1.6rem;
-    max-width: 40rem;
-  }
-
-  .misma h2 {
-    margin: 0 0 0.7rem;
-    font-size: 1.05rem;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-  }
-
-  .casos {
-    margin: 0 0 1rem;
-    padding: 0;
-    list-style: none;
-  }
-
-  .casos li {
-    margin: 0;
-    padding: 0.35rem 0;
-  }
-
-  .casos li + li {
-    border-top: 1px solid color-mix(in srgb, var(--line) 22%, var(--board));
-  }
-
-  .contraste {
+  .programa {
     display: grid;
-    gap: 0.55rem;
-  }
-
-  .contraste p {
-    margin: 0;
-    font-weight: 600;
-  }
-
-  .contraste-clave {
-    display: inline-block;
-    min-width: 7.5rem;
-    margin-right: 0.45rem;
-    color: var(--emphasis);
-    font-weight: 800;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-  }
-
-  .cierre {
-    margin: 1.6rem 0 0;
-    padding-top: 1.1rem;
-    border-top: 2px solid var(--line);
-    font-size: clamp(1.08rem, 0.35vw + 1rem, 1.25rem);
-    font-weight: 700;
-    line-height: 1.4;
+    gap: 0.7rem;
+    margin-top: 1.6rem;
     max-width: 46rem;
   }
 
+  .programa p {
+    margin: 0;
+  }
+
   @media (max-width: 52rem) {
-    .convergencia {
+    .arbol {
+      display: grid;
       grid-template-columns: 1fr;
       grid-template-areas:
+        "sistema"
+        "arriba"
         "hw"
         "baja"
-        "tarea"
+        "tareas"
         "alta"
         "sw";
-      row-gap: 0.15rem;
+      justify-items: stretch;
+      width: 100%;
     }
 
-    .haz {
-      display: none;
+    .sistema {
+      grid-area: sistema;
     }
 
-    .via {
-      display: flex;
+    .conexion-arriba {
+      grid-area: arriba;
+    }
+
+    .par {
+      display: contents;
+    }
+
+    .hardware {
+      grid-area: hw;
+    }
+
+    .software {
+      grid-area: sw;
     }
 
     .via-baja {
@@ -296,14 +307,51 @@ import PizarronLayout from "../../layouts/PizarronLayout.astro";
       grid-area: alta;
     }
 
-    .encuentro {
+    .tareas {
+      grid-area: tareas;
+    }
+
+    .sistema,
+    .tareas,
+    .rama {
       width: 100%;
     }
 
-    .contraste-clave {
+    .conexion {
+      grid-template-columns: 1fr;
+      min-height: 0;
+      margin: 0.15rem 0;
+      gap: 0.15rem;
+    }
+
+    .conexion-abajo {
+      display: none;
+    }
+
+    .haz {
+      display: none;
+    }
+
+    .relacion {
+      background: transparent;
+    }
+
+    .relacion-par {
+      display: none;
+    }
+
+    .relacion-rama {
       display: block;
-      min-width: 0;
-      margin: 0 0 0.15rem;
+    }
+
+    .software .relacion-rama {
+      order: -1;
+      margin: 0 0 0.55rem;
+    }
+
+    .flecha-movil,
+    .via {
+      display: flex;
     }
   }
 </style>
