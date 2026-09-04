@@ -1,4 +1,5 @@
 ---
+import { navegacionesParaPizarron } from "../data/recorridos";
 import Layout from "./Layout.astro";
 
 type EncabezadoVariant =
@@ -12,10 +13,6 @@ interface Props {
   description: string;
   categoria: string;
   encabezado?: EncabezadoVariant;
-  recorridoHref?: string;
-  recorridoNombre?: string;
-  recorridoPaso?: number;
-  recorridoTotal?: number;
 }
 
 const {
@@ -23,22 +20,10 @@ const {
   description,
   categoria,
   encabezado = "simple-chico",
-  recorridoHref,
-  recorridoNombre,
-  recorridoPaso,
-  recorridoTotal,
 } = Astro.props;
 
 const tieneSlotEncabezado = Astro.slots.has("encabezado-extra");
-const mostrarRecorrido = Boolean(recorridoHref && recorridoNombre);
-const mostrarPaso =
-  mostrarRecorrido &&
-  Number.isInteger(recorridoPaso) &&
-  Number.isInteger(recorridoTotal) &&
-  recorridoPaso !== undefined &&
-  recorridoTotal !== undefined &&
-  recorridoPaso >= 1 &&
-  recorridoTotal >= recorridoPaso;
+const navegaciones = navegacionesParaPizarron(Astro.url.pathname);
 ---
 
 <Layout
@@ -56,18 +41,65 @@ const mostrarPaso =
       <p class="ubicacion">Pizarrones · {categoria}</p>
       <h1>{title}</h1>
       {tieneSlotEncabezado && <slot name="encabezado-extra" />}
-      {mostrarRecorrido && (
-        <p class="recorrido">
-          {mostrarPaso ? (
-            <>
-              Paso {recorridoPaso} de {recorridoTotal}
-              {" · "}
-            </>
-          ) : (
-            "Este pizarrón forma parte de "
+      {navegaciones.map((navegacion) => (
+        <nav
+          class="recorrido"
+          hidden
+          data-recorrido-id={navegacion.id}
+          aria-label={`Recorrido ${navegacion.nombre}`}
+        >
+          <p class="recorrido-contexto">
+            Paso {navegacion.paso} de {navegacion.total}
+            {" · "}
+            <a href={navegacion.href}>{navegacion.nombre}</a>
+          </p>
+          {(navegacion.anterior || navegacion.siguiente) && (
+            <div class="recorrido-vecinos">
+              {navegacion.anterior && (
+                <a
+                  class="recorrido-vecino recorrido-vecino--anterior"
+                  href={navegacion.anterior.href}
+                  rel="prev"
+                  aria-label={`Anterior: ${navegacion.anterior.title}`}
+                >
+                  ← Anterior
+                </a>
+              )}
+              {navegacion.siguiente && (
+                <a
+                  class="recorrido-vecino recorrido-vecino--siguiente"
+                  href={navegacion.siguiente.href}
+                  rel="next"
+                  aria-label={`Siguiente: ${navegacion.siguiente.title}`}
+                >
+                  Siguiente →
+                </a>
+              )}
+            </div>
           )}
-          <a href={recorridoHref}>{recorridoNombre}</a>
-        </p>
+        </nav>
+      ))}
+      {navegaciones.length > 0 && (
+        <script is:inline>
+          (function () {
+            var script = document.currentScript;
+            var header = script && script.parentElement;
+            if (!header) return;
+            var id = new URLSearchParams(window.location.search).get(
+              "recorrido",
+            );
+            if (!id) return;
+            var navs = header.querySelectorAll(
+              "nav.recorrido[data-recorrido-id]",
+            );
+            for (var i = 0; i < navs.length; i++) {
+              if (navs[i].getAttribute("data-recorrido-id") === id) {
+                navs[i].removeAttribute("hidden");
+                return;
+              }
+            }
+          })();
+        </script>
       )}
     </header>
     <slot />
@@ -115,12 +147,32 @@ const mostrarPaso =
   }
 
   .recorrido {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.15rem;
     margin: 0.7rem 0 0;
     color: var(--muted);
     font-size: 0.95rem;
     font-weight: 600;
     line-height: 1.4;
+  }
+
+  .recorrido[hidden] {
+    display: none;
+  }
+
+  .recorrido-contexto {
+    margin: 0;
     overflow-wrap: break-word;
+  }
+
+  .recorrido-vecinos {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.25rem 1rem;
+    margin: 0;
   }
 
   .recorrido a {
@@ -132,5 +184,16 @@ const mostrarPaso =
 
   .recorrido a:hover {
     color: var(--accent);
+  }
+
+  .recorrido-vecino {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+    padding: 0.35rem 0.15rem;
+  }
+
+  .recorrido-vecino--siguiente {
+    margin-inline-start: auto;
   }
 </style>

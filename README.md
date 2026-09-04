@@ -11,7 +11,7 @@ Aula TI reúne materiales utilizados en clase para proyectarlos, consultarlos y 
 Los pizarrones pueden encontrarse de dos maneras:
 
 - por espacio curricular;
-- por escuela y período de enseñanza.
+- por recorrido de enseñanza, según el lugar y el período en que se usaron.
 
 ### Sistemas Informáticos
 
@@ -31,8 +31,9 @@ Los pizarrones pueden encontrarse de dos maneras:
 ### Recorridos por escuela
 
 - **Gabriela Mistral · 2.º cuatrimestre 2026**
+- **Sistemas Informáticos · CFP 7 · 2026**
 
-Cada pizarrón tiene una única página. Los recorridos por escuela lo referencian sin duplicar el contenido.
+Cada pizarrón tiene una única página. Un mismo pizarrón puede formar parte de más de un recorrido; los recorridos lo referencian sin duplicar el contenido.
 
 ## Implementación
 

@@ -5,15 +5,15 @@ import {
 } from "../../../data/recorridos";
 import Layout from "../../../layouts/Layout.astro";
 
-const recorrido = requireRecorrido("gm-2026-2");
+const recorrido = requireRecorrido("cfp7-si-2026");
 ---
 
 <Layout
   title={`${recorrido.nombre} · Aula TI`}
-  description="Pizarrones del recorrido de Gabriela Mistral en el segundo cuatrimestre de 2026."
+  description="Pizarrones del recorrido de Sistemas Informáticos en CFP 7 durante 2026."
   current="escuelas"
 >
-  <p class="ubicacion-recorrido">Escuelas · Gabriela Mistral</p>
+  <p class="ubicacion-recorrido">Escuelas · CFP 7</p>
   <h1 class="page-title">{recorrido.nombre}</h1>
   <p class="lede">
     Pizarrones vistos en esta escuela durante este período.
