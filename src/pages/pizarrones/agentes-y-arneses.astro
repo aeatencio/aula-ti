@@ -1,0 +1,263 @@
+---
+import PizarronLayout from "../../layouts/PizarronLayout.astro";
+---
+
+<PizarronLayout
+  title="Agentes y arneses"
+  description="Pizarrón sobre el arnés: las condiciones —contexto, herramientas, reglas y pruebas— en las que un agente actúa."
+  categoria="Pensamiento Computacional"
+  encabezado="simple-grande"
+>
+  <p class="bajada" slot="encabezado-extra">
+    El arnés organiza las condiciones en las que el agente actúa.
+  </p>
+
+  <figure
+    class="figura"
+    aria-label="El agente trabaja dentro de un arnés. El arnés reúne contexto, herramientas, reglas y pruebas. Del hilo sale un objetivo; el agente trabaja dentro del arnés; la evidencia vuelve al hilo."
+  >
+    <section class="arnes" aria-labelledby="arnes-nombre">
+      <h2 id="arnes-nombre" class="arnes-nombre">Arnés</h2>
+
+      <div class="condiciones">
+        <div class="condicion">
+          <p class="condicion-nombre">Contexto</p>
+          <p class="condicion-detalle">la información de partida</p>
+        </div>
+        <div class="condicion">
+          <p class="condicion-nombre">Herramientas</p>
+          <p class="condicion-detalle">con qué puede actuar</p>
+        </div>
+        <div class="condicion">
+          <p class="condicion-nombre">Reglas</p>
+          <p class="condicion-detalle">qué puede hacer</p>
+        </div>
+        <div class="condicion">
+          <p class="condicion-nombre">Pruebas</p>
+          <p class="condicion-detalle">cómo se comprueba</p>
+        </div>
+      </div>
+
+      <div class="agente">
+        <p class="agente-nombre">Agente</p>
+        <p class="agente-ciclo">observa → actúa → verifica</p>
+      </div>
+    </section>
+
+    <div
+      class="vuelta"
+      aria-label="Del hilo sale un objetivo. El agente trabaja dentro del arnés. La evidencia vuelve al hilo."
+    >
+      <div class="nodo">
+        <p class="nodo-clave">Hilo</p>
+        <p class="nodo-texto">Definimos el objetivo</p>
+      </div>
+      <div class="via" aria-hidden="true">
+        <svg viewBox="0 0 48 24" focusable="false">
+          <path d="M2 12h38M31 4l13 8-13 8"></path>
+        </svg>
+      </div>
+      <div class="nodo nodo-centro">
+        <p class="nodo-clave">Agente + arnés</p>
+        <p class="nodo-texto">Trabaja y deja evidencia</p>
+      </div>
+      <div class="via" aria-hidden="true">
+        <svg viewBox="0 0 48 24" focusable="false">
+          <path d="M2 12h38M31 4l13 8-13 8"></path>
+        </svg>
+      </div>
+      <div class="nodo">
+        <p class="nodo-clave">Hilo</p>
+        <p class="nodo-texto">Miramos y decidimos</p>
+      </div>
+    </div>
+  </figure>
+
+  <p class="cierre">
+    Volvemos al hilo a mirar qué hizo y a decidir qué sigue.
+  </p>
+</PizarronLayout>
+
+<style>
+  .bajada {
+    margin: 0.45rem 0 0;
+    color: var(--muted);
+    font-size: clamp(1.05rem, 0.35vw + 0.98rem, 1.25rem);
+    font-weight: 700;
+    line-height: 1.35;
+    max-width: 46rem;
+  }
+
+  .figura {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 1.35rem 0 1.45rem;
+    border-top: 2px solid var(--line);
+    border-bottom: 2px solid var(--line);
+  }
+
+  .arnes {
+    margin: 0;
+    padding: 1.15rem 1.1rem 1.25rem;
+    border: 2px solid var(--line);
+  }
+
+  .arnes-nombre {
+    margin: 0 0 1rem;
+    text-align: center;
+    font-size: clamp(1.35rem, 0.7vw + 1.15rem, 1.75rem);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    line-height: 1.15;
+  }
+
+  .condiciones {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.65rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .condicion {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+    padding: 0.75rem 0.65rem;
+    border: 2px solid var(--line);
+    text-align: center;
+  }
+
+  .condicion-nombre {
+    margin: 0;
+    font-size: clamp(1.02rem, 0.25vw + 0.95rem, 1.18rem);
+    font-weight: 700;
+    letter-spacing: 0.03em;
+  }
+
+  .condicion-detalle {
+    margin: 0.35rem 0 0;
+    color: var(--muted);
+    font-size: 0.92rem;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  .agente {
+    width: min(100%, 28rem);
+    margin: 0 auto;
+    padding: 1.05rem 1.1rem;
+    background: var(--accent);
+    color: var(--board);
+    border: 2px solid var(--accent);
+    text-align: center;
+  }
+
+  .agente-nombre {
+    margin: 0 0 0.35rem;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: color-mix(in srgb, var(--board) 82%, var(--accent));
+  }
+
+  .agente-ciclo {
+    margin: 0;
+    font-size: clamp(1.15rem, 0.45vw + 1.05rem, 1.4rem);
+    font-weight: 700;
+    line-height: 1.25;
+  }
+
+  .vuelta {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 3rem minmax(0, 1.15fr) 3rem minmax(0, 1fr);
+    align-items: stretch;
+    gap: 0.35rem 0.2rem;
+  }
+
+  .nodo {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.85rem 0.8rem;
+    border: 2px solid var(--line);
+    text-align: center;
+  }
+
+  .nodo-clave {
+    margin: 0 0 0.35rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .nodo-texto {
+    margin: 0;
+    font-size: clamp(1.02rem, 0.25vw + 0.95rem, 1.18rem);
+    font-weight: 700;
+    line-height: 1.25;
+  }
+
+  .nodo-centro {
+    border-color: var(--emphasis);
+    background: color-mix(in srgb, var(--emphasis) 8%, var(--board));
+  }
+
+  .nodo-centro .nodo-clave {
+    color: var(--emphasis);
+  }
+
+  .via {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .via svg {
+    width: 2.6rem;
+    height: 1.35rem;
+    fill: none;
+    stroke: var(--ink);
+    stroke-width: 2.4;
+    stroke-linecap: square;
+    stroke-linejoin: miter;
+  }
+
+  .cierre {
+    margin: 1.35rem 0 0;
+    font-size: clamp(1.08rem, 0.35vw + 1rem, 1.28rem);
+    font-weight: 700;
+    line-height: 1.4;
+    max-width: 46rem;
+  }
+
+  @media (max-width: 56rem) {
+    .condiciones {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 44rem) {
+    .condiciones {
+      grid-template-columns: 1fr;
+    }
+
+    .vuelta {
+      grid-template-columns: 1fr;
+    }
+
+    .via svg {
+      transform: rotate(90deg);
+      width: 1.5rem;
+      height: 2.2rem;
+    }
+  }
+</style>

@@ -27,6 +27,8 @@ Los pizarrones pueden encontrarse de dos maneras:
 ### Pensamiento Computacional
 
 - La máquina obedece exactamente
+- Hilos y agentes
+- Agentes y arneses
 
 ### Recorridos por escuela
 
