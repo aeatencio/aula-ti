@@ -1,0 +1,201 @@
+---
+import PizarronLayout from "../../layouts/PizarronLayout.astro";
+---
+
+<PizarronLayout
+  title="Entrada, procesamiento y salida"
+  description="Pizarrón sobre entrada, procesamiento y salida: cómo entra la información a un sistema, se opera con ella y se comunica o aplica un resultado."
+  categoria="Sistemas Informáticos"
+  encabezado="borde-chico"
+  recorridoHref="/escuelas/gabriela-mistral/2-cuatrimestre-2026/"
+  recorridoNombre="Gabriela Mistral · 2.º cuatrimestre 2026"
+  recorridoPaso={4}
+  recorridoTotal={6}
+>
+  <figure
+    class="figura"
+    aria-label="La información entra al sistema, se procesa y sale. La salida de un sistema puede convertirse en entrada de otro."
+  >
+    <div class="cadena">
+      <section class="nodo" aria-labelledby="entrada-nombre">
+        <p id="entrada-nombre" class="nodo-titulo">Entrada</p>
+        <p class="nodo-detalle">Incorpora información al sistema</p>
+        <p class="nodo-ejemplos">persona · sensor · otro sistema</p>
+      </section>
+
+      <div class="via" aria-hidden="true">
+        <svg viewBox="0 0 48 24" focusable="false">
+          <path d="M2 12h38M31 4l13 8-13 8"></path>
+        </svg>
+      </div>
+
+      <section class="nodo nodo-proceso" aria-labelledby="proceso-nombre">
+        <p id="proceso-nombre" class="nodo-titulo">Procesamiento</p>
+        <p class="nodo-detalle">
+          Realiza operaciones con la información recibida
+        </p>
+        <p class="nodo-ejemplos">el programa organiza la tarea</p>
+      </section>
+
+      <div class="via" aria-hidden="true">
+        <svg viewBox="0 0 48 24" focusable="false">
+          <path d="M2 12h38M31 4l13 8-13 8"></path>
+        </svg>
+      </div>
+
+      <section class="nodo" aria-labelledby="salida-nombre">
+        <p id="salida-nombre" class="nodo-titulo">Salida</p>
+        <p class="nodo-detalle">
+          Comunica un resultado o produce una acción
+        </p>
+        <p class="nodo-ejemplos">pantalla · parlante · luz · impresora</p>
+      </section>
+    </div>
+
+    <div class="continuidad">
+      <div class="via via-abajo" aria-hidden="true">
+        <svg viewBox="0 0 48 24" focusable="false">
+          <path d="M2 12h38M31 4l13 8-13 8"></path>
+        </svg>
+      </div>
+      <p class="eco">
+        Puede convertirse en entrada de otro sistema
+      </p>
+    </div>
+  </figure>
+</PizarronLayout>
+
+<style>
+  .figura {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 1.5rem 0 1.45rem;
+  }
+
+  .cadena {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 3.2rem minmax(0, 1.15fr) 3.2rem minmax(0, 1fr);
+    align-items: stretch;
+    width: 100%;
+    gap: 0.35rem 0.2rem;
+  }
+
+  .nodo {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+    padding: 1.15rem 1rem 1.05rem;
+    border: 2px solid var(--line);
+    text-align: center;
+  }
+
+  .nodo-titulo {
+    margin: 0 0 0.55rem;
+    font-size: clamp(1.35rem, 0.8vw + 1.15rem, 1.85rem);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    line-height: 1.15;
+  }
+
+  .nodo-detalle {
+    margin: 0;
+    font-size: clamp(1.05rem, 0.3vw + 0.98rem, 1.22rem);
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  .nodo-ejemplos {
+    margin: 0.55rem 0 0;
+    color: var(--muted);
+    font-size: 0.92rem;
+    font-weight: 700;
+    line-height: 1.35;
+  }
+
+  .nodo-proceso {
+    background: var(--accent);
+    color: var(--board);
+    border-color: var(--accent);
+  }
+
+  .nodo-proceso .nodo-ejemplos {
+    color: color-mix(in srgb, var(--board) 82%, var(--accent));
+  }
+
+  .via {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .via svg {
+    width: 3rem;
+    height: 1.5rem;
+    fill: none;
+    stroke: var(--ink);
+    stroke-width: 2.4;
+    stroke-linecap: square;
+    stroke-linejoin: miter;
+  }
+
+  .continuidad {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 3.2rem minmax(0, 1.15fr) 3.2rem minmax(0, 1fr);
+    justify-items: stretch;
+    width: 100%;
+    margin-top: 0.15rem;
+  }
+
+  .via-abajo,
+  .eco {
+    grid-column: 5;
+  }
+
+  .via-abajo {
+    margin: 0.2rem 0 0.2rem;
+  }
+
+  .via-abajo svg {
+    transform: rotate(90deg);
+    width: 1.5rem;
+    height: 2.2rem;
+  }
+
+  .eco {
+    margin: 0;
+    color: var(--muted);
+    font-size: clamp(0.98rem, 0.2vw + 0.92rem, 1.12rem);
+    font-weight: 700;
+    line-height: 1.35;
+    text-align: center;
+  }
+
+  @media (max-width: 52rem) {
+    .cadena {
+      grid-template-columns: 1fr;
+      justify-items: stretch;
+    }
+
+    .via svg {
+      transform: rotate(90deg);
+      width: 1.5rem;
+      height: 2.2rem;
+    }
+
+    .continuidad {
+      grid-template-columns: 1fr;
+      margin-top: 0.15rem;
+    }
+
+    .via-abajo,
+    .eco {
+      grid-column: 1;
+    }
+  }
+</style>
