@@ -1,0 +1,261 @@
+---
+import PizarronLayout from "../../layouts/PizarronLayout.astro";
+---
+
+<PizarronLayout
+  title="Arquitectura de Von Neumann"
+  description="Pizarrón sobre la arquitectura de Von Neumann: una computadora representada por dispositivos de entrada, CPU y memoria relacionadas, y dispositivos de salida."
+  categoria="Sistemas Informáticos"
+  encabezado="borde-chico"
+  recorridoHref="/escuelas/gabriela-mistral/2-cuatrimestre-2026/"
+  recorridoNombre="Gabriela Mistral · 2.º cuatrimestre 2026"
+  recorridoPaso={7}
+  recorridoTotal={8}
+>
+  <figure
+    class="figura"
+    aria-label="Modelo de una computadora. Los dispositivos de entrada incorporan información al núcleo formado por la CPU o procesador y la memoria, que trabajan relacionadas en ambos sentidos. Los dispositivos de salida comunican resultados."
+  >
+    <div class="modelo">
+      <section class="nodo nodo-io entrada" aria-labelledby="entrada-nombre">
+        <p id="entrada-nombre" class="nodo-titulo">Entrada</p>
+        <p class="nodo-detalle">Incorpora información</p>
+        <p class="nodo-ejemplos">dispositivos de entrada</p>
+      </section>
+
+      <div class="via via-vertical via-in" aria-hidden="true">
+        <svg viewBox="0 0 48 24" focusable="false">
+          <path d="M2 12h38M31 4l13 8-13 8"></path>
+        </svg>
+      </div>
+
+      <div class="nucleo">
+        <section class="nodo nodo-nucleo cpu" aria-labelledby="cpu-nombre">
+          <p id="cpu-nombre" class="nodo-titulo">
+            <span>CPU /</span> Procesador
+          </p>
+          <p class="nodo-detalle">
+            Ejecuta instrucciones y realiza operaciones
+          </p>
+        </section>
+
+        <div class="intercambio" aria-hidden="true">
+          <div class="via via-ida">
+            <p>información</p>
+            <svg viewBox="0 0 48 24" focusable="false">
+              <path d="M2 12h38M31 4l13 8-13 8"></path>
+            </svg>
+          </div>
+          <div class="via via-vuelta">
+            <svg viewBox="0 0 48 24" focusable="false">
+              <path d="M2 12h38M31 4l13 8-13 8"></path>
+            </svg>
+            <p>resultados</p>
+          </div>
+        </div>
+
+        <section class="nodo nodo-nucleo memoria" aria-labelledby="memoria-nombre">
+          <p id="memoria-nombre" class="nodo-titulo">Memoria</p>
+          <p class="nodo-detalle">
+            Mantiene disponibles instrucciones y datos
+          </p>
+        </section>
+      </div>
+
+      <div class="via via-vertical via-out" aria-hidden="true">
+        <svg viewBox="0 0 48 24" focusable="false">
+          <path d="M2 12h38M31 4l13 8-13 8"></path>
+        </svg>
+      </div>
+
+      <section class="nodo nodo-io salida" aria-labelledby="salida-nombre">
+        <p id="salida-nombre" class="nodo-titulo">Salida</p>
+        <p class="nodo-detalle">Comunica resultados</p>
+        <p class="nodo-ejemplos">dispositivos de salida</p>
+      </section>
+    </div>
+  </figure>
+</PizarronLayout>
+
+<style>
+  .figura {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 1.15rem 0 0.2rem;
+  }
+
+  .modelo {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: stretch;
+    width: 100%;
+  }
+
+  .nucleo {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 7.2rem minmax(0, 1fr);
+    align-items: stretch;
+    gap: 0.2rem 0.25rem;
+  }
+
+  .nodo {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+    padding: 1.05rem 1rem 0.95rem;
+    border: 2px solid var(--line);
+    text-align: center;
+  }
+
+  .nodo-io {
+    width: 100%;
+    padding: 0.85rem 1rem 0.8rem;
+  }
+
+  .nodo-titulo {
+    margin: 0 0 0.45rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    line-height: 1.15;
+  }
+
+  .nodo-io .nodo-titulo {
+    font-size: clamp(1.15rem, 0.45vw + 1.05rem, 1.45rem);
+  }
+
+  .nodo-nucleo .nodo-titulo {
+    margin-bottom: 0.55rem;
+    font-size: clamp(1.28rem, 0.85vw + 1.05rem, 1.8rem);
+  }
+
+  .cpu .nodo-titulo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 0.35rem;
+  }
+
+  .nodo-detalle {
+    margin: 0;
+    font-size: clamp(0.98rem, 0.25vw + 0.92rem, 1.15rem);
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  .nodo-nucleo .nodo-detalle {
+    font-size: clamp(1.02rem, 0.28vw + 0.95rem, 1.18rem);
+  }
+
+  .nodo-ejemplos {
+    margin: 0.4rem 0 0;
+    color: var(--muted);
+    font-size: 0.9rem;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  .intercambio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.85rem;
+    min-width: 0;
+  }
+
+  .via {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.12rem;
+    color: var(--muted);
+    font-size: 0.82rem;
+    font-weight: 700;
+    line-height: 1.15;
+    text-align: center;
+  }
+
+  .via p {
+    margin: 0;
+  }
+
+  .via svg {
+    width: 2.6rem;
+    height: 1.3rem;
+    fill: none;
+    stroke: var(--ink);
+    stroke-width: 2.4;
+    stroke-linecap: square;
+    stroke-linejoin: miter;
+  }
+
+  .via-vertical {
+    display: flex;
+    min-height: 2.3rem;
+  }
+
+  .via-vertical svg {
+    transform: rotate(90deg);
+    width: 1.5rem;
+    height: 2.2rem;
+  }
+
+  .via-ida svg {
+    transform: scaleX(-1);
+  }
+
+  @media (max-width: 52rem) {
+    .nucleo {
+      grid-template-columns: 1fr;
+      justify-items: stretch;
+    }
+
+    .nodo {
+      padding: 0.85rem 0.65rem 0.8rem;
+    }
+
+    .nodo-nucleo .nodo-titulo {
+      font-size: clamp(1.15rem, 2.4vw + 0.85rem, 1.4rem);
+    }
+
+    .intercambio {
+      flex-direction: row;
+      justify-content: center;
+      gap: 1.75rem;
+      min-height: 4.4rem;
+      padding: 0.15rem 0;
+    }
+
+    .via {
+      font-size: 0.78rem;
+    }
+
+    .via-vuelta {
+      flex-direction: column-reverse;
+    }
+
+    .via svg {
+      width: 1.5rem;
+      height: 2.2rem;
+    }
+
+    .via-vertical svg {
+      width: 1.5rem;
+      height: 2.2rem;
+    }
+
+    .via-ida svg {
+      transform: rotate(-90deg);
+    }
+
+    .via-vuelta svg {
+      transform: rotate(90deg);
+    }
+  }
+</style>

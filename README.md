@@ -17,6 +17,7 @@ Los pizarrones pueden encontrarse de dos maneras:
 
 - Preguntas y conceptos principales
 - El estado de un sistema
+- Arquitectura de Von Neumann
 - El sistema operativo
 - Sistemas digitales: hardware y software
 - Instrucciones, datos, operaciones y resultados
