@@ -21,6 +21,7 @@ Los pizarrones pueden encontrarse de dos maneras:
 - Sistemas digitales: hardware y software
 - Instrucciones, datos, operaciones y resultados
 - Entrada, procesamiento y salida
+- Procesador y memoria durante la ejecución
 
 ### Pensamiento Computacional
 

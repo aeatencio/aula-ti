@@ -1,0 +1,226 @@
+---
+import PizarronLayout from "../../layouts/PizarronLayout.astro";
+---
+
+<PizarronLayout
+  title="Procesador y memoria durante la ejecución"
+  description="Pizarrón sobre procesador y memoria durante la ejecución: cómo se relacionan para mantener y utilizar la información mientras un programa está en curso."
+  categoria="Sistemas Informáticos"
+  encabezado="borde-chico"
+  recorridoHref="/escuelas/gabriela-mistral/2-cuatrimestre-2026/"
+  recorridoNombre="Gabriela Mistral · 2.º cuatrimestre 2026"
+  recorridoPaso={5}
+  recorridoTotal={7}
+>
+  <figure
+    class="figura"
+    aria-label="Durante la ejecución, memoria y procesador se relacionan en ambos sentidos. La memoria mantiene disponible instrucciones, datos y resultados parciales. El procesador utiliza esa información para ejecutar operaciones. Los resultados vuelven a quedar disponibles."
+  >
+    <p class="nucleo">
+      Durante la ejecución, memoria y procesador trabajan relacionados.
+    </p>
+
+    <div class="pareja">
+      <section class="nodo" aria-labelledby="memoria-nombre">
+        <p id="memoria-nombre" class="nodo-titulo">Memoria</p>
+        <p class="nodo-detalle">
+          Mantiene disponible la información necesaria mientras la tarea está en
+          curso
+        </p>
+        <p class="nodo-ejemplos">instrucciones · datos · resultados parciales</p>
+      </section>
+
+      <div class="intercambio" aria-hidden="true">
+        <div class="via via-ida">
+          <p>información</p>
+          <svg viewBox="0 0 48 24" focusable="false">
+            <path d="M2 12h38M31 4l13 8-13 8"></path>
+          </svg>
+        </div>
+        <div class="via via-vuelta">
+          <svg viewBox="0 0 48 24" focusable="false">
+            <path d="M2 12h38M31 4l13 8-13 8"></path>
+          </svg>
+          <p>resultados</p>
+        </div>
+      </div>
+
+      <section class="nodo" aria-labelledby="procesador-nombre">
+        <p id="procesador-nombre" class="nodo-titulo">Procesador</p>
+        <p class="nodo-detalle">
+          Ejecuta instrucciones y realiza operaciones utilizando la información
+          disponible
+        </p>
+      </section>
+    </div>
+
+    <p class="ejemplo">
+      <span class="cuenta">48 + 27 = 75</span>
+      <span class="apoyo">
+        Datos y operación se mantienen disponibles mientras el procesador
+        calcula
+      </span>
+    </p>
+  </figure>
+</PizarronLayout>
+
+<style>
+  .figura {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 1.15rem 0 0.35rem;
+  }
+
+  .nucleo {
+    margin: 0 0 1.35rem;
+    max-width: 38rem;
+    text-align: center;
+    font-size: clamp(1.12rem, 0.35vw + 1.02rem, 1.32rem);
+    font-weight: 700;
+    line-height: 1.35;
+  }
+
+  .pareja {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 7.6rem minmax(0, 1fr);
+    align-items: stretch;
+    width: 100%;
+    gap: 0.35rem 0.2rem;
+  }
+
+  .nodo {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+    padding: 1.25rem 1.1rem 1.15rem;
+    border: 2px solid var(--line);
+    text-align: center;
+  }
+
+  .nodo-titulo {
+    margin: 0 0 0.6rem;
+    font-size: clamp(1.45rem, 1vw + 1.2rem, 2rem);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    line-height: 1.15;
+  }
+
+  .nodo-detalle {
+    margin: 0;
+    font-size: clamp(1.05rem, 0.3vw + 0.98rem, 1.22rem);
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  .nodo-ejemplos {
+    margin: 0.6rem 0 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.35;
+  }
+
+  .intercambio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    min-width: 0;
+  }
+
+  .via {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.12rem;
+    color: var(--muted);
+    font-size: 0.88rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  .via p {
+    margin: 0;
+  }
+
+  .via svg {
+    width: 2.8rem;
+    height: 1.4rem;
+    fill: none;
+    stroke: var(--ink);
+    stroke-width: 2.4;
+    stroke-linecap: square;
+    stroke-linejoin: miter;
+  }
+
+  .via-vuelta svg {
+    transform: scaleX(-1);
+  }
+
+  .ejemplo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+    width: 100%;
+    margin: 1.45rem 0 0;
+    padding-top: 1.15rem;
+    border-top: 2px solid var(--line);
+    text-align: center;
+  }
+
+  .cuenta {
+    font-size: clamp(1.55rem, 1.4vw + 1.15rem, 2.2rem);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    line-height: 1.1;
+  }
+
+  .apoyo {
+    max-width: 28rem;
+    color: var(--muted);
+    font-size: clamp(0.95rem, 0.2vw + 0.9rem, 1.08rem);
+    font-weight: 700;
+    line-height: 1.35;
+  }
+
+  @media (max-width: 52rem) {
+    .pareja {
+      grid-template-columns: 1fr;
+      justify-items: stretch;
+    }
+
+    .intercambio {
+      flex-direction: row;
+      justify-content: center;
+      gap: 1.75rem;
+      min-height: 4.4rem;
+      padding: 0.15rem 0;
+    }
+
+    .via svg {
+      width: 1.5rem;
+      height: 2.2rem;
+    }
+
+    .via-vuelta {
+      flex-direction: column-reverse;
+    }
+
+    .via-ida svg {
+      transform: rotate(90deg);
+    }
+
+    .via-vuelta svg {
+      transform: rotate(-90deg);
+    }
+  }
+</style>
