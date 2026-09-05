@@ -12,7 +12,7 @@ import PizarronLayout from "../../layouts/PizarronLayout.astro";
 
   <figure
     class="comparacion"
-    aria-label="Un hilo avanza de a uno: la persona pide, la IA responde, la persona sigue. Un agente recibe un objetivo, observa, actúa y verifica para decidir qué sigue. Las dos formas pueden producir texto, imágenes, código o archivos."
+    aria-label="Un hilo avanza de a uno: la persona pide, la IA responde, la persona sigue. Un agente recibe un objetivo y entra en un ciclo: observa, actúa, verifica y vuelve a observar. Las dos formas pueden producir texto, imágenes, código o archivos."
   >
     <section class="modo" aria-labelledby="hilo-nombre">
       <h2 id="hilo-nombre" class="modo-nombre">Hilo</h2>
@@ -67,27 +67,60 @@ import PizarronLayout from "../../layouts/PizarronLayout.astro";
             <path d="M2 12h38M31 4l13 8-13 8"></path>
           </svg>
         </div>
-        <div class="paso">
-          <p class="paso-clave">Observa</p>
-          <p class="paso-texto">Mira la situación</p>
-        </div>
-        <div class="flecha" aria-hidden="true">
-          <svg viewBox="0 0 48 24" focusable="false">
-            <path d="M2 12h38M31 4l13 8-13 8"></path>
+        <div
+          class="ciclo"
+          role="group"
+          aria-label="Ciclo: observa, actúa, verifica y vuelve a observar"
+        >
+          <div class="paso ciclo-observa">
+            <p class="paso-clave">Observa</p>
+            <p class="paso-texto">Mira la situación</p>
+          </div>
+          <div class="flecha ciclo-f1" aria-hidden="true">
+            <svg viewBox="0 0 48 24" focusable="false">
+              <path d="M2 12h38M31 4l13 8-13 8"></path>
+            </svg>
+          </div>
+          <div class="paso paso-maquina ciclo-actua">
+            <p class="paso-clave">Actúa</p>
+            <p class="paso-texto">Da un paso</p>
+          </div>
+          <div class="flecha ciclo-f2" aria-hidden="true">
+            <svg viewBox="0 0 48 24" focusable="false">
+              <path d="M2 12h38M31 4l13 8-13 8"></path>
+            </svg>
+          </div>
+          <div class="paso ciclo-verifica">
+            <p class="paso-clave">Verifica</p>
+            <p class="paso-texto">Mira qué pasó y decide</p>
+          </div>
+
+          <svg
+            class="ciclo-arco"
+            viewBox="0 0 108 200"
+            preserveAspectRatio="none"
+            focusable="false"
+            aria-hidden="true"
+          >
+            <path
+              d="M36 27 H100 V173 H0"
+              vector-effect="non-scaling-stroke"
+            ></path>
+            <svg
+              x="0"
+              y="15"
+              width="40"
+              height="24"
+              viewBox="0 0 48 24"
+              preserveAspectRatio="xMinYMid meet"
+            >
+              <path
+                d="M46 12 H10 M21 4 L6 12 L21 20"
+                vector-effect="non-scaling-stroke"
+              ></path>
+            </svg>
           </svg>
-        </div>
-        <div class="paso paso-maquina">
-          <p class="paso-clave">Actúa</p>
-          <p class="paso-texto">Da un paso</p>
-        </div>
-        <div class="flecha" aria-hidden="true">
-          <svg viewBox="0 0 48 24" focusable="false">
-            <path d="M2 12h38M31 4l13 8-13 8"></path>
-          </svg>
-        </div>
-        <div class="paso">
-          <p class="paso-clave">Verifica</p>
-          <p class="paso-texto">Mira qué pasó y decide</p>
+          <p class="ciclo-leyenda">vuelve a observar</p>
         </div>
       </div>
     </section>
@@ -100,6 +133,10 @@ import PizarronLayout from "../../layouts/PizarronLayout.astro";
   <p class="cierre">
     Las dos formas sirven para pensar y para producir. Cambia quién conduce
     cada paso.
+  </p>
+
+  <p class="continuar">
+    <a href="/hilos-agentes-y-arneses/">Leer la explicación completa</a>
   </p>
 </PizarronLayout>
 
@@ -155,6 +192,74 @@ import PizarronLayout from "../../layouts/PizarronLayout.astro";
     flex: 1;
     margin: 0;
     padding: 0;
+  }
+
+  .ciclo {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 4.4rem 1.95rem;
+    grid-template-rows: auto auto auto auto auto;
+    align-items: stretch;
+    column-gap: 0.15rem;
+  }
+
+  .ciclo-observa {
+    grid-area: 1 / 1;
+  }
+
+  .ciclo-f1 {
+    grid-area: 2 / 1;
+  }
+
+  .ciclo-actua {
+    grid-area: 3 / 1;
+  }
+
+  .ciclo-f2 {
+    grid-area: 4 / 1;
+  }
+
+  .ciclo-verifica {
+    grid-area: 5 / 1;
+  }
+
+  .ciclo .paso {
+    min-height: 5.4rem;
+  }
+
+  .ciclo .flecha {
+    min-height: 1.9rem;
+  }
+
+  .ciclo-arco {
+    grid-area: 1 / 2 / 6 / 4;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    fill: none;
+    stroke: var(--ink);
+    stroke-width: 2.4;
+    stroke-linecap: square;
+    stroke-linejoin: miter;
+    pointer-events: none;
+  }
+
+  .ciclo-arco path {
+    fill: none;
+  }
+
+  .ciclo-leyenda {
+    grid-area: 1 / 2 / 6 / 3;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0 0.15rem;
+    text-align: center;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    line-height: 1.25;
   }
 
   .paso {
@@ -225,7 +330,22 @@ import PizarronLayout from "../../layouts/PizarronLayout.astro";
     font-size: clamp(1.08rem, 0.35vw + 1rem, 1.28rem);
     font-weight: 700;
     line-height: 1.4;
-    max-width: 46rem;
+  }
+
+  .continuar {
+    margin: 1.5rem 0 0;
+    font-size: 0.98rem;
+    font-weight: 600;
+  }
+
+  .continuar a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 2px solid var(--accent);
+  }
+
+  .continuar a:hover {
+    color: var(--accent);
   }
 
   @media (max-width: 44rem) {
@@ -241,6 +361,14 @@ import PizarronLayout from "../../layouts/PizarronLayout.astro";
 
     .paso {
       min-height: 0;
+    }
+
+    .ciclo .paso {
+      min-height: 5.4rem;
+    }
+
+    .ciclo {
+      grid-template-columns: minmax(0, 1fr) 4rem 1.8rem;
     }
   }
 </style>

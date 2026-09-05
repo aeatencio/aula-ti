@@ -14,7 +14,7 @@ import PizarronLayout from "../../layouts/PizarronLayout.astro";
 
   <figure
     class="figura"
-    aria-label="El agente trabaja dentro de un arnés. El arnés reúne contexto, herramientas, reglas y pruebas. Del hilo sale un objetivo; el agente trabaja dentro del arnés; la evidencia vuelve al hilo."
+    aria-label="El agente trabaja dentro de un arnés. El arnés reúne contexto, herramientas, reglas y pruebas. El agente observa, actúa, verifica y vuelve a observar. Del hilo sale un objetivo; el agente trabaja dentro del arnés; la evidencia vuelve al hilo."
   >
     <section class="arnes" aria-labelledby="arnes-nombre">
       <h2 id="arnes-nombre" class="arnes-nombre">Arnés</h2>
@@ -38,9 +38,55 @@ import PizarronLayout from "../../layouts/PizarronLayout.astro";
         </div>
       </div>
 
-      <div class="agente">
+      <div
+        class="agente"
+        role="group"
+        aria-label="El agente observa, actúa, verifica y vuelve a observar"
+      >
         <p class="agente-nombre">Agente</p>
-        <p class="agente-ciclo">observa → actúa → verifica</p>
+        <svg
+          class="agente-loop"
+          viewBox="0 0 440 108"
+          role="img"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <text class="loop-paso" x="70" y="28" text-anchor="middle">
+            observa
+          </text>
+          <svg x="112" y="16" width="44" height="24" viewBox="0 0 48 24">
+            <path d="M2 12h38M31 4l13 8-13 8"></path>
+          </svg>
+          <text class="loop-paso" x="220" y="28" text-anchor="middle">
+            actúa
+          </text>
+          <svg x="256" y="16" width="44" height="24" viewBox="0 0 48 24">
+            <path d="M2 12h38M31 4l13 8-13 8"></path>
+          </svg>
+          <text class="loop-paso" x="370" y="28" text-anchor="middle">
+            verifica
+          </text>
+          <path
+            class="loop-retorno"
+            d="M370 42 V64 H286"
+            vector-effect="non-scaling-stroke"
+          ></path>
+          <rect class="loop-fondo" x="154" y="54" width="132" height="20"></rect>
+          <text
+            class="loop-leyenda"
+            x="220"
+            y="64"
+            text-anchor="middle"
+            dominant-baseline="middle"
+          >
+            vuelve a observar
+          </text>
+          <path
+            class="loop-retorno"
+            d="M154 64 H70 V54 M58 54 L70 38 L82 54"
+            vector-effect="non-scaling-stroke"
+          ></path>
+        </svg>
       </div>
     </section>
 
@@ -76,6 +122,10 @@ import PizarronLayout from "../../layouts/PizarronLayout.astro";
   <p class="cierre">
     Volvemos al hilo a mirar qué hizo y a decidir qué sigue.
   </p>
+
+  <p class="continuar">
+    <a href="/hilos-agentes-y-arneses/">Leer la explicación completa</a>
+  </p>
 </PizarronLayout>
 
 <style>
@@ -85,7 +135,6 @@ import PizarronLayout from "../../layouts/PizarronLayout.astro";
     font-size: clamp(1.05rem, 0.35vw + 0.98rem, 1.25rem);
     font-weight: 700;
     line-height: 1.35;
-    max-width: 46rem;
   }
 
   .figura {
@@ -167,11 +216,37 @@ import PizarronLayout from "../../layouts/PizarronLayout.astro";
     color: color-mix(in srgb, var(--board) 82%, var(--accent));
   }
 
-  .agente-ciclo {
-    margin: 0;
-    font-size: clamp(1.15rem, 0.45vw + 1.05rem, 1.4rem);
+  .agente-loop {
+    display: block;
+    width: min(100%, 26rem);
+    height: auto;
+    margin: 0.1rem auto 0;
+    overflow: visible;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.4;
+    stroke-linecap: square;
+    stroke-linejoin: miter;
+  }
+
+  .agente-loop text {
+    fill: currentColor;
+    stroke: none;
+    font-family: "Segoe UI", system-ui, sans-serif;
     font-weight: 700;
-    line-height: 1.25;
+  }
+
+  .agente-loop .loop-paso {
+    font-size: 20px;
+  }
+
+  .agente-loop .loop-leyenda {
+    font-size: 14px;
+  }
+
+  .agente-loop .loop-fondo {
+    fill: var(--accent);
+    stroke: none;
   }
 
   .vuelta {
@@ -236,7 +311,22 @@ import PizarronLayout from "../../layouts/PizarronLayout.astro";
     font-size: clamp(1.08rem, 0.35vw + 1rem, 1.28rem);
     font-weight: 700;
     line-height: 1.4;
-    max-width: 46rem;
+  }
+
+  .continuar {
+    margin: 1.5rem 0 0;
+    font-size: 0.98rem;
+    font-weight: 600;
+  }
+
+  .continuar a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 2px solid var(--accent);
+  }
+
+  .continuar a:hover {
+    color: var(--accent);
   }
 
   @media (max-width: 56rem) {

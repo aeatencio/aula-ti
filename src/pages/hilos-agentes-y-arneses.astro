@@ -1,0 +1,793 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="Hilos, agentes y arneses · Aula"
+  description="Una forma de organizar el trabajo con IA: pensar y decidir en un hilo, delegar un objetivo a un agente dentro de un arnés, y volver a mirar la evidencia."
+>
+  <article class="lectura">
+    <header class="apertura">
+      <h1 class="page-title">Hilos, agentes y arneses</h1>
+      <p class="bajada">Una forma de organizar el trabajo con IA</p>
+    </header>
+
+    <div class="prosa">
+      <p>
+        Usar IA puede ser varias cosas distintas. A veces avanzamos de a uno, en
+        una conversación. A veces le damos un objetivo y un sistema encadena
+        acciones a partir de lo que va observando.
+      </p>
+      <p>Estas dos maneras se pueden combinar.</p>
+    </div>
+
+    <section class="tramo" aria-labelledby="hilo-agente">
+      <div class="prosa">
+        <h2 id="hilo-agente">El hilo y el agente</h2>
+        <p>
+          En un hilo, la persona marca el siguiente paso: pide, recibe una
+          respuesta y decide cómo seguir. Un agente recibe un objetivo y
+          encadena acciones: observa, actúa, verifica y decide cómo continuar.
+        </p>
+      </div>
+
+      <figure
+        class="visual"
+        aria-label="Un hilo avanza de a uno: la persona pide, la IA responde, la persona sigue. Un agente recibe un objetivo y entra en un ciclo: observa, actúa, verifica y vuelve a observar. Ambas formas pueden producir texto, imágenes, código o archivos."
+      >
+        <div class="comparacion">
+          <div class="modo">
+            <p class="modo-nombre">Hilo</p>
+            <p class="modo-idea">Avanzamos de a uno</p>
+            <div class="cadena">
+              <div class="paso">
+                <p class="paso-clave">Persona</p>
+                <p class="paso-texto">Pide</p>
+              </div>
+              <div class="flecha" aria-hidden="true">
+                <svg viewBox="0 0 48 24" focusable="false">
+                  <path d="M2 12h38M31 4l13 8-13 8"></path>
+                </svg>
+              </div>
+              <div class="paso paso-maquina">
+                <p class="paso-clave">IA</p>
+                <p class="paso-texto">Responde</p>
+              </div>
+              <div class="flecha" aria-hidden="true">
+                <svg viewBox="0 0 48 24" focusable="false">
+                  <path d="M2 12h38M31 4l13 8-13 8"></path>
+                </svg>
+              </div>
+              <div class="paso">
+                <p class="paso-clave">Persona</p>
+                <p class="paso-texto">Sigue</p>
+              </div>
+              <div class="flecha" aria-hidden="true">
+                <svg viewBox="0 0 48 24" focusable="false">
+                  <path d="M2 12h38M31 4l13 8-13 8"></path>
+                </svg>
+              </div>
+              <div class="paso paso-maquina">
+                <p class="paso-clave">IA</p>
+                <p class="paso-texto">Responde</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="modo">
+            <p class="modo-nombre">Agente</p>
+            <p class="modo-idea">Encadena acciones hacia un objetivo</p>
+            <div class="cadena">
+              <div class="paso">
+                <p class="paso-clave">Objetivo</p>
+                <p class="paso-texto">Qué hay que lograr</p>
+              </div>
+              <div class="flecha" aria-hidden="true">
+                <svg viewBox="0 0 48 24" focusable="false">
+                  <path d="M2 12h38M31 4l13 8-13 8"></path>
+                </svg>
+              </div>
+              <div
+                class="ciclo-agente"
+                role="group"
+                aria-label="Ciclo: observa, actúa, verifica y vuelve a observar"
+              >
+                <div class="paso ciclo-agente-observa">
+                  <p class="paso-clave">Observa</p>
+                  <p class="paso-texto">Mira la situación</p>
+                </div>
+                <div class="flecha ciclo-agente-f1" aria-hidden="true">
+                  <svg viewBox="0 0 48 24" focusable="false">
+                    <path d="M2 12h38M31 4l13 8-13 8"></path>
+                  </svg>
+                </div>
+                <div class="paso paso-maquina ciclo-agente-actua">
+                  <p class="paso-clave">Actúa</p>
+                  <p class="paso-texto">Da un paso</p>
+                </div>
+                <div class="flecha ciclo-agente-f2" aria-hidden="true">
+                  <svg viewBox="0 0 48 24" focusable="false">
+                    <path d="M2 12h38M31 4l13 8-13 8"></path>
+                  </svg>
+                </div>
+                <div class="paso ciclo-agente-verifica">
+                  <p class="paso-clave">Verifica</p>
+                  <p class="paso-texto">Mira qué pasó y decide</p>
+                </div>
+                <svg
+                  class="ciclo-agente-arco"
+                  viewBox="0 0 108 172"
+                  preserveAspectRatio="none"
+                  focusable="false"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M36 23 H100 V149 H0"
+                    vector-effect="non-scaling-stroke"
+                  ></path>
+                  <svg
+                    x="0"
+                    y="11"
+                    width="40"
+                    height="24"
+                    viewBox="0 0 48 24"
+                    preserveAspectRatio="xMinYMid meet"
+                  >
+                    <path
+                      d="M46 12 H10 M21 4 L6 12 L21 20"
+                      vector-effect="non-scaling-stroke"
+                    ></path>
+                  </svg>
+                </svg>
+                <p class="ciclo-agente-leyenda">vuelve a observar</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="visual-nota">
+          Ambos pueden producir texto, imágenes, código o archivos.
+        </p>
+        <figcaption>
+          <a href="/pizarrones/hilos-y-agentes/">Pizarrón: Hilos y agentes</a>
+        </figcaption>
+      </figure>
+
+      <div class="prosa">
+        <p>
+          Las dos formas sirven para pensar y para producir. Cambia quién
+          conduce cada paso.
+        </p>
+      </div>
+    </section>
+
+    <section class="tramo" aria-labelledby="el-arnes">
+      <div class="prosa">
+        <h2 id="el-arnes">El arnés</h2>
+        <p>
+          El agente actúa dentro de un arnés: las condiciones que encuadran lo
+          que puede observar, hacer y comprobar.
+        </p>
+      </div>
+
+      <figure
+        class="visual"
+        aria-label="El agente trabaja dentro de un arnés. El arnés reúne contexto, herramientas, reglas y pruebas. El agente observa, actúa, verifica y vuelve a observar."
+      >
+        <div class="arnes">
+          <p class="arnes-nombre">Arnés</p>
+          <div class="condiciones">
+            <div class="condicion">
+              <p class="condicion-nombre">Contexto</p>
+              <p class="condicion-detalle">la información de partida</p>
+            </div>
+            <div class="condicion">
+              <p class="condicion-nombre">Herramientas</p>
+              <p class="condicion-detalle">con qué puede actuar</p>
+            </div>
+            <div class="condicion">
+              <p class="condicion-nombre">Reglas</p>
+              <p class="condicion-detalle">qué puede hacer</p>
+            </div>
+            <div class="condicion">
+              <p class="condicion-nombre">Pruebas</p>
+              <p class="condicion-detalle">cómo se comprueba</p>
+            </div>
+          </div>
+          <div
+            class="agente"
+            role="group"
+            aria-label="El agente observa, actúa, verifica y vuelve a observar"
+          >
+            <p class="agente-nombre">Agente</p>
+            <svg
+              class="agente-loop"
+              viewBox="0 0 440 108"
+              role="img"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <text class="loop-paso" x="70" y="28" text-anchor="middle">
+                observa
+              </text>
+              <svg x="112" y="16" width="44" height="24" viewBox="0 0 48 24">
+                <path d="M2 12h38M31 4l13 8-13 8"></path>
+              </svg>
+              <text class="loop-paso" x="220" y="28" text-anchor="middle">
+                actúa
+              </text>
+              <svg x="256" y="16" width="44" height="24" viewBox="0 0 48 24">
+                <path d="M2 12h38M31 4l13 8-13 8"></path>
+              </svg>
+              <text class="loop-paso" x="370" y="28" text-anchor="middle">
+                verifica
+              </text>
+              <path
+                class="loop-retorno"
+                d="M370 42 V64 H286"
+                vector-effect="non-scaling-stroke"
+              ></path>
+              <rect class="loop-fondo" x="154" y="54" width="132" height="20"></rect>
+              <text
+                class="loop-leyenda"
+                x="220"
+                y="64"
+                text-anchor="middle"
+                dominant-baseline="middle"
+              >
+                vuelve a observar
+              </text>
+              <path
+                class="loop-retorno"
+                d="M154 64 H70 V54 M58 54 L70 38 L82 54"
+                vector-effect="non-scaling-stroke"
+              ></path>
+            </svg>
+          </div>
+        </div>
+        <figcaption>
+          <a href="/pizarrones/agentes-y-arneses/">
+            Pizarrón: Agentes y arneses
+          </a>
+        </figcaption>
+      </figure>
+
+      <div class="prosa">
+        <p>
+          Esas condiciones definen el trabajo posible. Un mismo objetivo, con
+          otro contexto o con otras reglas, es otro trabajo.
+        </p>
+      </div>
+    </section>
+
+    <section class="tramo" aria-labelledby="combinarlos">
+      <div class="prosa">
+        <h2 id="combinarlos">Combinarlos</h2>
+        <p>
+          Una forma posible es esta: pensar y decidir en un hilo, delegar un
+          objetivo, dejar que el agente trabaje dentro del arnés y volver al
+          hilo con la evidencia.
+        </p>
+      </div>
+
+      <figure
+        class="visual"
+        aria-label="En el hilo vemos el problema. Al delegar, enunciamos un objetivo. El agente trabaja dentro del arnés. Deja evidencia. Volvemos al hilo a mirar y decidir."
+      >
+        <div class="ciclo">
+          <div class="nodo">
+            <p class="nodo-clave">Hilo</p>
+            <p class="nodo-texto">Vemos el problema</p>
+          </div>
+          <div class="via" aria-hidden="true">
+            <svg viewBox="0 0 48 24" focusable="false">
+              <path d="M2 12h38M31 4l13 8-13 8"></path>
+            </svg>
+          </div>
+          <div class="nodo">
+            <p class="nodo-clave">Delegación</p>
+            <p class="nodo-texto">Enunciamos el objetivo</p>
+          </div>
+          <div class="via" aria-hidden="true">
+            <svg viewBox="0 0 48 24" focusable="false">
+              <path d="M2 12h38M31 4l13 8-13 8"></path>
+            </svg>
+          </div>
+          <div class="nodo nodo-centro">
+            <p class="nodo-clave">Agente + arnés</p>
+            <p class="nodo-texto">Trabaja dentro de condiciones</p>
+          </div>
+          <div class="via" aria-hidden="true">
+            <svg viewBox="0 0 48 24" focusable="false">
+              <path d="M2 12h38M31 4l13 8-13 8"></path>
+            </svg>
+          </div>
+          <div class="nodo">
+            <p class="nodo-clave">Evidencia</p>
+            <p class="nodo-texto">Qué hizo y cómo se comprueba</p>
+          </div>
+          <div class="via" aria-hidden="true">
+            <svg viewBox="0 0 48 24" focusable="false">
+              <path d="M2 12h38M31 4l13 8-13 8"></path>
+            </svg>
+          </div>
+          <div class="nodo">
+            <p class="nodo-clave">Hilo</p>
+            <p class="nodo-texto">Miramos y decidimos</p>
+          </div>
+        </div>
+      </figure>
+    </section>
+
+    <section class="tramo" aria-labelledby="un-ejemplo">
+      <div class="prosa">
+        <h2 id="un-ejemplo">Un ejemplo</h2>
+        <p>
+          Imaginemos una lista de trabajos entregados. A veces, al enviar, el
+          trabajo no queda anotado.
+        </p>
+        <p>
+          En el hilo vemos el problema y definimos lo que tiene que ocurrir: al
+          enviar, el trabajo se guarda y aparece en la lista. Delegamos un
+          objetivo: encontrar por qué falla y corregirlo, sin cambiar el resto.
+        </p>
+        <p>
+          El agente mira la situación, hace un cambio y comprueba el resultado,
+          usando las herramientas y las reglas del arnés. Vuelve con evidencia:
+          qué cambió y si la comprobación salió bien.
+        </p>
+        <p>
+          En el hilo miramos si ahora se guarda, si se rompió otra cosa, y
+          decidimos qué sigue. El patrón no depende de programar: cambian el
+          objetivo, las herramientas y las pruebas.
+        </p>
+      </div>
+    </section>
+
+    <section class="tramo cierre-lectura" aria-labelledby="el-criterio">
+      <div class="prosa">
+        <h2 id="el-criterio">El criterio permanece en el hilo</h2>
+        <p>
+          El agente puede ejecutar una cadena de acciones. Quien vuelve a mirar
+          la evidencia y decide qué hacer con ella es la persona.
+        </p>
+      </div>
+      <p class="idea">
+        La ejecución se puede delegar. El criterio permanece en el hilo.
+      </p>
+    </section>
+
+    <nav class="pie" aria-label="Pizarrones de esta lectura">
+      <p class="pie-titulo">Pizarrones</p>
+      <ul>
+        <li>
+          <a href="/pizarrones/hilos-y-agentes/">Hilos y agentes</a>
+        </li>
+        <li>
+          <a href="/pizarrones/agentes-y-arneses/">Agentes y arneses</a>
+        </li>
+      </ul>
+    </nav>
+  </article>
+</Layout>
+
+<style>
+  .lectura {
+    max-width: 58rem;
+  }
+
+  .apertura {
+    margin: 0 0 2rem;
+    padding-bottom: 1.35rem;
+    border-bottom: 2px solid var(--line);
+  }
+
+  .bajada {
+    margin: 0.45rem 0 0;
+    color: var(--muted);
+    font-size: clamp(1.15rem, 0.4vw + 1.05rem, 1.4rem);
+    font-weight: 700;
+    line-height: 1.35;
+  }
+
+  .prosa h2 {
+    margin: 0 0 0.85rem;
+    font-size: clamp(1.2rem, 0.35vw + 1.1rem, 1.45rem);
+    font-weight: 700;
+    line-height: 1.25;
+  }
+
+  .prosa p {
+    margin: 0;
+  }
+
+  .prosa p + p {
+    margin-top: 0.9rem;
+  }
+
+  .tramo {
+    margin-top: 2.75rem;
+  }
+
+  .visual {
+    margin: 1.5rem 0 0;
+    padding: clamp(1.1rem, 2.4vw, 1.85rem);
+    background: var(--board);
+    border: 2px solid var(--line);
+  }
+
+  .visual figcaption {
+    margin: 1.1rem 0 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+
+  .visual figcaption a,
+  .pie a {
+    color: var(--ink);
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 2px solid var(--accent);
+  }
+
+  .visual figcaption a:hover,
+  .pie a:hover {
+    color: var(--accent);
+  }
+
+  .visual-nota {
+    margin: 1.15rem 0 0;
+    text-align: center;
+    color: var(--muted);
+    font-size: clamp(1.02rem, 0.2vw + 0.95rem, 1.12rem);
+    font-weight: 700;
+    line-height: 1.35;
+  }
+
+  .comparacion {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.35rem 1.75rem;
+  }
+
+  .modo {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .modo-nombre,
+  .arnes-nombre {
+    margin: 0 0 0.3rem;
+    text-align: center;
+    font-size: clamp(1.25rem, 0.55vw + 1.1rem, 1.6rem);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    line-height: 1.15;
+  }
+
+  .modo-idea {
+    margin: 0 0 0.9rem;
+    text-align: center;
+    color: var(--muted);
+    font-size: 1.02rem;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  .cadena {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .ciclo-agente {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 4.1rem 1.8rem;
+    grid-template-rows: auto auto auto auto auto;
+    align-items: stretch;
+    column-gap: 0.15rem;
+  }
+
+  .ciclo-agente-observa {
+    grid-area: 1 / 1;
+  }
+
+  .ciclo-agente-f1 {
+    grid-area: 2 / 1;
+  }
+
+  .ciclo-agente-actua {
+    grid-area: 3 / 1;
+  }
+
+  .ciclo-agente-f2 {
+    grid-area: 4 / 1;
+  }
+
+  .ciclo-agente-verifica {
+    grid-area: 5 / 1;
+  }
+
+  .ciclo-agente .paso {
+    min-height: 4.6rem;
+  }
+
+  .ciclo-agente .flecha {
+    min-height: 1.7rem;
+  }
+
+  .ciclo-agente-arco {
+    grid-area: 1 / 2 / 6 / 4;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    fill: none;
+    stroke: var(--ink);
+    stroke-width: 2.4;
+    stroke-linecap: square;
+    stroke-linejoin: miter;
+    pointer-events: none;
+  }
+
+  .ciclo-agente-arco path {
+    fill: none;
+  }
+
+  .ciclo-agente-leyenda {
+    grid-area: 1 / 2 / 6 / 3;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0 0.15rem;
+    text-align: center;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    line-height: 1.25;
+  }
+
+  .paso,
+  .nodo,
+  .condicion {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.7rem 0.75rem;
+    border: 2px solid var(--line);
+    text-align: center;
+  }
+
+  .paso {
+    min-height: 4.6rem;
+  }
+
+  .paso-clave,
+  .nodo-clave,
+  .agente-nombre {
+    margin: 0 0 0.28rem;
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .paso-texto,
+  .nodo-texto {
+    margin: 0;
+    font-size: clamp(1.02rem, 0.25vw + 0.95rem, 1.18rem);
+    font-weight: 700;
+    line-height: 1.25;
+  }
+
+  .paso-maquina,
+  .agente {
+    background: var(--accent);
+    color: var(--board);
+    border-color: var(--accent);
+  }
+
+  .paso-maquina .paso-clave,
+  .agente-nombre {
+    color: color-mix(in srgb, var(--board) 82%, var(--accent));
+  }
+
+  .flecha,
+  .via {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 1.7rem;
+  }
+
+  .flecha {
+    transform: rotate(90deg);
+  }
+
+  .flecha svg,
+  .via svg {
+    width: 2.3rem;
+    height: 1.2rem;
+    fill: none;
+    stroke: var(--ink);
+    stroke-width: 2.4;
+    stroke-linecap: square;
+    stroke-linejoin: miter;
+  }
+
+  .arnes {
+    padding: 1rem 0.95rem 1.1rem;
+    border: 2px solid var(--line);
+  }
+
+  .arnes-nombre {
+    margin-bottom: 0.9rem;
+  }
+
+  .condiciones {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.55rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .condicion-nombre {
+    margin: 0;
+    font-size: clamp(0.98rem, 0.2vw + 0.92rem, 1.12rem);
+    font-weight: 700;
+  }
+
+  .condicion-detalle {
+    margin: 0.3rem 0 0;
+    color: var(--muted);
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  .agente {
+    width: min(100%, 26rem);
+    margin: 0 auto;
+    padding: 0.95rem 1rem;
+    text-align: center;
+  }
+
+  .agente-loop {
+    display: block;
+    width: min(100%, 24rem);
+    height: auto;
+    margin: 0.1rem auto 0;
+    overflow: visible;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.4;
+    stroke-linecap: square;
+    stroke-linejoin: miter;
+  }
+
+  .agente-loop text {
+    fill: currentColor;
+    stroke: none;
+    font-family: "Segoe UI", system-ui, sans-serif;
+    font-weight: 700;
+  }
+
+  .agente-loop .loop-paso {
+    font-size: 20px;
+  }
+
+  .agente-loop .loop-leyenda {
+    font-size: 14px;
+  }
+
+  .agente-loop .loop-fondo {
+    fill: var(--accent);
+    stroke: none;
+  }
+
+  .ciclo {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: min(100%, 28rem);
+    margin: 0 auto;
+  }
+
+  .nodo {
+    padding: 0.85rem 0.9rem;
+  }
+
+  .ciclo .via svg {
+    transform: rotate(90deg);
+    width: 1.5rem;
+    height: 2.1rem;
+  }
+
+  .nodo-centro {
+    border-color: var(--emphasis);
+    background: color-mix(in srgb, var(--emphasis) 8%, var(--board));
+  }
+
+  .nodo-centro .nodo-clave {
+    color: var(--emphasis);
+  }
+
+  .idea {
+    margin: 1.35rem 0 0;
+    padding: 1.05rem 1.15rem;
+    border: 2px solid var(--emphasis);
+    background: color-mix(in srgb, var(--emphasis) 8%, var(--board));
+    color: var(--emphasis);
+    font-size: clamp(1.12rem, 0.4vw + 1.05rem, 1.38rem);
+    font-weight: 700;
+    line-height: 1.35;
+  }
+
+  .pie {
+    margin-top: 3rem;
+    padding-top: 1.35rem;
+    border-top: 2px solid var(--line);
+  }
+
+  .pie-titulo {
+    margin: 0 0 0.7rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+  }
+
+  .pie ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .pie li + li {
+    margin-top: 0.5rem;
+  }
+
+  .tramo .prosa + .prosa {
+    margin-top: 1.15rem;
+  }
+
+  .visual + .prosa {
+    margin-top: 1.35rem;
+  }
+
+  @media (max-width: 56rem) {
+    .condiciones {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 44rem) {
+    .comparacion {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .modo + .modo {
+      padding-top: 1.35rem;
+      border-top: 2px solid var(--line);
+    }
+
+    .paso {
+      min-height: 0;
+    }
+
+    .ciclo-agente .paso {
+      min-height: 4.6rem;
+    }
+
+    .ciclo-agente {
+      grid-template-columns: minmax(0, 1fr) 3.8rem 1.7rem;
+    }
+
+    .condiciones {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,10 +1,10 @@
-# Aula TI
+# Aula
 
 Pizarrones digitales para clases de Tecnologías de la Información.
 
 **Sitio:** https://aula.andresatencio.com
 
-Aula TI reúne materiales utilizados en clase para proyectarlos, consultarlos y recuperarlos después, especialmente cuando un estudiante faltó o no pudo copiar un pizarrón.
+Aula reúne materiales utilizados en clase para proyectarlos, consultarlos y recuperarlos después, especialmente cuando un estudiante faltó o no pudo copiar un pizarrón.
 
 ## Contenido
 
@@ -30,6 +30,8 @@ Los pizarrones pueden encontrarse de dos maneras:
 - Hilos y agentes
 - Agentes y arneses
 
+Hay una lectura breve que combina los dos últimos: [Hilos, agentes y arneses](/hilos-agentes-y-arneses/).
+
 ### Recorridos por escuela
 
 - **Gabriela Mistral · 2.º cuatrimestre 2026**
@@ -39,7 +41,7 @@ Cada pizarrón tiene una única página. Un mismo pizarrón puede formar parte d
 
 ## Implementación
 
-Aula TI es un sitio estático construido con:
+Aula es un sitio estático construido con:
 
 - Astro
 - TypeScript
