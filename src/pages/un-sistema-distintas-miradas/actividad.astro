@@ -1,0 +1,289 @@
+---
+import MaterialLayout from "../../layouts/MaterialLayout.astro";
+---
+
+<MaterialLayout
+  title="Elegir la mirada"
+  description="Actividad: relacionar tres representaciones de una misma venta, decidir cuál ayuda con cada pregunta y aplicar esas miradas a una situación nueva."
+  tipo="Actividad"
+  bajada="Trabajar con tres representaciones de un mismo sistema"
+>
+  <p class="entrada-texto">
+    Vas a necesitar el pizarrón{" "}
+    <a href="/pizarrones/tres-miradas-sobre-una-situacion/">
+      Tres miradas sobre una misma situación
+    </a>. Tenelo a la vista mientras trabajás.
+  </p>
+
+  <section class="parte" aria-labelledby="parte-venta">
+    <h2 id="parte-venta" class="parte-titulo">
+      <span class="parte-nro">Parte 1</span>
+      La venta
+    </h2>
+
+    <ol class="consignas">
+      <li class="consigna">
+        <p>
+          En el pizarrón aparece tres veces la misma venta. Buscá el número 2 en
+          cada mirada. En una de las tres no está escrito. ¿Dónde está igual?
+        </p>
+        <div class="espacio"></div>
+      </li>
+
+      <li class="consigna">
+        <p>
+          Decidí qué mirada te ayuda más con cada pregunta y escribí por qué.
+        </p>
+        <ul class="subpreguntas">
+          <li>¿Cuántas unidades quedan después de la venta?</li>
+          <li>¿Quién le avisa al sistema que hubo una venta?</li>
+          <li>¿Qué cosa del sistema siguió igual?</li>
+          <li>¿El 10 es un dato o un resultado?</li>
+        </ul>
+        <p class="aclaracion">
+          En alguna puede haber más de una respuesta razonable. Lo que importa
+          es el porqué.
+        </p>
+        <div class="espacio espacio--grande"></div>
+      </li>
+
+      <li class="consigna">
+        <p>
+          Escribí una pregunta sobre esta venta que ninguna de las tres miradas
+          responda.
+        </p>
+        <div class="espacio"></div>
+      </li>
+
+      <li class="consigna">
+        <p>
+          Alguien dice: «Las tres miradas dicen lo mismo, sólo que dibujado
+          distinto». ¿Estás de acuerdo? Contestá usando algo concreto del
+          pizarrón.
+        </p>
+        <div class="espacio espacio--mediano"></div>
+      </li>
+    </ol>
+  </section>
+
+  <section class="parte" aria-labelledby="parte-otra">
+    <h2 id="parte-otra" class="parte-titulo">
+      <span class="parte-nro">Parte 2</span>
+      Otra situación
+    </h2>
+
+    <div class="situacion">
+      <p>
+        Una estufa tiene un termostato. Alguien dejó puesto 22 grados. Cada tanto
+        el termostato mide la temperatura del ambiente. Si mide menos de 22,
+        enciende la estufa. Si mide 22 o más, la apaga. Nadie le pide nada: el
+        termostato mide solo.
+      </p>
+    </div>
+
+    <ol class="consignas" start="5">
+      <li class="consigna">
+        <p>
+          Tomá un momento concreto: el ambiente está en 18 grados y la estufa
+          está apagada. Separá estas cinco cosas.
+        </p>
+        <ul class="subpreguntas">
+          <li>Qué había antes.</li>
+          <li>Qué le llega al sistema.</li>
+          <li>Qué hace el sistema.</li>
+          <li>Qué se puede observar desde afuera.</li>
+          <li>Qué cambió y qué siguió igual.</li>
+        </ul>
+        <div class="espacio espacio--grande"></div>
+      </li>
+
+      <li class="consigna">
+        <p>
+          Elegí una de las tres miradas y dibujá con ella esta situación. Escribí
+          por qué elegiste ésa y no otra.
+        </p>
+        <div class="espacio espacio--grande"></div>
+      </li>
+
+      <li class="consigna">
+        <p>
+          En la venta, una persona le pide algo al sistema. Acá nadie le pide
+          nada. ¿Te parece que igual hay una entrada? Defendé tu respuesta.
+        </p>
+        <div class="espacio espacio--mediano"></div>
+      </li>
+
+      <li class="consigna">
+        <p>
+          Al encender la estufa el ambiente se calienta, así que un rato después
+          el termostato mide otro número. ¿Alguna de las tres miradas deja ver
+          eso? Si ninguna alcanza, escribí qué le agregarías.
+        </p>
+        <div class="espacio espacio--mediano"></div>
+      </li>
+    </ol>
+  </section>
+
+  <section class="parte" aria-labelledby="parte-cierre">
+    <h2 id="parte-cierre" class="parte-titulo">
+      <span class="parte-nro">Para cerrar</span>
+    </h2>
+
+    <ol class="consignas" start="9">
+      <li class="consigna">
+        <p>
+          En dos o tres renglones: ¿para qué sirve tener más de una manera de
+          dibujar un mismo sistema?
+        </p>
+        <div class="espacio espacio--mediano"></div>
+      </li>
+    </ol>
+  </section>
+</MaterialLayout>
+
+<style>
+  .entrada-texto {
+    margin: 0;
+    font-weight: 600;
+  }
+
+  .entrada-texto a {
+    color: var(--ink);
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 2px solid var(--accent);
+  }
+
+  .entrada-texto a:hover {
+    color: var(--accent);
+  }
+
+  .parte {
+    margin-top: 2.5rem;
+  }
+
+  .parte-titulo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.35rem 0.7rem;
+    margin: 0 0 1.25rem;
+    padding-bottom: 0.7rem;
+    border-bottom: 2px solid var(--line);
+    font-size: clamp(1.2rem, 0.35vw + 1.1rem, 1.45rem);
+    font-weight: 700;
+    line-height: 1.25;
+  }
+
+  .parte-nro {
+    color: var(--muted);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .consignas {
+    margin: 0;
+    padding-left: 1.9rem;
+  }
+
+  .consignas li::marker {
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  .consigna + .consigna {
+    margin-top: 1.6rem;
+  }
+
+  .consigna > p {
+    margin: 0;
+    font-weight: 600;
+  }
+
+  .subpreguntas {
+    margin: 0.7rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .subpreguntas li {
+    padding: 0.5rem 0 0.5rem 0.9rem;
+    border-left: 3px solid var(--accent);
+    font-weight: 600;
+  }
+
+  .subpreguntas li + li {
+    margin-top: 0.4rem;
+  }
+
+  .aclaracion {
+    margin: 0.7rem 0 0;
+    color: var(--muted);
+    font-size: 0.98rem;
+    font-weight: 600;
+  }
+
+  .situacion {
+    margin: 0 0 1.5rem;
+    padding: 1.05rem 1.15rem;
+    border: 2px solid var(--line);
+    background: var(--board);
+  }
+
+  .situacion p {
+    margin: 0;
+    font-size: clamp(1.05rem, 0.3vw + 0.98rem, 1.2rem);
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  /* Renglones para escribir: sólo aparecen al imprimir. */
+  .espacio {
+    display: none;
+    margin-top: 0.6rem;
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent,
+      transparent calc(0.85cm - 1px),
+      var(--muted) calc(0.85cm - 1px),
+      var(--muted) 0.85cm
+    );
+  }
+
+  @media print {
+    .entrada-texto a {
+      border-bottom: 0;
+    }
+
+    .parte {
+      margin-top: 1.6rem;
+    }
+
+    .parte + .parte {
+      break-before: page;
+    }
+
+    .consigna {
+      break-inside: avoid;
+    }
+
+    .consigna + .consigna {
+      margin-top: 1rem;
+    }
+
+    .espacio {
+      display: block;
+      height: 2.55cm;
+    }
+
+    .espacio--mediano {
+      height: 3.4cm;
+    }
+
+    .espacio--grande {
+      height: 5.1cm;
+    }
+  }
+</style>

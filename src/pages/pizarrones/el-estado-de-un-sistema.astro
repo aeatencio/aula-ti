@@ -25,15 +25,18 @@ import PizarronLayout from "../../layouts/PizarronLayout.astro";
           <p class="caja-dato">Stock 12</p>
         </div>
 
-        <div class="flecha" aria-hidden="true">
-          <svg viewBox="0 0 48 24" focusable="false">
+        <div class="entrada">
+          <p class="entrada-etiqueta">Entrada</p>
+          <p class="entrada-dato">vender 2</p>
+          <svg class="entrada-flecha" viewBox="0 0 48 24" aria-hidden="true" focusable="false">
             <path d="M2 12h38M31 4l13 8-13 8"></path>
           </svg>
         </div>
 
         <div class="caja operacion">
-          <p class="caja-etiqueta">Entrada / operación</p>
-          <p class="caja-dato">Vender 2</p>
+          <p class="caja-etiqueta">Operación</p>
+          <p class="caja-dato">Descontar 2</p>
+          <p class="caja-nota">y registrar la venta</p>
         </div>
 
         <div class="flecha" aria-hidden="true">
@@ -48,6 +51,10 @@ import PizarronLayout from "../../layouts/PizarronLayout.astro";
           <p class="caja-nota">+ venta registrada</p>
         </div>
       </div>
+
+      <figcaption class="pie-diagrama">
+        Lo que llega al sistema no es lo mismo que lo que el sistema hace.
+      </figcaption>
     </figure>
   </section>
 
@@ -136,7 +143,9 @@ import PizarronLayout from "../../layouts/PizarronLayout.astro";
 
   .flujo {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 3rem minmax(0, 1fr) 3rem minmax(0, 1.15fr);
+    grid-template-columns:
+      minmax(0, 1fr) minmax(6rem, 0.7fr) minmax(0, 1.15fr) 3rem
+      minmax(0, 1.15fr);
     align-items: stretch;
     gap: 0.5rem 0.35rem;
   }
@@ -185,7 +194,8 @@ import PizarronLayout from "../../layouts/PizarronLayout.astro";
     justify-content: center;
   }
 
-  .flecha svg {
+  .flecha svg,
+  .entrada-flecha {
     width: 3rem;
     height: 1.5rem;
     fill: none;
@@ -193,6 +203,45 @@ import PizarronLayout from "../../layouts/PizarronLayout.astro";
     stroke-width: 2.4;
     stroke-linecap: square;
     stroke-linejoin: miter;
+  }
+
+  /*
+    Lo que llega viaja por la flecha; no ocupa una caja. Así queda a la vista
+    que la entrada y la operación no son la misma cosa.
+  */
+  .entrada {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.1rem;
+    text-align: center;
+  }
+
+  .entrada-etiqueta {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .entrada-dato {
+    margin: 0 0 0.25rem;
+    font-size: clamp(1rem, 0.3vw + 0.92rem, 1.18rem);
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .pie-diagrama {
+    margin: 1.1rem 0 0;
+    color: var(--muted);
+    font-size: clamp(0.98rem, 0.2vw + 0.92rem, 1.1rem);
+    font-weight: 700;
+    line-height: 1.35;
+    text-align: center;
   }
 
   .cierre {
@@ -219,7 +268,17 @@ import PizarronLayout from "../../layouts/PizarronLayout.astro";
 
     .flecha {
       min-height: 2.25rem;
+    }
+
+    .flecha svg,
+    .entrada-flecha {
+      width: 1.5rem;
+      height: 2.2rem;
       transform: rotate(90deg);
+    }
+
+    .entrada {
+      margin: 0.35rem 0 0.15rem;
     }
   }
 </style>

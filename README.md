@@ -6,12 +6,15 @@ Pizarrones digitales para clases de Tecnologías de la Información.
 
 Aula reúne materiales utilizados en clase para proyectarlos, consultarlos y recuperarlos después, especialmente cuando un estudiante faltó o no pudo copiar un pizarrón.
 
+Los pizarrones son el material predominante, pero no el único: hay lecturas, actividades y guías cuando la enseñanza las necesita.
+
 ## Contenido
 
-Los pizarrones pueden encontrarse de dos maneras:
+Los materiales pueden encontrarse de tres maneras:
 
 - por espacio curricular;
-- por recorrido de enseñanza, según el lugar y el período en que se usaron.
+- por recorrido de enseñanza, según el lugar y el período en que se usaron;
+- por tema, cuando varios materiales se usan juntos.
 
 ### Sistemas Informáticos
 
@@ -23,6 +26,7 @@ Los pizarrones pueden encontrarse de dos maneras:
 - Instrucciones, datos, operaciones y resultados
 - Entrada, procesamiento y salida
 - Procesador y memoria durante la ejecución
+- Tres miradas sobre una misma situación
 
 ### Pensamiento Computacional
 
@@ -30,7 +34,14 @@ Los pizarrones pueden encontrarse de dos maneras:
 - Hilos y agentes
 - Agentes y arneses
 
-Hay una lectura breve que combina los dos últimos: [Hilos, agentes y arneses](/hilos-agentes-y-arneses/).
+### Temas
+
+Un tema reúne varios materiales que se usan juntos.
+
+- [Un sistema, distintas miradas](/un-sistema-distintas-miradas/) · Sistemas Informáticos. Lectura, actividad imprimible y guía docente alrededor del pizarrón *Tres miradas sobre una misma situación*, que reutiliza *Entrada, procesamiento y salida*, *El estado de un sistema* e *Instrucciones, datos, operaciones y resultados*.
+- [Hilos, agentes y arneses](/hilos-agentes-y-arneses/) · Pensamiento Computacional. Lectura breve que combina los pizarrones *Hilos y agentes* y *Agentes y arneses*.
+
+La relación entre los materiales de un tema se declara en `src/data/`, junto a los recorridos. No hay un sistema general de formatos ni un índice de tipos: cada tema describe su propio conjunto.
 
 ### Recorridos por escuela
 

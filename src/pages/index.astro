@@ -14,4 +14,41 @@ import Layout from "../layouts/Layout.astro";
   <p>
     <a href="/escuelas/">Ver por escuela</a>
   </p>
+
+  <section class="categoria" aria-labelledby="temas">
+    <h2 id="temas">Temas</h2>
+    <p class="lede">
+      Un tema trabajado con varios materiales que se usan juntos.
+    </p>
+    <ul class="lista-pizarrones">
+      <li>
+        <a href="/un-sistema-distintas-miradas/">
+          Un sistema, distintas miradas
+        </a>
+        <span class="tema-nota">Sistemas Informáticos</span>
+      </li>
+      <li>
+        <a href="/hilos-agentes-y-arneses/">Hilos, agentes y arneses</a>
+        <span class="tema-nota">Pensamiento Computacional</span>
+      </li>
+    </ul>
+  </section>
 </Layout>
+
+<style>
+  .categoria .lede {
+    margin: 0 0 0.9rem;
+  }
+
+  .tema-nota {
+    display: block;
+    margin-top: 0.15rem;
+    color: var(--muted);
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+
+  .lista-pizarrones li + li {
+    margin-top: 0.75rem;
+  }
+</style>

@@ -1,0 +1,90 @@
+---
+import { otrosMateriales, serieMiradas } from "../data/serie-miradas";
+
+interface Props {
+  pathname: string;
+  mostrarPizarrones?: boolean;
+}
+
+const { pathname, mostrarPizarrones = true } = Astro.props;
+const materiales = otrosMateriales(pathname);
+---
+
+<nav class="pie-serie" aria-labelledby="pie-serie-titulo">
+  <p id="pie-serie-titulo" class="pie-serie-titulo">Materiales de esta serie</p>
+  <ul class="pie-serie-lista">
+    {materiales.map((material) => (
+      <li>
+        <a href={material.href}>{material.title}</a>
+        <span class="pie-serie-nota">
+          {material.tipo} · {material.para}
+        </span>
+      </li>
+    ))}
+  </ul>
+  {mostrarPizarrones && (
+    <>
+      <p class="pie-serie-titulo pie-serie-titulo--segundo">
+        Pizarrones que usa
+      </p>
+      <ul class="pie-serie-lista pie-serie-lista--simple">
+        {serieMiradas.pizarrones.map((pizarron) => (
+          <li>
+            <a href={pizarron.href}>{pizarron.title}</a>
+          </li>
+        ))}
+      </ul>
+    </>
+  )}
+</nav>
+
+<style>
+  .pie-serie {
+    margin-top: 2.75rem;
+    padding-top: 1.35rem;
+    border-top: 2px solid var(--line);
+  }
+
+  .pie-serie-titulo {
+    margin: 0 0 0.75rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+  }
+
+  .pie-serie-titulo--segundo {
+    margin-top: 1.5rem;
+  }
+
+  .pie-serie-lista {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .pie-serie-lista li + li {
+    margin-top: 0.7rem;
+  }
+
+  .pie-serie-lista--simple li + li {
+    margin-top: 0.5rem;
+  }
+
+  .pie-serie a {
+    color: var(--ink);
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 2px solid var(--accent);
+  }
+
+  .pie-serie a:hover {
+    color: var(--accent);
+  }
+
+  .pie-serie-nota {
+    display: block;
+    margin-top: 0.15rem;
+    color: var(--muted);
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+</style>

@@ -63,6 +63,10 @@ export const recorridos: Recorrido[] = [
         href: "/pizarrones/el-sistema-operativo/",
         title: "El sistema operativo",
       },
+      {
+        href: "/pizarrones/tres-miradas-sobre-una-situacion/",
+        title: "Tres miradas sobre una misma situación",
+      },
     ],
   },
   {

@@ -1,0 +1,335 @@
+---
+import MaterialLayout from "../../layouts/MaterialLayout.astro";
+---
+
+<MaterialLayout
+  title="Un sistema, distintas miradas"
+  description="Por qué un mismo sistema se dibuja de varias maneras: cada representación elige qué mostrar y sirve para responder preguntas distintas."
+  tipo="Lectura"
+  bajada="Por qué un mismo sistema se dibuja de varias maneras"
+>
+  <div class="prosa">
+    <p>
+      En un negocio se vende algo. Alguien pregunta cuántas unidades quedan.
+      Otra persona pregunta cómo se enteró el sistema de que hubo una venta. Una
+      tercera pregunta qué papel cumple ahí el número 2.
+    </p>
+    <p>
+      Son tres preguntas sobre la misma venta. Ninguna se responde bien con el
+      mismo dibujo.
+    </p>
+  </div>
+
+  <section class="tramo" aria-labelledby="elegir-que-mostrar">
+    <div class="prosa">
+      <h2 id="elegir-que-mostrar">Un dibujo elige qué mostrar</h2>
+      <p>
+        Cuando dibujamos un sistema siempre dejamos cosas afuera. No por
+        descuido: si pusiéramos todo, el dibujo no serviría para pensar nada.
+      </p>
+      <p>
+        Un dibujo que muestra por dónde entra y por dónde sale la información no
+        dice cuánto stock quedó. Uno que muestra el stock antes y después no dice
+        quién cargó la venta. Ninguno de los dos está mal. Fueron hechos para
+        pensar cosas distintas.
+      </p>
+    </div>
+
+    <figure
+      class="visual"
+      aria-label="Cada mirada deja ver algunas cosas y no dice nada sobre otras."
+    >
+      <div class="tarjetas">
+        <div class="tarjeta">
+          <p class="tarjeta-nombre">Entrada, procesamiento y salida</p>
+          <p class="tarjeta-rotulo">Deja ver</p>
+          <p class="tarjeta-texto">
+            por dónde entra la información, quién la produce y dónde aparece el
+            resultado
+          </p>
+          <p class="tarjeta-rotulo tarjeta-rotulo--afuera">No dice nada sobre</p>
+          <p class="tarjeta-texto">cuánto cambió el stock ni qué queda guardado</p>
+        </div>
+
+        <div class="tarjeta">
+          <p class="tarjeta-nombre">El estado</p>
+          <p class="tarjeta-rotulo">Deja ver</p>
+          <p class="tarjeta-texto">
+            qué valores cambiaron y cuáles siguieron igual
+          </p>
+          <p class="tarjeta-rotulo tarjeta-rotulo--afuera">No dice nada sobre</p>
+          <p class="tarjeta-texto">
+            quién avisó de la venta ni por dónde salió el resultado
+          </p>
+        </div>
+
+        <div class="tarjeta">
+          <p class="tarjeta-nombre">Instrucciones, datos, operaciones y resultados</p>
+          <p class="tarjeta-rotulo">Deja ver</p>
+          <p class="tarjeta-texto">
+            qué papel cumple cada cosa dentro de la tarea
+          </p>
+          <p class="tarjeta-rotulo tarjeta-rotulo--afuera">No dice nada sobre</p>
+          <p class="tarjeta-texto">en qué orden ocurrió ni cuánto quedó</p>
+        </div>
+      </div>
+    </figure>
+  </section>
+
+  <section class="tramo" aria-labelledby="la-pregunta-primero">
+    <div class="prosa">
+      <h2 id="la-pregunta-primero">La pregunta viene primero</h2>
+      <p>
+        Conviene hacerlo al revés de como parece: primero la pregunta, después
+        el dibujo.
+      </p>
+      <p>
+        Si querés saber dónde ve el cliente el resultado, mirá por dónde entra y
+        sale la información. Si querés saber qué quedó guardado para mañana,
+        mirá lo que cambió. Si querés saber qué es «descontar» dentro de la
+        tarea, mirá los papeles.
+      </p>
+      <p>
+        Y a veces la pregunta no entra en ninguna de las tres. «¿Qué pasa si dos
+        personas venden la última unidad al mismo tiempo?» no se responde con
+        ninguna de estas miradas. Eso no significa que el sistema no tenga
+        respuesta: significa que hace falta otro dibujo.
+      </p>
+    </div>
+  </section>
+
+  <section class="tramo" aria-labelledby="un-modelo">
+    <div class="prosa">
+      <h2 id="un-modelo">Un modelo no es el sistema</h2>
+      <p>
+        Ninguno de estos dibujos es el sistema. El sistema real tiene cables, una
+        pantalla, una base de datos, gente apurada y errores. Un dibujo es algo
+        que hacemos nosotros para poder pensar una cosa por vez.
+      </p>
+    </div>
+
+    <figure
+      class="visual"
+      aria-label="De todo lo que pasó en el negocio, una mirada retiene sólo algunos datos. El resto queda afuera a propósito."
+    >
+      <div class="recorte">
+        <div class="bloque bloque-todo">
+          <p class="bloque-nombre">Lo que pasó</p>
+          <ul class="bloque-items">
+            <li>el cliente pidió 2 unidades</li>
+            <li>el vendedor lo cargó en la computadora</li>
+            <li>la caja imprimió un ticket</li>
+            <li>la base de datos guardó la venta</li>
+            <li>el estante quedó con menos unidades</li>
+            <li>mañana alguien puede pedir un cambio</li>
+          </ul>
+        </div>
+
+        <div class="via" aria-hidden="true">
+          <svg viewBox="0 0 48 24" focusable="false">
+            <path d="M2 12h38M31 4l13 8-13 8"></path>
+          </svg>
+        </div>
+        <p class="via-texto">elegimos qué mirar</p>
+
+        <div class="bloque bloque-mirada">
+          <p class="bloque-nombre">La mirada del estado</p>
+          <ul class="bloque-items">
+            <li>stock 12</li>
+            <li>stock 10</li>
+            <li>venta registrada</li>
+          </ul>
+        </div>
+      </div>
+      <p class="visual-nota">Todo lo demás queda afuera a propósito.</p>
+    </figure>
+
+    <div class="prosa">
+      <p>
+        Por eso conviene tener más de un dibujo. No porque alguno sea el bueno,
+        sino porque preguntamos cosas distintas.
+      </p>
+    </div>
+
+    <p class="idea">
+      Un modelo no es el sistema: es una manera de mirarlo para pensar algo.
+    </p>
+  </section>
+</MaterialLayout>
+
+<style>
+  .prosa h2 {
+    margin: 0 0 0.85rem;
+    font-size: clamp(1.2rem, 0.35vw + 1.1rem, 1.45rem);
+    font-weight: 700;
+    line-height: 1.25;
+  }
+
+  .prosa p {
+    margin: 0;
+  }
+
+  .prosa p + p {
+    margin-top: 0.9rem;
+  }
+
+  .tramo {
+    margin-top: 2.75rem;
+  }
+
+  .visual {
+    margin: 1.5rem 0 0;
+    padding: clamp(1.1rem, 2.4vw, 1.85rem);
+    background: var(--board);
+    border: 2px solid var(--line);
+  }
+
+  .visual + .prosa {
+    margin-top: 1.35rem;
+  }
+
+  .visual-nota {
+    margin: 1.15rem 0 0;
+    color: var(--muted);
+    font-size: clamp(1rem, 0.2vw + 0.95rem, 1.12rem);
+    font-weight: 700;
+    line-height: 1.35;
+    text-align: center;
+  }
+
+  .tarjetas {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .tarjeta {
+    min-width: 0;
+    padding: 0.95rem 1rem 1rem;
+    border: 2px solid var(--line);
+  }
+
+  .tarjeta-nombre {
+    margin: 0 0 0.75rem;
+    font-size: clamp(1rem, 0.25vw + 0.94rem, 1.15rem);
+    font-weight: 700;
+    line-height: 1.25;
+  }
+
+  .tarjeta-rotulo {
+    margin: 0 0 0.25rem;
+    color: var(--accent);
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .tarjeta-rotulo--afuera {
+    margin-top: 0.75rem;
+    color: var(--emphasis);
+  }
+
+  .tarjeta-texto {
+    margin: 0;
+    font-size: 0.98rem;
+    font-weight: 600;
+    line-height: 1.35;
+  }
+
+  .recorte {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .bloque {
+    padding: 0.95rem 1.05rem 1.05rem;
+    border: 2px solid var(--line);
+  }
+
+  .bloque-mirada {
+    width: min(100%, 24rem);
+    margin: 0 auto;
+    border-color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 8%, var(--board));
+  }
+
+  .bloque-nombre {
+    margin: 0 0 0.65rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .bloque-mirada .bloque-nombre {
+    color: var(--accent);
+  }
+
+  .bloque-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 0.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .bloque-items li {
+    padding: 0.35rem 0.6rem;
+    border: 2px solid var(--line);
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+
+  .bloque-mirada .bloque-items li {
+    border-color: var(--accent);
+    background: var(--board);
+    font-weight: 700;
+  }
+
+  .via {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.6rem;
+  }
+
+  .via svg {
+    width: 1.5rem;
+    height: 2.1rem;
+    fill: none;
+    stroke: var(--ink);
+    stroke-width: 2.4;
+    stroke-linecap: square;
+    stroke-linejoin: miter;
+    transform: rotate(90deg);
+  }
+
+  .via-texto {
+    margin: 0.1rem 0 0.75rem;
+    color: var(--muted);
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .idea {
+    margin: 1.5rem 0 0;
+    padding: 1.05rem 1.15rem;
+    border: 2px solid var(--emphasis);
+    background: color-mix(in srgb, var(--emphasis) 8%, var(--board));
+    color: var(--emphasis);
+    font-size: clamp(1.12rem, 0.4vw + 1.05rem, 1.38rem);
+    font-weight: 700;
+    line-height: 1.35;
+  }
+
+  @media (max-width: 52rem) {
+    .tarjetas {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

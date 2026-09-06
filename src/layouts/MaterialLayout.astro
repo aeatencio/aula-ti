@@ -1,0 +1,77 @@
+---
+import PieSerie from "../components/PieSerie.astro";
+import { serieMiradas } from "../data/serie-miradas";
+import Layout from "./Layout.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  tipo: string;
+  bajada?: string;
+}
+
+const { title, description, tipo, bajada } = Astro.props;
+
+const pathname = Astro.url.pathname;
+const esPortada = pathname.replace(/\/?$/, "/") === serieMiradas.href;
+---
+
+<Layout title={`${title} · Aula`} description={description}>
+  <article class="material">
+    <header class="apertura">
+      <p class="ubicacion">
+        {esPortada ? (
+          <>{serieMiradas.categoria}</>
+        ) : (
+          <a href={serieMiradas.href}>{serieMiradas.titulo}</a>
+        )}
+        {" · "}
+        {tipo}
+      </p>
+      <h1 class="page-title">{title}</h1>
+      {bajada && <p class="bajada">{bajada}</p>}
+    </header>
+
+    <slot />
+
+    <PieSerie pathname={pathname} />
+  </article>
+</Layout>
+
+<style>
+  .material {
+    max-width: 58rem;
+  }
+
+  .apertura {
+    margin: 0 0 2rem;
+    padding-bottom: 1.35rem;
+    border-bottom: 2px solid var(--line);
+  }
+
+  .ubicacion {
+    margin: 0 0 0.45rem;
+    color: var(--muted);
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
+  .ubicacion a {
+    color: var(--muted);
+    text-decoration: none;
+    border-bottom: 2px solid var(--accent);
+  }
+
+  .ubicacion a:hover {
+    color: var(--accent);
+  }
+
+  .bajada {
+    margin: 0.45rem 0 0;
+    color: var(--muted);
+    font-size: clamp(1.15rem, 0.4vw + 1.05rem, 1.4rem);
+    font-weight: 700;
+    line-height: 1.35;
+  }
+</style>

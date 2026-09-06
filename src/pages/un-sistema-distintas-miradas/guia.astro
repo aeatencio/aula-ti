@@ -1,0 +1,409 @@
+---
+import MaterialLayout from "../../layouts/MaterialLayout.astro";
+---
+
+<MaterialLayout
+  title="Guía para la clase"
+  description="Guía docente de la serie Un sistema, distintas miradas: propósito, recorrido posible, preguntas, errores productivos y criterios para reconocer comprensión."
+  tipo="Guía docente"
+  bajada="Para preparar y conducir la clase"
+>
+  <section class="bloque" aria-labelledby="para-que">
+    <h2 id="para-que">Para qué</h2>
+    <p>
+      El propósito no es que reconozcan tres diagramas. Es que puedan elegir una
+      representación según la pregunta que quieren responder, relacionar dos
+      representaciones de una misma situación y notar que cada una deja cosas
+      afuera.
+    </p>
+    <p>
+      La idea de modelo conviene que aparezca al final, como conclusión de algo
+      que hicieron, y no como definición inicial.
+    </p>
+  </section>
+
+  <section class="bloque" aria-labelledby="antes">
+    <h2 id="antes">Qué conviene haber visto antes</h2>
+    <p>
+      La comparación se apoya en tres pizarrones. No hace falta haber trabajado
+      los tres: con dos alcanza para que tenga sentido.
+    </p>
+    <ul class="lista">
+      <li>
+        <a href="/pizarrones/entrada-procesamiento-y-salida/">
+          Entrada, procesamiento y salida
+        </a>
+      </li>
+      <li>
+        <a href="/pizarrones/el-estado-de-un-sistema/">El estado de un sistema</a>
+      </li>
+      <li>
+        <a href="/pizarrones/instrucciones-datos-operaciones-y-resultados/">
+          Instrucciones, datos, operaciones y resultados
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <section class="bloque" aria-labelledby="recorrido">
+    <h2 id="recorrido">Un recorrido posible</h2>
+    <p class="apoyo">
+      Los tiempos son orientativos. El orden importa más que la duración.
+    </p>
+
+    <ol class="momentos">
+      <li>
+        <p class="momento-nombre">
+          Abrir sin proyectar nada
+          <span class="momento-tiempo">unos 10 minutos</span>
+        </p>
+        <p>
+          «¿Qué pasa en el sistema del negocio cuando se vende algo?» Anotar en
+          el pizarrón del aula lo que vayan diciendo, sin ordenarlo. Ese desorden
+          sirve después: cada mirada ordenó una parte de eso.
+        </p>
+      </li>
+
+      <li>
+        <p class="momento-nombre">
+          Proyectar las tres miradas
+          <span class="momento-tiempo">unos 5 minutos</span>
+        </p>
+        <p>
+          Conviene no explicarlas. Leer en voz alta las tres preguntas y dejar un
+          minuto de lectura silenciosa.
+        </p>
+      </li>
+
+      <li>
+        <p class="momento-nombre">
+          Buscar el número 2
+          <span class="momento-tiempo">unos 10 minutos</span>
+        </p>
+        <p>
+          Es la consigna que abre la discusión y conviene hacerla en común. En la
+          mirada del estado el 2 no está escrito: está en la diferencia entre 12
+          y 10. Cuando alguien lo dice, ya está trabajando la relación entre
+          representaciones.
+        </p>
+      </li>
+
+      <li>
+        <p class="momento-nombre">
+          Consignas 2 a 4, en parejas
+          <span class="momento-tiempo">unos 20 minutos</span>
+        </p>
+        <p>
+          En la puesta en común interesa el porqué, no la mirada elegida. Si dos
+          parejas eligieron distinto y las dos lo justifican, es una buena
+          discusión, no un error a resolver.
+        </p>
+      </li>
+
+      <li>
+        <p class="momento-nombre">
+          La otra situación
+          <span class="momento-tiempo">unos 25 minutos</span>
+        </p>
+        <p>
+          El termostato no se resuelve copiando la venta. Vale dejar que
+          intenten copiarlo y que choquen: ahí aparece la pregunta buena.
+        </p>
+      </li>
+
+      <li>
+        <p class="momento-nombre">
+          Cerrar
+          <span class="momento-tiempo">unos 10 minutos</span>
+        </p>
+        <p>
+          Recién acá conviene enunciar que un dibujo es un recorte hecho a
+          propósito. La lectura de la serie deja escrito ese cierre para quien
+          faltó o quiera volver a leerlo.
+        </p>
+      </li>
+    </ol>
+  </section>
+
+  <section class="bloque" aria-labelledby="preguntas">
+    <h2 id="preguntas">Preguntas para abrir y para repreguntar</h2>
+
+    <p class="rotulo">Para abrir</p>
+    <ul class="lista lista--citas">
+      <li>¿Qué necesita saber el sistema para registrar una venta?</li>
+      <li>Si te pido que dibujes lo que pasó, ¿qué dibujarías primero?</li>
+      <li>
+        ¿Vieron alguna vez el mismo lugar dibujado de dos maneras distintas? Un
+        mapa de calles y un mapa de subte muestran la misma ciudad y no sirven
+        para lo mismo.
+      </li>
+    </ul>
+
+    <p class="rotulo">Para repreguntar</p>
+    <ul class="lista lista--citas">
+      <li>¿Esa mirada te lo dice, o lo estás sabiendo por otra?</li>
+      <li>Mostrame en qué parte del dibujo lo leés.</li>
+      <li>Si sólo tuvieras esta mirada, ¿podrías contestar?</li>
+      <li>¿Qué le falta a este dibujo para contestar tu pregunta?</li>
+      <li>¿Pueden ser buenas las dos respuestas? ¿Por qué?</li>
+    </ul>
+  </section>
+
+  <section class="bloque" aria-labelledby="errores">
+    <h2 id="errores">Interpretaciones que conviene aprovechar</h2>
+
+    <ul class="casos">
+      <li>
+        <p class="caso-dicho">«Las tres dicen lo mismo, sólo que dibujado distinto.»</p>
+        <p>
+          Es la respuesta más frecuente y la más útil. Conviene no corregirla de
+          frente: pedir una pregunta que una mirada responda y otra no.
+        </p>
+      </li>
+
+      <li>
+        <p class="caso-dicho">«¿Cuál es la mirada correcta?»</p>
+        <p>
+          Suele aparecer como pedido de que el docente decida. Devolver la
+          pregunta: depende de qué quieran averiguar.
+        </p>
+      </li>
+
+      <li>
+        <p class="caso-dicho">«Vender 2» como entrada y como operación.</p>
+        <p>
+          Mezclar lo que llega con lo que el sistema hace es habitual. El
+          pizarrón{" "}
+          <a href="/pizarrones/el-estado-de-un-sistema/">El estado de un sistema</a>{" "}
+          los separa: lo que llega viaja por la flecha y la operación tiene su
+          propia caja. Conviene mostrarlo en ese momento y no antes.
+        </p>
+      </li>
+
+      <li>
+        <p class="caso-dicho">«Toda operación cambia el estado.»</p>
+        <p>
+          El termostato ayuda a discutirlo: cuando mide 23 grados y la estufa ya
+          está apagada, el sistema consulta y no cambia nada. Vale proponer ese
+          caso si nadie lo trae.
+        </p>
+      </li>
+
+      <li>
+        <p class="caso-dicho">
+          «La entrada es la persona que dejó puestos 22 grados.»
+        </p>
+        <p>
+          Es una confusión valiosa. Los 22 grados forman parte del estado; lo que
+          llega en este momento es la medición. No hace falta cerrarla rápido:
+          discutirla enseña más que corregirla.
+        </p>
+      </li>
+
+      <li>
+        <p class="caso-dicho">El termostato dibujado como una venta.</p>
+        <p>
+          Si «vender 2» se convierte en «medir 18» y nada más, preguntar qué pasa
+          después de que la estufa calienta el ambiente.
+        </p>
+      </li>
+
+      <li>
+        <p class="caso-dicho">
+          «Ninguna mirada muestra que la estufa cambia lo que el termostato va a
+          medir.»
+        </p>
+        <p>
+          Es la observación que busca la consigna 8. Conviene traer entonces el
+          pizarrón{" "}
+          <a href="/pizarrones/entrada-procesamiento-y-salida/">
+            Entrada, procesamiento y salida
+          </a>, que sí tiene una flecha para eso: la salida puede convertirse en
+          entrada. Las tres miradas la dejaron afuera, y notar esa falta es
+          justamente lo que se está aprendiendo.
+        </p>
+      </li>
+    </ul>
+  </section>
+
+  <section class="bloque" aria-labelledby="comprension">
+    <h2 id="comprension">Qué mirar para reconocer comprensión</h2>
+    <ul class="lista">
+      <li>Justifica su elección con lo que la mirada muestra, no con lo que ya sabía.</li>
+      <li>Puede señalar en un dibujo dónde está algo que vio en otro.</li>
+      <li>Formula una pregunta que ninguna de las tres miradas responde.</li>
+      <li>
+        En el termostato distingue lo que llega (la medición) de lo que el
+        sistema hace (comparar y decidir).
+      </li>
+      <li>Reconoce que hay algo del estado que no cambió.</li>
+      <li>Dice con sus palabras que un dibujo deja cosas afuera a propósito.</li>
+    </ul>
+  </section>
+
+  <section class="bloque" aria-labelledby="adaptar">
+    <h2 id="adaptar">Para acortar o adaptar</h2>
+    <ul class="lista">
+      <li>
+        <strong>En 40 minutos:</strong> consignas 1, 2 y 5. Las demás quedan como
+        tarea.
+      </li>
+      <li>
+        <strong>Sin proyector:</strong> la tabla del estado y la lista de papeles
+        se copian rápido en el pizarrón del aula; la cadena de entrada y salida
+        se puede dictar.
+      </li>
+      <li>
+        <strong>Con un grupo numeroso:</strong> repartir una mirada por equipo y
+        darle preguntas que su mirada no responde. Para contestarlas tienen que
+        ir a buscar a otro equipo.
+      </li>
+      <li>
+        <strong>Si el termostato no engancha:</strong> sirve cualquier situación
+        donde nadie pida nada y el sistema mida por su cuenta, como un cargador
+        que corta al llegar al 100%.
+      </li>
+    </ul>
+  </section>
+</MaterialLayout>
+
+<style>
+  .bloque {
+    margin-top: 2.5rem;
+  }
+
+  .bloque h2 {
+    margin: 0 0 0.9rem;
+    padding-bottom: 0.7rem;
+    border-bottom: 2px solid var(--line);
+    font-size: clamp(1.2rem, 0.35vw + 1.1rem, 1.45rem);
+    font-weight: 700;
+    line-height: 1.25;
+  }
+
+  .bloque > p {
+    margin: 0;
+  }
+
+  .bloque > p + p {
+    margin-top: 0.9rem;
+  }
+
+  .apoyo {
+    color: var(--muted);
+    font-size: 0.98rem;
+    font-weight: 600;
+  }
+
+  .rotulo {
+    margin: 1.5rem 0 0.6rem;
+    color: var(--muted);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .bloque .rotulo:first-of-type {
+    margin-top: 0;
+  }
+
+  .lista {
+    margin: 1rem 0 0;
+    padding-left: 1.3rem;
+  }
+
+  .lista li + li {
+    margin-top: 0.5rem;
+  }
+
+  .lista--citas {
+    margin-top: 0;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  .lista--citas li {
+    padding: 0.45rem 0 0.45rem 0.9rem;
+    border-left: 3px solid var(--accent);
+    font-weight: 600;
+  }
+
+  .lista a,
+  .casos a {
+    color: var(--ink);
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 2px solid var(--accent);
+  }
+
+  .lista a:hover,
+  .casos a:hover {
+    color: var(--accent);
+  }
+
+  .momentos {
+    margin: 1.2rem 0 0;
+    padding-left: 1.9rem;
+  }
+
+  .momentos > li + li {
+    margin-top: 1.35rem;
+  }
+
+  .momentos li::marker {
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  .momentos p {
+    margin: 0;
+  }
+
+  .momento-nombre {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.2rem 0.7rem;
+    margin-bottom: 0.35rem !important;
+    font-size: clamp(1.05rem, 0.25vw + 1rem, 1.2rem);
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  .momento-tiempo {
+    color: var(--muted);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+
+  .casos {
+    margin: 1.2rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .casos > li {
+    padding: 1rem 1.05rem;
+    border: 2px solid var(--line);
+    background: var(--board);
+  }
+
+  .casos > li + li {
+    margin-top: 0.85rem;
+  }
+
+  .casos p {
+    margin: 0;
+  }
+
+  .caso-dicho {
+    margin-bottom: 0.5rem !important;
+    color: var(--emphasis);
+    font-size: clamp(1.05rem, 0.25vw + 1rem, 1.2rem);
+    font-weight: 700;
+    line-height: 1.3;
+  }
+</style>

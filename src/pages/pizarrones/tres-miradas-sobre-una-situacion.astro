@@ -1,0 +1,403 @@
+---
+import PieSerie from "../../components/PieSerie.astro";
+import PizarronLayout from "../../layouts/PizarronLayout.astro";
+---
+
+<PizarronLayout
+  title="Tres miradas sobre una misma situación"
+  description="Pizarrón de comparación: una misma venta representada de tres maneras. Cada mirada responde una pregunta distinta."
+  categoria="Sistemas Informáticos"
+  encabezado="borde-chico"
+>
+  <section class="situacion" aria-labelledby="situacion-titulo">
+    <p id="situacion-titulo" class="situacion-etiqueta">La situación</p>
+    <p class="situacion-texto">
+      En un negocio se venden 2 unidades de un producto. El sistema registra la
+      venta.
+    </p>
+  </section>
+
+  <div class="miradas">
+    <section class="mirada" aria-labelledby="pregunta-eps">
+      <h2 id="pregunta-eps" class="mirada-pregunta">
+        ¿Por dónde entra y por dónde sale la información?
+      </h2>
+
+      <div class="cadena">
+        <div class="paso">
+          <p class="paso-clave">Entrada</p>
+          <p class="paso-texto">El vendedor carga: vender 2</p>
+        </div>
+        <div class="flecha" aria-hidden="true">
+          <svg viewBox="0 0 48 24" focusable="false">
+            <path d="M2 12h38M31 4l13 8-13 8"></path>
+          </svg>
+        </div>
+        <div class="paso paso-maquina">
+          <p class="paso-clave">Procesamiento</p>
+          <p class="paso-texto">El programa descuenta y registra</p>
+        </div>
+        <div class="flecha" aria-hidden="true">
+          <svg viewBox="0 0 48 24" focusable="false">
+            <path d="M2 12h38M31 4l13 8-13 8"></path>
+          </svg>
+        </div>
+        <div class="paso">
+          <p class="paso-clave">Salida</p>
+          <p class="paso-texto">Ticket y stock en pantalla</p>
+        </div>
+      </div>
+
+      <p class="mirada-fuente">
+        <a href="/pizarrones/entrada-procesamiento-y-salida/">
+          Entrada, procesamiento y salida
+        </a>
+      </p>
+    </section>
+
+    <section class="mirada" aria-labelledby="pregunta-estado">
+      <h2 id="pregunta-estado" class="mirada-pregunta">
+        ¿Qué cambió y qué siguió igual?
+      </h2>
+
+      <table class="cambio">
+        <thead>
+          <tr>
+            <td></td>
+            <th scope="col">Antes</th>
+            <th scope="col">Después</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Stock</th>
+            <td>12</td>
+            <td class="cambia">10</td>
+          </tr>
+          <tr>
+            <th scope="row">Ventas registradas</th>
+            <td>7</td>
+            <td class="cambia">8</td>
+          </tr>
+          <tr>
+            <th scope="row">Precio</th>
+            <td>$500</td>
+            <td>$500</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="mirada-fuente">
+        <a href="/pizarrones/el-estado-de-un-sistema/">El estado de un sistema</a>
+      </p>
+    </section>
+
+    <section class="mirada" aria-labelledby="pregunta-papeles">
+      <h2 id="pregunta-papeles" class="mirada-pregunta">
+        ¿Qué papel cumple cada cosa?
+      </h2>
+
+      <ul class="papeles">
+        <li>
+          <span class="papel-cosa">Primero descontar, después registrar</span>
+          <span class="papel-rol">Instrucciones</span>
+        </li>
+        <li>
+          <span class="papel-cosa">2</span>
+          <span class="papel-rol">Dato</span>
+        </li>
+        <li>
+          <span class="papel-cosa">Descontar</span>
+          <span class="papel-rol papel-rol--operacion">Operación</span>
+        </li>
+        <li>
+          <span class="papel-cosa">Stock 10</span>
+          <span class="papel-rol papel-rol--resultado">Resultado</span>
+        </li>
+      </ul>
+
+      <p class="mirada-fuente">
+        <a href="/pizarrones/instrucciones-datos-operaciones-y-resultados/">
+          Instrucciones, datos, operaciones y resultados
+        </a>
+      </p>
+    </section>
+  </div>
+
+  <div class="cierre">
+    <p class="cierre-texto">
+      Las tres miran la misma venta. Cada una responde una pregunta distinta y
+      deja el resto afuera.
+    </p>
+    <p class="cierre-pregunta">
+      ¿Qué pregunta sobre esta venta no responde ninguna de las tres?
+    </p>
+  </div>
+
+  <PieSerie
+    pathname="/pizarrones/tres-miradas-sobre-una-situacion/"
+    mostrarPizarrones={false}
+  />
+</PizarronLayout>
+
+<style>
+  .situacion {
+    margin: 0 0 1.6rem;
+    padding: 0.9rem 0 0.95rem 1rem;
+    border-left: 4px solid var(--emphasis);
+  }
+
+  .situacion-etiqueta {
+    margin: 0 0 0.3rem;
+    color: var(--muted);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .situacion-texto {
+    margin: 0;
+    font-size: clamp(1.15rem, 0.5vw + 1.05rem, 1.45rem);
+    font-weight: 700;
+    line-height: 1.35;
+  }
+
+  /*
+    Las tres miradas no se unifican a propósito: una cadena, una tabla y una
+    asignación de papeles. La diferencia de forma es parte de lo que se enseña.
+  */
+  .miradas {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    padding: 1.5rem 0 1.4rem;
+    border-top: 2px solid var(--line);
+    border-bottom: 2px solid var(--line);
+  }
+
+  .mirada {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mirada + .mirada {
+    padding-left: 1.4rem;
+    border-left: 2px solid var(--line);
+  }
+
+  .mirada-pregunta {
+    margin: 0 0 1rem;
+    font-size: clamp(1.05rem, 0.35vw + 0.98rem, 1.25rem);
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  .mirada-fuente {
+    margin: auto 0 0;
+    padding-top: 1.1rem;
+    color: var(--muted);
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .mirada-fuente a {
+    color: var(--ink);
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 2px solid var(--accent);
+  }
+
+  .mirada-fuente a:hover {
+    color: var(--accent);
+  }
+
+  .cadena {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .paso {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    padding: 0.75rem 0.8rem;
+    border: 2px solid var(--line);
+    text-align: center;
+  }
+
+  .paso-clave {
+    margin: 0 0 0.3rem;
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .paso-texto {
+    margin: 0;
+    font-size: clamp(1rem, 0.25vw + 0.94rem, 1.15rem);
+    font-weight: 700;
+    line-height: 1.25;
+  }
+
+  .paso-maquina {
+    background: var(--accent);
+    color: var(--board);
+    border-color: var(--accent);
+  }
+
+  .paso-maquina .paso-clave {
+    color: color-mix(in srgb, var(--board) 82%, var(--accent));
+  }
+
+  .flecha {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 1.9rem;
+  }
+
+  .flecha svg {
+    width: 1.5rem;
+    height: 2.1rem;
+    fill: none;
+    stroke: var(--ink);
+    stroke-width: 2.4;
+    stroke-linecap: square;
+    stroke-linejoin: miter;
+    transform: rotate(90deg);
+  }
+
+  .cambio {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+
+  .cambio th,
+  .cambio td {
+    padding: 0.6rem 0.5rem;
+    border: 2px solid var(--line);
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  .cambio thead td {
+    border: 0;
+  }
+
+  .cambio thead td {
+    width: 42%;
+  }
+
+  .cambio thead th {
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .cambio tbody th {
+    text-align: left;
+    font-size: clamp(0.85rem, 2.6vw, 0.95rem);
+    font-weight: 700;
+    line-height: 1.25;
+  }
+
+  .cambio tbody td {
+    font-size: clamp(1.05rem, 0.3vw + 0.98rem, 1.25rem);
+    font-weight: 700;
+  }
+
+  .cambio .cambia {
+    border-color: var(--emphasis);
+    background: color-mix(in srgb, var(--emphasis) 10%, var(--board));
+    color: var(--emphasis);
+  }
+
+  .papeles {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .papeles li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.2rem 0.75rem;
+    padding: 0.7rem 0.8rem;
+    border: 2px solid var(--line);
+  }
+
+  .papel-cosa {
+    font-size: clamp(1rem, 0.28vw + 0.94rem, 1.18rem);
+    font-weight: 700;
+    line-height: 1.25;
+  }
+
+  .papel-rol {
+    margin-left: auto;
+    color: var(--muted);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .papel-rol--operacion {
+    color: var(--accent);
+  }
+
+  .papel-rol--resultado {
+    color: var(--emphasis);
+  }
+
+  .cierre {
+    margin-top: 1.6rem;
+  }
+
+  .cierre-texto {
+    margin: 0;
+    font-size: clamp(1.08rem, 0.35vw + 1rem, 1.28rem);
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  .cierre-pregunta {
+    margin: 1.1rem 0 0;
+    padding: 0.95rem 1.05rem;
+    border: 2px solid var(--emphasis);
+    background: color-mix(in srgb, var(--emphasis) 8%, var(--board));
+    color: var(--emphasis);
+    font-size: clamp(1.08rem, 0.4vw + 1rem, 1.32rem);
+    font-weight: 700;
+    line-height: 1.35;
+  }
+
+  @media (max-width: 58rem) {
+    .miradas {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .mirada + .mirada {
+      padding-left: 0;
+      padding-top: 1.5rem;
+      border-left: 0;
+      border-top: 2px solid var(--line);
+    }
+
+    .paso {
+      flex: 0 0 auto;
+    }
+  }
+</style>

@@ -163,3 +163,24 @@ button:focus-visible {
 .lista-pizarrones a:hover {
   color: var(--accent);
 }
+
+/*
+  Al imprimir, la barra del sitio no aporta nada en el papel y el fondo gris
+  gasta tinta. Cada material que se imprime resuelve su propio contenido.
+*/
+@media print {
+  .skip-link,
+  .site-header {
+    display: none;
+  }
+
+  body {
+    background: #fff;
+    font-size: 11pt;
+  }
+
+  .site-main {
+    max-width: none;
+    padding: 0;
+  }
+}
