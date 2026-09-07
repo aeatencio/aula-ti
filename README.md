@@ -1,12 +1,16 @@
 # Aula
 
-Pizarrones digitales para clases de Tecnologías de la Información.
+Materiales para enseñar y trabajar en clase.
 
 **Sitio:** https://aula.andresatencio.com
 
-Aula reúne materiales utilizados en clase para proyectarlos, consultarlos y recuperarlos después, especialmente cuando un estudiante faltó o no pudo copiar un pizarrón.
+Aula reúne materiales utilizados en clase para proyectarlos, consultarlos y recuperarlos después.
 
-Los pizarrones son el material predominante, pero no el único: hay lecturas, actividades y guías cuando la enseñanza las necesita.
+Los pizarrones fueron su punto de partida y siguen siendo el material predominante, especialmente útiles cuando un estudiante faltó o no pudo copiar uno. No son el límite del producto: Aula puede incorporar otros recursos cuando una necesidad real de enseñanza lo requiera. El corpus actual refleja principalmente la práctica docente en Tecnologías de la Información y Ciencias de la Computación, sin convertir ese origen en una restricción permanente.
+
+## Publicación y privacidad
+
+Este repositorio contiene material público. El material didáctico legítimamente publicable puede incorporarse directamente; quedan fuera los datos personales de estudiantes, los secretos, la documentación privada y cualquier otro contenido sensible. Los materiales externos deben respetar su autoría, procedencia y condiciones de licencia.
 
 ## Contenido
 
