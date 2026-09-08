@@ -2,53 +2,409 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Aula" current="home">
-  <h1 class="page-title">Aula</h1>
-  <p class="lede">
-    Materiales docentes de Tecnologías de la Información, pensados para proyectar
-    y leer en el aula.
-  </p>
-  <p>
-    <a class="cta" href="/pizarrones/">Entrar a Pizarrones</a>
-  </p>
-  <p>
-    <a href="/escuelas/">Ver por escuela</a>
-  </p>
+<Layout
+  title="Aula"
+  socialTitle="Materiales para enseñar y trabajar en clase"
+  description="Materiales para proyectar, consultar y recuperar después de clase."
+  current="home"
+>
+  <div class="hero">
+    <h1>Aula</h1>
+    <p>Materiales para enseñar y aprender.</p>
+  </div>
 
-  <section class="categoria" aria-labelledby="temas">
-    <h2 id="temas">Temas</h2>
-    <p class="lede">
-      Un tema trabajado con varios materiales que se usan juntos.
+  <section class="campo" aria-labelledby="campo-si">
+    <h2 id="campo-si">Sistemas Informáticos</h2>
+    <p class="campo-idea">
+      Cómo funciona un sistema digital: de qué está hecho, qué pasa adentro
+      mientras un programa se ejecuta y cómo lo representamos.
     </p>
-    <ul class="lista-pizarrones">
+
+    <ul class="indice">
+      <li class="fila">
+        <p class="fila-nombre">
+          <a href="/pizarrones/preguntas-y-conceptos-principales/">
+            Preguntas y conceptos principales
+          </a>
+        </p>
+        <p class="fila-idea">
+          Ocho preguntas y los conceptos principales asociados a cada una.
+        </p>
+      </li>
+
+      <li class="fila">
+        <p class="fila-nombre">
+          <a href="/pizarrones/hardware-software-y-tarea/">
+            Sistemas digitales: hardware y software
+          </a>
+        </p>
+        <p class="fila-idea">
+          Una misma computadora hace tareas distintas según el programa que
+          ejecuta.
+        </p>
+      </li>
+
+      <li class="fila">
+        <p class="fila-nombre">
+          <a href="/pizarrones/instrucciones-datos-operaciones-y-resultados/">
+            Instrucciones, datos, operaciones y resultados
+          </a>
+        </p>
+        <p class="fila-idea">
+          Cómo se organiza una tarea y cómo un resultado puede volver a usarse
+          como dato.
+        </p>
+      </li>
+
+      <li class="fila">
+        <p class="fila-nombre">
+          <a href="/pizarrones/entrada-procesamiento-y-salida/">
+            Entrada, procesamiento y salida
+          </a>
+        </p>
+        <p class="fila-idea">
+          Cómo entra la información a un sistema, se opera con ella y se
+          comunica o aplica un resultado.
+        </p>
+      </li>
+
+      <li class="fila">
+        <p class="fila-nombre">
+          <a href="/pizarrones/procesador-y-memoria-durante-la-ejecucion/">
+            Procesador y memoria durante la ejecución
+          </a>
+        </p>
+        <p class="fila-idea">
+          Cómo se relacionan para mantener y utilizar la información mientras
+          un programa está en curso.
+        </p>
+      </li>
+
+      <li class="fila">
+        <p class="fila-nombre">
+          <a href="/pizarrones/el-estado-de-un-sistema/">
+            El estado de un sistema
+          </a>
+        </p>
+        <p class="fila-idea">
+          Datos relacionados que describen la situación actual y permiten que
+          el programa continúe.
+        </p>
+      </li>
+
+      <li class="fila">
+        <p class="fila-nombre">
+          <a href="/pizarrones/arquitectura-de-von-neumann/">
+            Arquitectura de Von Neumann
+          </a>
+        </p>
+        <p class="fila-idea">
+          Una computadora representada por dispositivos de entrada, CPU y
+          memoria relacionadas, y dispositivos de salida.
+        </p>
+      </li>
+
+      <li class="fila">
+        <p class="fila-nombre">
+          <a href="/pizarrones/el-sistema-operativo/">
+            El sistema operativo
+          </a>
+        </p>
+        <p class="fila-idea">
+          El software de base que administra los recursos y permite que los
+          programas usen el hardware.
+        </p>
+      </li>
+
+      <li class="fila">
+        <p class="fila-nombre">
+          <a href="/pizarrones/tres-miradas-sobre-una-situacion/">
+            Tres miradas sobre una misma situación
+          </a>
+        </p>
+        <p class="fila-idea">
+          Una misma venta representada de tres maneras. Cada mirada responde
+          una pregunta distinta.
+        </p>
+      </li>
+
+      <li class="fila">
+        <p class="fila-nombre">
+          <a href="/un-sistema-distintas-miradas/">
+            Un sistema, distintas miradas
+          </a>
+          <span class="tipo">Lectura</span>
+        </p>
+        <p class="fila-idea">
+          Cada representación elige qué mostrar, y por eso sirve para
+          responder preguntas distintas.
+        </p>
+      </li>
+
+      <li class="fila">
+        <p class="fila-nombre">
+          <a href="/un-sistema-distintas-miradas/actividad/">
+            Elegir la mirada
+          </a>
+          <span class="tipo">Actividad</span>
+          <span class="uso">para imprimir</span>
+        </p>
+        <p class="fila-idea">
+          Relacionar las tres representaciones de una venta, decidir cuál
+          ayuda con cada pregunta y aplicarlas a una situación nueva.
+        </p>
+      </li>
+    </ul>
+
+    <div class="secundario" aria-labelledby="docentes-si">
+      <h3 id="docentes-si">Para docentes</h3>
+      <p>
+        <a href="/un-sistema-distintas-miradas/guia/">Guía para la clase</a>
+        — para conducir <em>Un sistema, distintas miradas</em>: propósito,
+        preguntas, errores productivos y criterios para reconocer
+        comprensión.
+      </p>
+    </div>
+  </section>
+
+  <section class="campo" aria-labelledby="campo-pc">
+    <h2 id="campo-pc">Pensamiento Computacional</h2>
+    <p class="campo-idea">
+      Qué significa darle instrucciones a una máquina, y qué cambia cuando
+      quien las encadena es un agente.
+    </p>
+
+    <ul class="indice">
+      <li class="fila">
+        <p class="fila-nombre">
+          <a href="/pizarrones/la-maquina-obedece-exactamente/">
+            La máquina obedece exactamente
+          </a>
+        </p>
+        <p class="fila-idea">
+          La máquina no interpreta lo que queremos: ejecuta lo que le pedimos.
+        </p>
+      </li>
+
+      <li class="fila">
+        <p class="fila-nombre">
+          <a href="/pizarrones/hilos-y-agentes/">
+            Hilos y agentes
+          </a>
+        </p>
+        <p class="fila-idea">
+          Un hilo avanza de a uno; un agente encadena acciones hacia un
+          objetivo.
+        </p>
+      </li>
+
+      <li class="fila">
+        <p class="fila-nombre">
+          <a href="/pizarrones/agentes-y-arneses/">
+            Agentes y arneses
+          </a>
+        </p>
+        <p class="fila-idea">
+          El arnés: las condiciones —contexto, herramientas, reglas y
+          pruebas— en las que un agente actúa.
+        </p>
+      </li>
+
+      <li class="fila">
+        <p class="fila-nombre">
+          <a href="/hilos-agentes-y-arneses/">
+            Hilos, agentes y arneses
+          </a>
+          <span class="tipo">Lectura</span>
+        </p>
+        <p class="fila-idea">
+          Pensar y decidir en un hilo, delegar un objetivo a un agente dentro
+          de un arnés, y volver a mirar la evidencia.
+        </p>
+      </li>
+    </ul>
+  </section>
+
+  <section class="secundario contexto" aria-labelledby="contexto-titulo">
+    <h2 id="contexto-titulo">Dónde se usaron</h2>
+    <ul class="contexto-lista">
       <li>
-        <a href="/un-sistema-distintas-miradas/">
-          Un sistema, distintas miradas
+        <a href="/escuelas/gabriela-mistral/2-cuatrimestre-2026/">
+          Gabriela Mistral · 2.º cuatrimestre 2026
         </a>
-        <span class="tema-nota">Sistemas Informáticos</span>
       </li>
       <li>
-        <a href="/hilos-agentes-y-arneses/">Hilos, agentes y arneses</a>
-        <span class="tema-nota">Pensamiento Computacional</span>
+        <a href="/escuelas/cfp-7/sistemas-informaticos-2026/">
+          CFP 7 · Sistemas Informáticos 2026
+        </a>
       </li>
     </ul>
   </section>
 </Layout>
 
 <style>
-  .categoria .lede {
-    margin: 0 0 0.9rem;
+  .hero {
+    max-width: var(--column);
+    margin: 0 0 2.75rem;
+    padding: clamp(1.35rem, 3.2vw, 2.35rem);
+    background: var(--board);
+    border: 2px solid var(--line);
   }
 
-  .tema-nota {
-    display: block;
-    margin-top: 0.15rem;
+  .hero h1 {
+    margin: 0;
+    font-size: clamp(2.4rem, 5vw + 0.9rem, 4rem);
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    line-height: 1.02;
+  }
+
+  .hero p {
+    max-width: 32rem;
+    margin: 0.55rem 0 0;
     color: var(--muted);
-    font-size: 0.95rem;
-    font-weight: 600;
+    font-size: clamp(1.05rem, 0.4vw + 0.95rem, 1.3rem);
+    line-height: 1.35;
   }
 
-  .lista-pizarrones li + li {
-    margin-top: 0.75rem;
+  .campo + .campo {
+    margin-top: 2.75rem;
+    padding-top: 2.25rem;
+    border-top: 2px solid var(--line);
+  }
+
+  .campo h2 {
+    margin: 0 0 0.45rem;
+    font-size: clamp(1.3rem, 0.6vw + 1.15rem, 1.6rem);
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .campo-idea {
+    max-width: 44rem;
+    margin: 0 0 1.5rem;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  .indice {
+    max-width: var(--column);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid var(--hairline);
+  }
+
+  .fila {
+    padding: 0.9rem 0;
+    border-bottom: 1px solid var(--hairline);
+  }
+
+  .fila-nombre {
+    margin: 0;
+    font-size: 1.05em;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  .fila-nombre a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 2px solid var(--accent);
+  }
+
+  .fila-nombre a:hover {
+    color: var(--accent);
+  }
+
+  .fila-idea {
+    max-width: 44rem;
+    margin: 0.25rem 0 0;
+    color: var(--muted);
+    font-size: 0.98rem;
+    line-height: 1.5;
+  }
+
+  .tipo {
+    margin-left: 0.55rem;
+    color: var(--muted);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .uso {
+    margin-left: 0.2rem;
+    color: var(--muted);
+    font-size: 0.85rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .uso::before {
+    content: "· ";
+  }
+
+  .secundario {
+    max-width: var(--column);
+    margin-top: 1.6rem;
+  }
+
+  .secundario h3,
+  .secundario h2 {
+    margin: 0 0 0.5rem;
+    color: var(--muted);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .secundario p {
+    max-width: 44rem;
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+
+  .secundario a {
+    color: var(--ink);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent);
+  }
+
+  .secundario a:hover {
+    color: var(--accent);
+  }
+
+  .contexto {
+    margin-top: 2.75rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid var(--line);
+  }
+
+  .contexto-lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 2rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 0.92rem;
+  }
+
+  @media (max-width: 46rem) {
+    .tipo {
+      margin-left: 0.4rem;
+    }
+
+    .contexto-lista {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
   }
 </style>

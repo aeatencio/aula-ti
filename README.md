@@ -75,7 +75,8 @@ Cada push a `main` ejecuta automáticamente mediante GitHub Actions:
 1. `npm ci`
 2. `npm run check`
 3. `npm run build`
-4. `npx wrangler deploy`
+4. `npm test`
+5. `npx wrangler deploy`
 
 El dominio público es:
 
@@ -124,6 +125,12 @@ El sitio generado queda en:
 
 ```text
 dist/
+```
+
+Los tests inspeccionan ese resultado. Después del build:
+
+```bash
+npm test
 ```
 
 Para servir localmente el build de producción:

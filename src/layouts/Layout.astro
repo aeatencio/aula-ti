@@ -4,14 +4,18 @@ import "../styles/global.css";
 interface Props {
   title: string;
   description?: string;
+  socialTitle?: string;
   current?: "home" | "pizarrones" | "escuelas";
 }
 
 const {
   title,
-  description = "Materiales docentes de Tecnologías de la Información.",
+  description = "Materiales para enseñar y trabajar en clase.",
+  socialTitle = title,
   current,
 } = Astro.props;
+
+const esHome = current === "home";
 
 const site = Astro.site;
 if (!site) {
@@ -20,7 +24,7 @@ if (!site) {
 
 const canonicalURL = new URL(Astro.url.pathname, site);
 const socialImageURL = new URL("/og.png", site);
-const socialImageAlt = "Aula";
+const socialImageAlt = "La palabra Aula sobre un pizarrón de clase";
 ---
 
 <!doctype html>
@@ -33,7 +37,7 @@ const socialImageAlt = "Aula";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href={canonicalURL.href} />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content={title} />
+    <meta property="og:title" content={socialTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalURL.href} />
     <meta property="og:image" content={socialImageURL.href} />
@@ -43,7 +47,7 @@ const socialImageAlt = "Aula";
     <meta property="og:image:alt" content={socialImageAlt} />
     <meta property="og:site_name" content="Aula" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title} />
+    <meta name="twitter:title" content={socialTitle} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={socialImageURL.href} />
     <meta name="twitter:image:alt" content={socialImageAlt} />
@@ -51,19 +55,29 @@ const socialImageAlt = "Aula";
   </head>
   <body>
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
-    <header class="site-header">
-      <a class="marca" href="/">Aula</a>
+    <header class:list={["site-header", esHome && "site-header--home"]}>
+      {
+        !esHome && (
+          <a class="marca" href="/">Aula</a>
+        )
+      }
       <nav class="site-nav" aria-label="Principal">
-        <a href="/pizarrones/" aria-current={current === "pizarrones" ? "page" : undefined}>
-          Pizarrones
-        </a>
         <a href="/escuelas/" aria-current={current === "escuelas" ? "page" : undefined}>
           Escuelas
         </a>
       </nav>
     </header>
-    <main id="contenido" class="site-main">
+    <main id="contenido" class:list={["site-main", esHome && "site-main--home"]}>
       <slot />
     </main>
+    {
+      esHome && (
+        <footer class="site-footer">
+          <p class="firma">
+            <a href="https://andresatencio.com" rel="author">Andrés Atencio</a>
+          </p>
+        </footer>
+      )
+    }
   </body>
 </html>
