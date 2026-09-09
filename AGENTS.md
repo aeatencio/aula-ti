@@ -6,6 +6,14 @@
 - Organizar el sitio no consiste sólo en permitir encontrar materiales: debe ayudar a orientarse, comprender, relacionar ideas, recuperar lo trabajado y continuar aprendiendo.
 - Los estudiantes son una referencia central del producto y otros docentes son también una audiencia real. Cuando corresponda, dar suficiente contexto para que otro docente comprenda para qué sirve un material y cómo podría aprovecharlo o adaptarlo, sin asumir que estas audiencias requieren productos o arquitecturas separadas.
 
+## Relación con la práctica de aula
+
+- Aula no es una bitácora exhaustiva ni una reconstrucción auditada de lo que sucedió en cada clase. La práctica real puede incluir explicaciones, actividades, materiales externos, ejercicios improvisados y decisiones docentes que todavía no estén publicados.
+- La presencia de un material en Aula no implica que haya sido usado por todos los estudiantes o en todos los grupos asociados a ese contexto. La ausencia de un material no implica que esa actividad, explicación o idea no haya sido trabajada en clase.
+- Dentro de un mismo curso o incluso de una misma clase pueden existir trayectorias individuales diferentes: estudiantes que trabajan materiales distintos, en distinto orden y en distinta cantidad. Un conjunto de materiales puede haber funcionado como repertorio u oferta de trabajo, no necesariamente como una secuencia realizada completa por todos.
+- Los recorridos de Aula representan una selección y, cuando corresponde, una secuenciación pedagógica situada de materiales; no son historiales exactos de ejecución ni registros de trayectorias individuales. Diferencias de ritmo, cantidad de clases, interrupciones o elecciones individuales no justifican por sí solas crear recorridos diferentes por división o estudiante. Sólo corresponde distinguir recorridos cuando exista una diferencia pedagógica real que lo justifique.
+- Aula puede recuperar posteriormente materiales que ya fueron usados en clase y también puede publicar materiales preparados para usos futuros. El corpus publicado es una construcción editorial y pedagógica en evolución, no un inventario completo de la práctica docente.
+
 ## Publicación y privacidad
 
 - Aula es un repositorio público. El material didáctico puede incorporarse directamente cuando sea legítimamente publicable.
